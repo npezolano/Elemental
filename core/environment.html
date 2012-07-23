@@ -502,6 +502,42 @@ treated as <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b
 </dd></dl>
 
 <dl class="type">
+<dt id="Conjugation">
+<em class="property">type </em><tt class="descname">Conjugation</tt><a class="headerlink" href="#Conjugation" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enum which can be set to either <tt class="docutils literal"><span class="pre">CONJUGATED</span></tt> or <tt class="docutils literal"><span class="pre">UNCONJUGATED</span></tt>.</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="NormType">
+<em class="property">type </em><tt class="descname">NormType</tt><a class="headerlink" href="#NormType" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enum that can be set to either</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">FROBENIUS_NORM</span></tt>:</p>
+<div class="math">
+<p><img src="../_images/math/fec751f28351f8543c825bcd4c0162e54080d4fd.png" alt="\|A\|_F = \sqrt{\sum_{i=0}^{m-1} \sum_{j=0}^{n-1} |\alpha_{i,j}|^2}"/></p>
+</div></li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">INFINITY_NORM</span></tt>:</p>
+<div class="math">
+<p><img src="../_images/math/1fba394944840cbc7221f3b0d613b1302ae36f2a.png" alt="\[
+\|A\|_{\infty} = \max_{\|x\|_{\infty}=1} \|Ax\|_{\infty}
+               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|
+\]"/></p>
+</div></li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ONE_NORM</span></tt>:</p>
+<div class="math">
+<p><img src="../_images/math/eb08c9019c7c6e5db60ebb0384189e892e1449df.png" alt="\[
+\|A\|_1 = \max_{\|x\|_1=1} \|Ax\|_1
+        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|
+\]"/></p>
+</div></li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">MAX_NORM</span></tt>:</p>
+<div class="math">
+<p><img src="../_images/math/649cab1f7a084c5e02562fb4a7b8b70d12103f0f.png" alt="\|A\|_{\mbox{max}} = \max_{i,j} |\alpha_{i,j}|"/></p>
+</div></li>
+</ul>
+</dd></dl>
+
+<dl class="type">
 <dt id="Distribution">
 <em class="property">type </em><tt class="descname">Distribution</tt><a class="headerlink" href="#Distribution" title="Permalink to this definition">¶</a></dt>
 <dd><p>An enum for specifying the distribution of a row or column of a distributed

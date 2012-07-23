@@ -59,47 +59,17 @@
 the maximum entrywise norm. The matrix two-norm is quite expensive to directly
 compute, so a probabilistic algorithm (based upon Dixon&#8217;s approach) will be
 added in the near future.</p>
-<dl class="type">
-<dt id="NormType">
-<em class="property">type </em><tt class="descname">NormType</tt><a class="headerlink" href="#NormType" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enum that can be set to either</p>
-<ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">FROBENIUS_NORM</span></tt>:</p>
-<div class="math">
-<p><img src="../_images/math/fec751f28351f8543c825bcd4c0162e54080d4fd.png" alt="\|A\|_F = \sqrt{\sum_{i=0}^{m-1} \sum_{j=0}^{n-1} |\alpha_{i,j}|^2}"/></p>
-</div></li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">INFINITY_NORM</span></tt>:</p>
-<div class="math">
-<p><img src="../_images/math/1fba394944840cbc7221f3b0d613b1302ae36f2a.png" alt="\[
-\|A\|_{\infty} = \max_{\|x\|_{\infty}=1} \|Ax\|_{\infty}
-               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|
-\]"/></p>
-</div></li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">ONE_NORM</span></tt>:</p>
-<div class="math">
-<p><img src="../_images/math/eb08c9019c7c6e5db60ebb0384189e892e1449df.png" alt="\[
-\|A\|_1 = \max_{\|x\|_1=1} \|Ax\|_1
-        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|
-\]"/></p>
-</div></li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">MAX_NORM</span></tt>:</p>
-<div class="math">
-<p><img src="../_images/math/649cab1f7a084c5e02562fb4a7b8b70d12103f0f.png" alt="\|A\|_{\mbox{max}} = \max_{i,j} |\alpha_{i,j}|"/></p>
-</div></li>
-</ul>
-</dd></dl>
-
 <div class="section" id="norm">
 <h2>Norm<a class="headerlink" href="#norm" title="Permalink to this headline">¶</a></h2>
 <p>For computing norms of fully-populated matrices.</p>
 <dl class="function">
 <dt id="Norm__Matrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="Norm__DistMatrix:F.U.V:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const DistMatrix&lt;F, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const DistMatrix&lt;F, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
