@@ -86,7 +86,7 @@ void <tt class="descname">Finalize</tt><big>(</big><big>)</big><a class="headerl
 <dl class="function">
 <dt id="Initialized">
 bool <tt class="descname">Initialized</tt><big>(</big><big>)</big><a class="headerlink" href="#Initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return whether or not Elemental is currently initialized.</p>
+<dd><p>Returns whether or not Elemental is currently initialized.</p>
 </dd></dl>
 
 </div>
@@ -119,94 +119,6 @@ simply push a new value onto a stack
 <dt id="PopBlocksizeStack">
 void <tt class="descname">PopBlocksizeStack</tt><big>(</big><big>)</big><a class="headerlink" href="#PopBlocksizeStack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pops the stack of blocksizes. See above.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="scalar-manipulation">
-<h2>Scalar manipulation<a class="headerlink" href="#scalar-manipulation" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="Abs__ZCR">
-Z <tt class="descname">Abs</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Abs__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the absolute value of the real variable <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Abs__Complex:Z:CR">
-Z <tt class="descname">Abs</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Abs__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the absolute value of complex <span class="math">\(\alpha\)</span>:</p>
-<div class="math">
-\[|\alpha| = \sqrt{|\mathcal{R}(\alpha)|^2+|\mathcal{I}(\alpha)|^2}\]</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="FastAbs__ZCR">
-Z <tt class="descname">FastAbs</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#FastAbs__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as :cpp:function::Abs: for real <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="FastAbs__Complex:Z:CR">
-Z <tt class="descname">FastAbs</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#FastAbs__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a cheaper norm of the complex <span class="math">\(\alpha\)</span>:</p>
-<div class="math">
-\[|\alpha|_{\mbox{fast}} = |\mathcal{R}(\alpha)| + |\mathcal{I}(\alpha)|\]</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="RealPart__ZCR">
-Z <tt class="descname">RealPart</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#RealPart__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the real part of the real variable <span class="math">\(\alpha\)</span>, which is
-<span class="math">\(\alpha\)</span> itself.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="RealPart__Complex:Z:CR">
-Z <tt class="descname">RealPart</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#RealPart__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the real part of the complex variable <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ImagPart__ZCR">
-Z <tt class="descname">ImagPart</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#ImagPart__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the imaginary part of the real variable <span class="math">\(\alpha\)</span>, which is
-trivially zero.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ImagPart__Complex:Z:CR">
-Z <tt class="descname">ImagPart</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#ImagPart__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the imaginary part of the complex variable <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Conj__ZCR">
-Z <tt class="descname">Conj</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Conj__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the complex conjugate of the real variable <span class="math">\(\alpha\)</span>,
-which is simply <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Conj__Complex:Z:CR">
-Complex&lt;Z&gt; <tt class="descname">Conj</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Conj__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the complex conjugate of the complex variable <span class="math">\(\alpha\)</span>,</p>
-<div class="math">
-\[\bar \alpha = \mathcal{R}(\alpha) - \mathcal{I}(\alpha) i\]</div>
-</dd></dl>
-
-<dl class="class">
-<dt id="Base:F:">
-<em class="property">class </em><tt class="descname">Base&lt;F&gt;</tt><a class="headerlink" href="#Base:F:" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="type">
-<dt id="Base:F:::type">
-<em class="property">type </em><tt class="descname">type</tt><a class="headerlink" href="#Base:F:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The underlying real datatype of the (potentially complex) datatype <tt class="docutils literal"><span class="pre">F</span></tt>.
-For example, <tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;Complex&lt;double&gt;</span> <span class="pre">&gt;::type</span></tt> and
-<tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;double&gt;::type</span></tt> are both equivalent to <tt class="docutils literal"><span class="pre">double</span></tt>.
-This is often extremely useful in implementing routines which are
-templated over real and complex datatypes but still make use of real
-datatypes.</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -320,6 +232,22 @@ Complex&lt;R&gt;&amp; <tt class="descname">operator*=</tt><big>(</big>const Comp
 <dt id="Complex:R:::div-assign-operator__Complex:R:CR">
 Complex&lt;R&gt;&amp; <tt class="descname">operator/=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::div-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Divide with a complex value.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="Base:F:__struct">
+<em class="property">type </em>struct <tt class="descname">Base&lt;F&gt;</tt><a class="headerlink" href="#Base:F:__struct" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="type">
+<dt id="Base:F:::type">
+<em class="property">type </em><tt class="descname">type</tt><a class="headerlink" href="#Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The underlying real datatype of the (potentially complex) datatype <tt class="docutils literal"><span class="pre">F</span></tt>.
+For example, <tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;Complex&lt;double&gt;</span> <span class="pre">&gt;::type</span></tt> and
+<tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;double&gt;::type</span></tt> are both equivalent to <tt class="docutils literal"><span class="pre">double</span></tt>.
+This is often extremely useful in implementing routines which are
+templated over real and complex datatypes but still make use of real
+datatypes.</p>
 </dd></dl>
 
 </dd></dl>
@@ -555,6 +483,109 @@ it is used to tune one of the algorithms in <tt class="docutils literal"><span c
 which requires building a smaller square process grid from a rectangular
 process grid, as the ordering of the processes can greatly impact
 performance. See <tt class="docutils literal"><span class="pre">SetHermitianTridiagGridOrder</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="scalar-manipulation">
+<h2>Scalar manipulation<a class="headerlink" href="#scalar-manipulation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Abs__FCR">
+F <tt class="descname">Abs</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Abs__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute value of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FastAbs__FCR">
+F <tt class="descname">FastAbs</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#FastAbs__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a cheaper norm of the real or complex <span class="math">\(\alpha\)</span>:</p>
+<div class="math">
+\[|\alpha|_{\mbox{fast}} = |\mathcal{R}(\alpha)| + |\mathcal{I}(\alpha)|\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="RealPart__FCR">
+F <tt class="descname">RealPart</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#RealPart__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the real part of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImagPart__FCR">
+F <tt class="descname">ImagPart</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#ImagPart__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the imaginary part of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Conj__FCR">
+F <tt class="descname">Conj</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Conj__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the complex conjugate of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Sqrt__FCR">
+F <tt class="descname">Sqrt</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Sqrt__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the square root or the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Cos__FCR">
+F <tt class="descname">Cos</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Cos__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cosine of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Sin__FCR">
+F <tt class="descname">Sin</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Sin__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sine of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Tan__FCR">
+F <tt class="descname">Tan</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Tan__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the tangent of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Cosh__FCR">
+F <tt class="descname">Cosh</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Cosh__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the hyperbolic cosine of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Sinh__FCR">
+F <tt class="descname">Sinh</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Sinh__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the hyperbolic sine of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Arg__FCR">
+<a class="reference internal" href="#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Arg</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Arg__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the argument of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Polar__RCR.RCR">
+Complex&lt;R&gt; <tt class="descname">Polar</tt><big>(</big>const R&amp; <em>r</em>, const R&amp; <em>theta</em><em>=0 </em><big>)</big><a class="headerlink" href="#Polar__RCR.RCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the complex variable constructed from the polar coordinates
+<span class="math">\((r,\theta)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Exp__FCR">
+F <tt class="descname">Exp</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Exp__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exponential of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Pow__FCR.FCR">
+F <tt class="descname">Pow</tt><big>(</big>const F&amp; <em>alpha</em>, const F&amp; <em>beta</em><big>)</big><a class="headerlink" href="#Pow__FCR.FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <span class="math">\(\alpha^\beta\)</span> for real or complex <span class="math">\(\alpha\)</span> and
+<span class="math">\(\beta\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Log__FCR">
+F <tt class="descname">Log</tt><big>(</big>const F&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Log__FCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the logarithm of the real or complex variable <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 </div>
