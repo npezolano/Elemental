@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
@@ -59,10 +60,10 @@ they have &#8220;locked&#8221; versions, which are meant for creating partitioni
 the submatrices cannot be modified.</p>
 <div class="section" id="partitionup">
 <h2>PartitionUp<a class="headerlink" href="#partitionup" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>AT</cite> and <cite>AB</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>AT</cite> and <cite>AB</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
 <div class="math">
-<p><img src="../_images/math/bcf91891484b33b5e0f0bf676f9335465d6c7fcf.png" alt="A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/55ca74bc7e97ebc1f4a4562b1d5aa676a2877f4f.png" alt="A_B"/> is of a specified height.</p>
+\[\begin{split}A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_B\)</span> is of a specified height.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionUp( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAB=Blocksize() )</tt></dt>
@@ -89,10 +90,10 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitiondown">
 <h2>PartitionDown<a class="headerlink" href="#partitiondown" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>AT</cite> and <cite>AB</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>AT</cite> and <cite>AB</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
 <div class="math">
-<p><img src="../_images/math/bcf91891484b33b5e0f0bf676f9335465d6c7fcf.png" alt="A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/fc55393e35cd8e5ad8e51af742e33e65c6a5a5f1.png" alt="A_T"/> is of a specified height.</p>
+\[\begin{split}A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_T\)</span> is of a specified height.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionDown( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAT=Blocksize() )</tt></dt>
@@ -119,10 +120,10 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitionleft">
 <h2>PartitionLeft<a class="headerlink" href="#partitionleft" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>AL</cite> and <cite>AR</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>AL</cite> and <cite>AR</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
 <div class="math">
-<p><img src="../_images/math/d1dd4d7768c2b4a5e252c5c377d76394582f74c8.png" alt="A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/9e39fc5ec4cb6d67a9b3453b75fd4f47a22aade0.png" alt="A_R"/> is of a specified width.</p>
+\[\begin{split}A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_R\)</span> is of a specified width.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionLeft( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAR=Blocksize() )</tt></dt>
@@ -149,10 +150,10 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitionright">
 <h2>PartitionRight<a class="headerlink" href="#partitionright" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>AL</cite> and <cite>AR</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>AL</cite> and <cite>AR</cite> to view the local data of <cite>A</cite> corresponding to the partition</p>
 <div class="math">
-<p><img src="../_images/math/d1dd4d7768c2b4a5e252c5c377d76394582f74c8.png" alt="A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/4b6dbcd4d8a9f72ba6ddffbe2d3e2428b2fe3253.png" alt="A_L"/> is of a specified width.</p>
+\[\begin{split}A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_L\)</span> is of a specified width.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionRight( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAL=Blocksize() )</tt></dt>
@@ -179,11 +180,11 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitionupdiagonal">
 <h2>PartitionUpDiagonal<a class="headerlink" href="#partitionupdiagonal" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <cite>A</cite> corresponding to the partitioning</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <cite>A</cite> corresponding to the partitioning</p>
 <div class="math">
-<p><img src="../_images/math/f70f76db61d8ed1271291491303caf42d0986966.png" alt="A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),"/></p>
-</div><p>where the diagonal of <img class="math" src="../_images/math/c5ad4c8d262ad617124b253fffdff17e17f98f2e.png" alt="A_{BR}"/> lies on the main diagonal
-(aka, the <em>left</em> diagonal) of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and is of the specified height/width.</p>
+\[\begin{split}A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),\end{split}\]</div>
+<p>where the diagonal of <span class="math">\(A_{BR}\)</span> lies on the main diagonal
+(aka, the <em>left</em> diagonal) of <span class="math">\(A\)</span> and is of the specified height/width.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionUpDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
@@ -237,12 +238,12 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitionuprightdiagonal">
 <h2>PartitionUpRightDiagonal<a class="headerlink" href="#partitionuprightdiagonal" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <cite>A</cite> corresponding to the partitioning</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <cite>A</cite> corresponding to the partitioning</p>
 <div class="math">
-<p><img src="../_images/math/f70f76db61d8ed1271291491303caf42d0986966.png" alt="A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),"/></p>
-</div><p>where the diagonal of <img class="math" src="../_images/math/c5ad4c8d262ad617124b253fffdff17e17f98f2e.png" alt="A_{BR}"/> lies on the <em>right</em> diagonal of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>,
-which is defined to include the bottom-right entry of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>; the length
-of the diagonal of <img class="math" src="../_images/math/c5ad4c8d262ad617124b253fffdff17e17f98f2e.png" alt="A_{BR}"/> is specified as a parameter in all of the
+\[\begin{split}A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),\end{split}\]</div>
+<p>where the diagonal of <span class="math">\(A_{BR}\)</span> lies on the <em>right</em> diagonal of <span class="math">\(A\)</span>,
+which is defined to include the bottom-right entry of <span class="math">\(A\)</span>; the length
+of the diagonal of <span class="math">\(A_{BR}\)</span> is specified as a parameter in all of the
 following routines.</p>
 <dl class="function">
 <dt>
@@ -270,11 +271,11 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitiondowndiagonal">
 <h2>PartitionDownDiagonal<a class="headerlink" href="#partitiondowndiagonal" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> corresponding to the partitioning</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data of <span class="math">\(A\)</span> corresponding to the partitioning</p>
 <div class="math">
-<p><img src="../_images/math/f70f76db61d8ed1271291491303caf42d0986966.png" alt="A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),"/></p>
-</div><p>where the diagonal of <img class="math" src="../_images/math/42ff634fc597342cbb8ed94cfa3a54d124b376ae.png" alt="A_{TL}"/> is of the specified length and lies on
-the main diagonal (aka, the <em>left</em> diagonal) of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>.</p>
+\[\begin{split}A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),\end{split}\]</div>
+<p>where the diagonal of <span class="math">\(A_{TL}\)</span> is of the specified length and lies on
+the main diagonal (aka, the <em>left</em> diagonal) of <span class="math">\(A\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionDownDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
@@ -328,12 +329,12 @@ of the distributed matrix <cite>A</cite>.</p>
 </div>
 <div class="section" id="partitiondownrightdiagonal">
 <h2>PartitionDownRightDiagonal<a class="headerlink" href="#partitiondownrightdiagonal" title="Permalink to this headline">¶</a></h2>
-<p>Given an <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data corresponding to the partitioning</p>
+<p>Given an <span class="math">\(m \times n\)</span> matrix <cite>A</cite>, configure <cite>ATL</cite>, <cite>ATR</cite>, <cite>ABL</cite>, and <cite>ABR</cite> to view the local data corresponding to the partitioning</p>
 <div class="math">
-<p><img src="../_images/math/f70f76db61d8ed1271291491303caf42d0986966.png" alt="A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),"/></p>
-</div><p>where the diagonal of <img class="math" src="../_images/math/42ff634fc597342cbb8ed94cfa3a54d124b376ae.png" alt="A_{TL}"/> is of the specified length and lies on
-the <em>right</em> diagonal of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>, which includes the bottom-right entry of
-<img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>.</p>
+\[\begin{split}A = \left(\begin{array}{cc} A_{TL} &amp; A_{TR} \\ A_{BL} &amp; A_{BR} \end{array}\right),\end{split}\]</div>
+<p>where the diagonal of <span class="math">\(A_{TL}\)</span> is of the specified length and lies on
+the <em>right</em> diagonal of <span class="math">\(A\)</span>, which includes the bottom-right entry of
+<span class="math">\(A\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void PartitionDownLeftDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>

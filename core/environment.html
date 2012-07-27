@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
@@ -126,71 +127,71 @@ void <tt class="descname">PopBlocksizeStack</tt><big>(</big><big>)</big><a class
 <dl class="function">
 <dt id="Abs__ZCR">
 Z <tt class="descname">Abs</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Abs__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the absolute value of the real variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>.</p>
+<dd><p>Return the absolute value of the real variable <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Abs__Complex:Z:CR">
 Z <tt class="descname">Abs</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Abs__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the absolute value of complex <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>:</p>
+<dd><p>Return the absolute value of complex <span class="math">\(\alpha\)</span>:</p>
 <div class="math">
-<p><img src="../_images/math/6116edc70d651f8bb7a736be40b41286cac67728.png" alt="|\alpha| = \sqrt{|\mathcal{R}(\alpha)|^2+|\mathcal{I}(\alpha)|^2}"/></p>
-</div></dd></dl>
+\[|\alpha| = \sqrt{|\mathcal{R}(\alpha)|^2+|\mathcal{I}(\alpha)|^2}\]</div>
+</dd></dl>
 
 <dl class="function">
 <dt id="FastAbs__ZCR">
 Z <tt class="descname">FastAbs</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#FastAbs__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as :cpp:function::Abs: for real <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>.</p>
+<dd><p>Same as :cpp:function::Abs: for real <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="FastAbs__Complex:Z:CR">
 Z <tt class="descname">FastAbs</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#FastAbs__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a cheaper norm of the complex <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>:</p>
+<dd><p>Return a cheaper norm of the complex <span class="math">\(\alpha\)</span>:</p>
 <div class="math">
-<p><img src="../_images/math/e162513b2f86191ee0cb9bef2f46e5581ec6ae54.png" alt="|\alpha|_{\mbox{fast}} = |\mathcal{R}(\alpha)| + |\mathcal{I}(\alpha)|"/></p>
-</div></dd></dl>
+\[|\alpha|_{\mbox{fast}} = |\mathcal{R}(\alpha)| + |\mathcal{I}(\alpha)|\]</div>
+</dd></dl>
 
 <dl class="function">
 <dt id="RealPart__ZCR">
 Z <tt class="descname">RealPart</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#RealPart__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the real part of the real variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>, which is
-<img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/> itself.</p>
+<dd><p>Return the real part of the real variable <span class="math">\(\alpha\)</span>, which is
+<span class="math">\(\alpha\)</span> itself.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="RealPart__Complex:Z:CR">
 Z <tt class="descname">RealPart</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#RealPart__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the real part of the complex variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>.</p>
+<dd><p>Return the real part of the complex variable <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="ImagPart__ZCR">
 Z <tt class="descname">ImagPart</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#ImagPart__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the imaginary part of the real variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>, which is
+<dd><p>Return the imaginary part of the real variable <span class="math">\(\alpha\)</span>, which is
 trivially zero.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="ImagPart__Complex:Z:CR">
 Z <tt class="descname">ImagPart</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#ImagPart__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the imaginary part of the complex variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>.</p>
+<dd><p>Return the imaginary part of the complex variable <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Conj__ZCR">
 Z <tt class="descname">Conj</tt><big>(</big>const Z&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Conj__ZCR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the complex conjugate of the real variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>,
-which is simply <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>.</p>
+<dd><p>Return the complex conjugate of the real variable <span class="math">\(\alpha\)</span>,
+which is simply <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Conj__Complex:Z:CR">
 Complex&lt;Z&gt; <tt class="descname">Conj</tt><big>(</big>const Complex&lt;Z&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Conj__Complex:Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the complex conjugate of the complex variable <img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/>,</p>
+<dd><p>Return the complex conjugate of the complex variable <span class="math">\(\alpha\)</span>,</p>
 <div class="math">
-<p><img src="../_images/math/0222e01aafe874b9c99cfa1c9cc8f3fa2c1b3796.png" alt="\bar \alpha = \mathcal{R}(\alpha) - \mathcal{I}(\alpha) i"/></p>
-</div></dd></dl>
+\[\bar \alpha = \mathcal{R}(\alpha) - \mathcal{I}(\alpha) i\]</div>
+</dd></dl>
 
 <dl class="class">
 <dt id="Base:F:">
@@ -472,8 +473,8 @@ stating whether or not a triangular matrix&#8217;s diagonal is explicitly stored
 <dl class="type">
 <dt id="Orientation">
 <em class="property">type </em><tt class="descname">Orientation</tt><a class="headerlink" href="#Orientation" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enum for specifying whether a matrix, say <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>, should be implicitly
-treated as <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> (<tt class="docutils literal"><span class="pre">NORMAL</span></tt>), <img class="math" src="../_images/math/7b82dd68a42b65efdc9ac248cb183e9b6982c654.png" alt="A^H"/> (<tt class="docutils literal"><span class="pre">ADJOINT</span></tt>), or <img class="math" src="../_images/math/4a113a49a168242ef8398e336b3e7bd9bef597e6.png" alt="A^T"/>
+<dd><p>An enum for specifying whether a matrix, say <span class="math">\(A\)</span>, should be implicitly
+treated as <span class="math">\(A\)</span> (<tt class="docutils literal"><span class="pre">NORMAL</span></tt>), <span class="math">\(A^H\)</span> (<tt class="docutils literal"><span class="pre">ADJOINT</span></tt>), or <span class="math">\(A^T\)</span>
 (<tt class="docutils literal"><span class="pre">TRANSPOSE</span></tt>).</p>
 </dd></dl>
 
@@ -514,26 +515,20 @@ treated as <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b
 <ul>
 <li><p class="first"><tt class="docutils literal"><span class="pre">FROBENIUS_NORM</span></tt>:</p>
 <div class="math">
-<p><img src="../_images/math/fec751f28351f8543c825bcd4c0162e54080d4fd.png" alt="\|A\|_F = \sqrt{\sum_{i=0}^{m-1} \sum_{j=0}^{n-1} |\alpha_{i,j}|^2}"/></p>
-</div></li>
+\[\|A\|_F = \sqrt{\sum_{i=0}^{m-1} \sum_{j=0}^{n-1} |\alpha_{i,j}|^2}\]</div>
+</li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">INFINITY_NORM</span></tt>:</p>
 <div class="math">
-<p><img src="../_images/math/1fba394944840cbc7221f3b0d613b1302ae36f2a.png" alt="\[
-\|A\|_{\infty} = \max_{\|x\|_{\infty}=1} \|Ax\|_{\infty}
-               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|
-\]"/></p>
-</div></li>
+\[\|A\|_{\infty} = \max_{\|x\|_{\infty}=1} \|Ax\|_{\infty}
+               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|\]</div></li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">ONE_NORM</span></tt>:</p>
 <div class="math">
-<p><img src="../_images/math/eb08c9019c7c6e5db60ebb0384189e892e1449df.png" alt="\[
-\|A\|_1 = \max_{\|x\|_1=1} \|Ax\|_1
-        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|
-\]"/></p>
-</div></li>
+\[\|A\|_1 = \max_{\|x\|_1=1} \|Ax\|_1
+        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|\]</div></li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">MAX_NORM</span></tt>:</p>
 <div class="math">
-<p><img src="../_images/math/649cab1f7a084c5e02562fb4a7b8b70d12103f0f.png" alt="\|A\|_{\mbox{max}} = \max_{i,j} |\alpha_{i,j}|"/></p>
-</div></li>
+\[\|A\|_{\mbox{max}} = \max_{i,j} |\alpha_{i,j}|\]</div>
+</li>
 </ul>
 </dd></dl>
 
@@ -543,9 +538,9 @@ treated as <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b
 <dd><p>An enum for specifying the distribution of a row or column of a distributed
 matrix:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">MC</span></tt>: Column of a matrix distribution</li>
-<li><tt class="docutils literal"><span class="pre">MD</span></tt>: Diagonal of a matrix distribution</li>
-<li><tt class="docutils literal"><span class="pre">MR</span></tt>: Row of a matrix distribution</li>
+<li><tt class="docutils literal"><span class="pre">MC</span></tt>: Column of a standard matrix distribution</li>
+<li><tt class="docutils literal"><span class="pre">MD</span></tt>: Diagonal of a standard matrix distribution</li>
+<li><tt class="docutils literal"><span class="pre">MR</span></tt>: Row of a standard matrix distribution</li>
 <li><tt class="docutils literal"><span class="pre">VC</span></tt>: Column-major vector distribution</li>
 <li><tt class="docutils literal"><span class="pre">VR</span></tt>: Row-major vector distribution</li>
 <li><tt class="docutils literal"><span class="pre">STAR</span></tt>: Redundantly stored</li>

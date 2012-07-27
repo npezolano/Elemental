@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
@@ -55,7 +56,7 @@
 <h1>Norms<a class="headerlink" href="#norms" title="Permalink to this headline">¶</a></h1>
 <p>Several matrix norm routines are provided for general, Hermitian, and symmetric
 (distributed) matrices; each of the following routines can return either
-<img class="math" src="../_images/math/11481efc04dbf729412494f3ce835e9782f3a566.png" alt="\|A\|_1"/>, <img class="math" src="../_images/math/00c8c707038bf9960143c2887235c01f5e9d035b.png" alt="\|A\|_\infty"/>, <img class="math" src="../_images/math/6f67f2eaf3c66b87c22edfa0bdd59cfb2663f974.png" alt="\|A\|_F"/> (the Frobenius norm), or
+<span class="math">\(\|A\|_1\)</span>, <span class="math">\(\|A\|_\infty\)</span>, <span class="math">\(\|A\|_F\)</span> (the Frobenius norm), or
 the maximum entrywise norm. The matrix two-norm is quite expensive to directly
 compute, so a probabilistic algorithm (based upon Dixon&#8217;s approach) will be
 added in the near future.</p>
@@ -75,15 +76,41 @@ added in the near future.</p>
 </div>
 <div class="section" id="hermitiannorm">
 <h2>HermitianNorm<a class="headerlink" href="#hermitiannorm" title="Permalink to this headline">¶</a></h2>
-<p>Same as <tt class="docutils literal"><span class="pre">Norm</span></tt>, but the (distributed) matrix is implicitly Hermitian
-with the data stored in the triangle specified by <tt class="docutils literal"><span class="pre">UpperOrLower</span></tt>. Also,
-while <tt class="docutils literal"><span class="pre">Norm</span></tt> supports every type of distribution, <tt class="docutils literal"><span class="pre">HermitianNorm</span></tt> currently
-only supports the standard matrix distribution.</p>
+<p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
+Hermitian with the data stored in the triangle specified by
+<a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
+<a class="reference internal" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="HermitianNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianNorm()</span></tt></a> currently only supports the standard matrix
+distribution.</p>
+<dl class="function">
+<dt id="HermitianNorm__UpperOrLower.Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="symmetricnorm">
 <h2>SymmetricNorm<a class="headerlink" href="#symmetricnorm" title="Permalink to this headline">¶</a></h2>
-<p>Same as <tt class="docutils literal"><span class="pre">Norm</span></tt>, but the (distributed) matrix is implicitly symmetric
-with the data stored in the triangle specified by <tt class="docutils literal"><span class="pre">UpperOrLower</span></tt>.</p>
+<p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
+symmetric with the data stored in the triangle specified by
+<a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
+<a class="reference internal" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="SymmetricNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">SymmetricNorm()</span></tt></a> currently only supports the standard matrix
+distribution.</p>
+<dl class="function">
+<dt id="SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="two-norm-estimates">
 <h2>Two-norm estimates<a class="headerlink" href="#two-norm-estimates" title="Permalink to this headline">¶</a></h2>
@@ -99,16 +126,16 @@ estimates will likely be added later.</p>
 <dl class="function">
 <dt id="TwoNormLowerBound__DistMatrix:F:CR">
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormLowerBound</tt><big>(</big>const DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TwoNormLowerBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tightest lower bound on <img class="math" src="../_images/math/6fef820797d7d3c89de44d590e1a520ec66ff191.png" alt="\|A\|_2"/> implied by the following inequalities:</p>
+<dd><p>Return the tightest lower bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
 <div class="math">
-<p><img src="../_images/math/b45f5e72f9e5d40693381c5fb0500e67ec340dbf.png" alt="\|A\|_2 \ge \|A\|_{\mathrm{max}},"/></p>
-</div><div class="math">
-<p><img src="../_images/math/b176f0478cc0586b7a30359ebeeb36a389827b72.png" alt="\|A\|_2 \ge \frac{1}{\sqrt{n}} \|A\|_{\infty},"/></p>
-</div><div class="math">
-<p><img src="../_images/math/8022c4865384ba76efaabf84fc1058b6212b4ef7.png" alt="\|A\|_2 \ge \frac{1}{\sqrt{m}} \|A\|_1,\;\;\mathrm{and}"/></p>
-</div><div class="math">
-<p><img src="../_images/math/ac548df2858bcfcaa9c3f283c0dd57e73dcb1e1d.png" alt="\|A\|_2 \ge \frac{1}{\mathrm{min}(m,n)} \|A\|_F."/></p>
-</div></dd></dl>
+\[\|A\|_2 \ge \|A\|_{\mathrm{max}},\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\sqrt{n}} \|A\|_{\infty},\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\sqrt{m}} \|A\|_1,\;\;\mathrm{and}\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\mathrm{min}(m,n)} \|A\|_F.\]</div>
+</dd></dl>
 
 <dl class="function">
 <dt id="TwoNormUpperBound__Matrix:F:CR">
@@ -118,16 +145,16 @@ estimates will likely be added later.</p>
 <dl class="function">
 <dt id="TwoNormUpperBound__DistMatrix:F:CR">
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormUpperBound</tt><big>(</big>const DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TwoNormUpperBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tightest upper bound on <img class="math" src="../_images/math/6fef820797d7d3c89de44d590e1a520ec66ff191.png" alt="\|A\|_2"/> implied by the following inequalities:</p>
+<dd><p>Return the tightest upper bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
 <div class="math">
-<p><img src="../_images/math/e212044ea437bedebaea7671d351e2ae42e70713.png" alt="\|A\|_2 \le \sqrt{m n} \|A\|_{\mathrm{max}},"/></p>
-</div><div class="math">
-<p><img src="../_images/math/6623f53d2ff60fe4925b1d21d225f3692a45bd26.png" alt="\|A\|_2 \le \sqrt{m} \|A\|_{\infty},"/></p>
-</div><div class="math">
-<p><img src="../_images/math/cfe0e3425b951ddc53846fb4b1bb7d65a830a20f.png" alt="\|A\|_2 \le \sqrt{n} \|A\|_1,\;\;\mathrm{and}"/></p>
-</div><div class="math">
-<p><img src="../_images/math/a46206d6976c0c05b0171d032df05f530afcb09d.png" alt="\|A\|_2 \le \sqrt{ \|A\|_1 \|A\|_{\infty} }."/></p>
-</div></dd></dl>
+\[\|A\|_2 \le \sqrt{m n} \|A\|_{\mathrm{max}},\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{m} \|A\|_{\infty},\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{n} \|A\|_1,\;\;\mathrm{and}\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{ \|A\|_1 \|A\|_{\infty} }.\]</div>
+</dd></dl>
 
 </div>
 </div>

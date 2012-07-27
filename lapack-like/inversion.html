@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
@@ -56,14 +57,11 @@
 <div class="section" id="general-inversion">
 <h2>General inversion<a class="headerlink" href="#general-inversion" title="Permalink to this headline">¶</a></h2>
 <p>This routine computes the in-place inverse of a general fully-populated
-(invertible) matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> as</p>
+(invertible) matrix <span class="math">\(A\)</span> as</p>
 <div class="math">
-<p><img src="../_images/math/d7c6f528a51c2e02c1de138ef2262ff304d2eb2b.png" alt="\[
-A^{-1} = U^{-1} L^{-1} P,
-\]"/></p>
-</div><p>where <img class="math" src="../_images/math/d38165f6cb26decf3c20b44fe86276382079540a.png" alt="PA=LU"/> is the result of LU factorization with partial pivoting.
-The algorithm essentially factors <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>, inverts <img class="math" src="../_images/math/e2bbebb3bd73f1ae5c64098ab0244f739abf7ca4.png" alt="U"/> in place,
-solves against <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> one block column at a time, and then applies the
+\[A^{-1} = U^{-1} L^{-1} P,\]</div><p>where <span class="math">\(PA=LU\)</span> is the result of LU factorization with partial pivoting.
+The algorithm essentially factors <span class="math">\(A\)</span>, inverts <span class="math">\(U\)</span> in place,
+solves against <span class="math">\(L\)</span> one block column at a time, and then applies the
 row pivots in reverse order to the columns of the result.</p>
 <dl class="function">
 <dt id="Inverse__Matrix:F:R">
@@ -81,19 +79,17 @@ void <tt class="descname">Inverse</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A
 <div class="section" id="hpd-inversion">
 <h2>HPD inversion<a class="headerlink" href="#hpd-inversion" title="Permalink to this headline">¶</a></h2>
 <p>This routine uses a custom algorithm for computing the inverse of a
-Hermitian positive-definite matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> as</p>
+Hermitian positive-definite matrix <span class="math">\(A\)</span> as</p>
 <div class="math">
-<p><img src="../_images/math/2fbf1af98250da6bc759d638325f09a369b35849.png" alt="\[
-A^{-1} = (L L^H)^{-1} = L^{-H} L^{-1},
-\]"/></p>
-</div><p>where <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> is the lower Cholesky factor of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> (the upper Cholesky
+\[A^{-1} = (L L^H)^{-1} = L^{-H} L^{-1},\]</div><p>where <span class="math">\(L\)</span> is the lower Cholesky factor of <span class="math">\(A\)</span> (the upper Cholesky
 factor is computed in the case of upper-triangular storage). Rather than
 performing Cholesky factorization, triangular inversion, and then the Hermitian
 triangular outer product in sequence, this routine makes use of the single-sweep
 algorithm described in Bientinesi et al.&#8217;s &#8220;Families of algorithms related to the
 inversion of a symmetric positive definite matrix&#8221;, in particular, the variant 2
 algorithm from Fig. 9.</p>
-<p>If the matrix is found to not be HPD, then a <tt class="docutils literal"><span class="pre">NonHPDMatrixException</span></tt> is thrown.</p>
+<p>If the matrix is found to not be HPD, then a <a class="reference internal" href="../core/environment.html#NonHPDMatrixException" title="NonHPDMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">NonHPDMatrixException</span></tt></a>
+is thrown.</p>
 <dl class="function">
 <dt id="HPDInverse__UpperOrLower.Matrix:F:R">
 void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPDInverse__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>

@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Basic linear algebra" href="../blas-like.html" />
@@ -62,7 +63,7 @@ implementations are in <a class="reference external" href="https://github.com/po
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p><img class="math" src="../_images/math/1b0919626e16d0864d1026655b4e1df238bf464b.png" alt="B := A^H"/>.</p>
+<p><span class="math">\(B := A^H\)</span>.</p>
 <dl class="function">
 <dt id="Adjoint__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Adjoint</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>A</em>, Matrix&lt;T&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Adjoint__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -73,13 +74,13 @@ void <tt class="descname">Adjoint</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em
 <dt id="Adjoint__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Adjoint</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Adjoint__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed version (templated over the datatype and the individual
-distributions of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and <img class="math" src="../_images/math/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" alt="B"/>).</p>
+distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
 </dd></dl>
 
 </div>
 <div class="section" id="axpy">
 <h2>Axpy<a class="headerlink" href="#axpy" title="Permalink to this headline">¶</a></h2>
-<p>Performs <img class="math" src="../_images/math/e9f26f3c91f19d510485873b15f652eba13a72d6.png" alt="Y := \alpha X + Y"/> (hence the name <em>axpy</em>).</p>
+<p>Performs <span class="math">\(Y := \alpha X + Y\)</span> (hence the name <em>axpy</em>).</p>
 <dl class="function">
 <dt id="Axpy__T.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>X</em>, Matrix&lt;T&gt;&amp; <em>Y</em><big>)</big><a class="headerlink" href="#Axpy__T.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -90,7 +91,7 @@ void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, const Matrix&lt
 <dt id="Axpy__T.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R">
 void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, const DistMatrix&lt;T, U, V&gt;&amp; <em>X</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>Y</em><big>)</big><a class="headerlink" href="#Axpy__T.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the shared
-distribution of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and <img class="math" src="../_images/math/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" alt="B"/>).</p>
+distribution of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -100,7 +101,7 @@ distribution of <img class="math" src="../_images/math/019e9892786e493964e145e7c
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p><img class="math" src="../_images/math/813320c87acf25a7c18a8894bed40a663a56747a.png" alt="A := \bar A"/>. For real datatypes, this is a no-op.</p>
+<p><span class="math">\(A := \bar A\)</span>. For real datatypes, this is a no-op.</p>
 <dl class="function">
 <dt id="Conjugate__Matrix:T:R">
 void <tt class="descname">Conjugate</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Conjugate__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -111,10 +112,10 @@ void <tt class="descname">Conjugate</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</
 <dt id="Conjugate__DistMatrix:T.U.V:R">
 void <tt class="descname">Conjugate</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Conjugate__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed version (templated over the datatype and the distribution of
-<img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>).</p>
+<span class="math">\(A\)</span>).</p>
 </dd></dl>
 
-<p><img class="math" src="../_images/math/0aa69ca0b0e02f0be5578004655ed6bfd83c4366.png" alt="B := \bar A"/>.</p>
+<p><span class="math">\(B := \bar A\)</span>.</p>
 <dl class="function">
 <dt id="Conjugate__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Conjugate</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>A</em>, Matrix&lt;T&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Conjugate__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -125,13 +126,13 @@ void <tt class="descname">Conjugate</tt><big>(</big>const Matrix&lt;T&gt;&amp; <
 <dt id="Conjugate__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Conjugate</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Conjugate__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed version (templated over the datatype and the individual
-distributions of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and <img class="math" src="../_images/math/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" alt="B"/>).</p>
+distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
 </dd></dl>
 
 </div>
 <div class="section" id="copy">
 <h2>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
-<p>Sets <img class="math" src="../_images/math/9a5407b103acea878d91780e85a589cfcde5af0b.png" alt="Y := X"/>.</p>
+<p>Sets <span class="math">\(Y := X\)</span>.</p>
 <dl class="function">
 <dt id="Copy__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Copy</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>X</em>, Matrix&lt;T&gt;&amp; <em>Y</em><big>)</big><a class="headerlink" href="#Copy__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -142,7 +143,7 @@ void <tt class="descname">Copy</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>X<
 <dt id="Copy__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Copy</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Copy__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and <img class="math" src="../_images/math/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" alt="B"/>).</p>
+individual distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -152,9 +153,9 @@ individual distributions of <img class="math" src="../_images/math/019e9892786e4
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p>Performs either <img class="math" src="../_images/math/9b96b4557bd6c9ee83cb2d490eb9faea156ed99b.png" alt="X := \mbox{op}(D) X"/> or <img class="math" src="../_images/math/b743b74895153cbd6835509f6f68447a44ec3579.png" alt="X := X \mbox{op}(D)"/>,
-where <img class="math" src="../_images/math/471ba291329d771104a53e59a4f8d97e367842cf.png" alt="op(D)"/> equals <img class="math" src="../_images/math/6156922f2de2fd8e091ab30ac8312cc6975662ee.png" alt="D=D^T"/>, or <img class="math" src="../_images/math/c80064cb888e98df33e384bf805d4279b88449dd.png" alt="D^H=\bar D"/>, where
-<img class="math" src="../_images/math/3e097736f719e84a4f83273b9239a33b59a32964.png" alt="D = \mbox{diag}(d)"/> and <img class="math" src="../_images/math/96ab646de7704969b91c76a214126b45f2b07b25.png" alt="d"/> is a column vector.</p>
+<p>Performs either <span class="math">\(X := \mbox{op}(D) X\)</span> or <span class="math">\(X := X \mbox{op}(D)\)</span>,
+where <span class="math">\(op(D)\)</span> equals <span class="math">\(D=D^T\)</span>, or <span class="math">\(D^H=\bar D\)</span>, where
+<span class="math">\(D = \mbox{diag}(d)\)</span> and <span class="math">\(d\)</span> is a column vector.</p>
 <dl class="function">
 <dt id="DiagonalScale__LeftOrRight.Orientation.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">DiagonalScale</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation" title="Orientation">Orientation</a> <em>orientation</em>, const Matrix&lt;T&gt;&amp; <em>d</em>, Matrix&lt;T&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#DiagonalScale__LeftOrRight.Orientation.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -165,7 +166,7 @@ void <tt class="descname">DiagonalScale</tt><big>(</big><a class="reference inte
 <dt id="DiagonalScale__LeftOrRight.Orientation.DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">DiagonalScale</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation" title="Orientation">Orientation</a> <em>orientation</em>, const DistMatrix&lt;T, U, V&gt;&amp; <em>d</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#DiagonalScale__LeftOrRight.Orientation.DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/96ab646de7704969b91c76a214126b45f2b07b25.png" alt="d"/> and <img class="math" src="../_images/math/6a47ca0fe7cb276abc022af6ac88ddae1a9d6894.png" alt="X"/>).</p>
+individual distributions of <span class="math">\(d\)</span> and <span class="math">\(X\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -175,8 +176,8 @@ individual distributions of <img class="math" src="../_images/math/96ab646de7704
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p>Performs either <img class="math" src="../_images/math/686b694233037c9010f61af217e0681f929aa8a0.png" alt="X := \mbox{op}(D)^{-1} X"/> or
-<img class="math" src="../_images/math/3657c1e25a1eeaa589879d37e6337d0b13b3b95b.png" alt="X := X \mbox{op}(D)^{-1}"/>, where <img class="math" src="../_images/math/3e097736f719e84a4f83273b9239a33b59a32964.png" alt="D = \mbox{diag}(d)"/> and <img class="math" src="../_images/math/96ab646de7704969b91c76a214126b45f2b07b25.png" alt="d"/>
+<p>Performs either <span class="math">\(X := \mbox{op}(D)^{-1} X\)</span> or
+<span class="math">\(X := X \mbox{op}(D)^{-1}\)</span>, where <span class="math">\(D = \mbox{diag}(d)\)</span> and <span class="math">\(d\)</span>
 is a column vector.</p>
 <dl class="function">
 <dt id="DiagonalSolve__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:R.b">
@@ -188,13 +189,13 @@ void <tt class="descname">DiagonalSolve</tt><big>(</big><a class="reference inte
 <dt id="DiagonalSolve__LeftOrRight.Orientation.DistMatrix:F.U.V:CR.DistMatrix:F.W.Z:R.b">
 void <tt class="descname">DiagonalSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation" title="Orientation">Orientation</a> <em>orientation</em>, const DistMatrix&lt;F, U, V&gt;&amp; <em>d</em>, DistMatrix&lt;F, W, Z&gt;&amp; <em>X</em>, bool <em>checkIfSingular</em><em>=false </em><big>)</big><a class="headerlink" href="#DiagonalSolve__LeftOrRight.Orientation.DistMatrix:F.U.V:CR.DistMatrix:F.W.Z:R.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/96ab646de7704969b91c76a214126b45f2b07b25.png" alt="d"/> and <img class="math" src="../_images/math/6a47ca0fe7cb276abc022af6ac88ddae1a9d6894.png" alt="X"/>).</p>
+individual distributions of <span class="math">\(d\)</span> and <span class="math">\(X\)</span>).</p>
 </dd></dl>
 
 </div>
 <div class="section" id="dot">
 <h2>Dot<a class="headerlink" href="#dot" title="Permalink to this headline">¶</a></h2>
-<p>Returns <img class="math" src="../_images/math/cb73b4438b7d7f021e3c81a99278aad90134b678.png" alt="(x,y) = x^H y"/>. <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/> are both allowed to be
+<p>Returns <span class="math">\((x,y) = x^H y\)</span>. <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are both allowed to be
 stored as column or row vectors, but will be interpreted as column vectors.</p>
 <dl class="function">
 <dt id="Dot__Matrix:T:CR.Matrix:T:CR">
@@ -206,7 +207,7 @@ T <tt class="descname">Dot</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>x</em>
 <dt id="Dot__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dot</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dot__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/>).</p>
+individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -224,13 +225,13 @@ T <tt class="descname">Dotc</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>x</em
 <dt id="Dotc__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dotc</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dotc__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/>).</p>
+individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
 </dd></dl>
 
 </div>
 <div class="section" id="dotu">
 <h2>Dotu<a class="headerlink" href="#dotu" title="Permalink to this headline">¶</a></h2>
-<p>Returns <img class="math" src="../_images/math/fe9c89c573f3ae7a6a6782a775f0cbcab1178779.png" alt="x^T y"/>, which is <strong>not</strong> an inner product.</p>
+<p>Returns <span class="math">\(x^T y\)</span>, which is <strong>not</strong> an inner product.</p>
 <dl class="function">
 <dt id="Dotu__Matrix:T:CR.Matrix:T:CR">
 T <tt class="descname">Dotu</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>x</em>, const Matrix&lt;T&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dotu__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
@@ -241,7 +242,7 @@ T <tt class="descname">Dotu</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>x</em
 <dt id="Dotu__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dotu</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dotu__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/>).</p>
+individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -273,8 +274,8 @@ void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference in
 </div>
 <div class="section" id="nrm2">
 <h2>Nrm2<a class="headerlink" href="#nrm2" title="Permalink to this headline">¶</a></h2>
-<p>Returns <img class="math" src="../_images/math/0afacdfbbbe6e3121a16890254e7da27dfbc2799.png" alt="||x||_2 = \sqrt{(x,x)} = \sqrt{x^H x}"/>. As with most other
-routines, even if <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> is stored as a row vector, it will be interpreted
+<p>Returns <span class="math">\(||x||_2 = \sqrt{(x,x)} = \sqrt{x^H x}\)</span>. As with most other
+routines, even if <span class="math">\(x\)</span> is stored as a row vector, it will be interpreted
 as a column vector.</p>
 <dl class="function">
 <dt id="Nrm2__Matrix:F:CR">
@@ -289,7 +290,7 @@ as a column vector.</p>
 </div>
 <div class="section" id="scal">
 <h2>Scal<a class="headerlink" href="#scal" title="Permalink to this headline">¶</a></h2>
-<p><img class="math" src="../_images/math/5017ae34d3562663ba48c51e6a95fa94dda2a751.png" alt="X := \alpha X"/>.</p>
+<p><span class="math">\(X := \alpha X\)</span>.</p>
 <dl class="function">
 <dt id="Scal__T.Matrix:T:R">
 void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, Matrix&lt;T&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#Scal__T.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -300,7 +301,7 @@ void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, Matrix&lt;T&gt;
 <dt id="Scal__T.DistMatrix:T.U.V:R">
 void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#Scal__T.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed implementation (templated over the datatype and the
-distribution of <img class="math" src="../_images/math/6a47ca0fe7cb276abc022af6ac88ddae1a9d6894.png" alt="X"/>).</p>
+distribution of <span class="math">\(X\)</span>).</p>
 </dd></dl>
 
 </div>
@@ -331,7 +332,7 @@ void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a cl
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p><img class="math" src="../_images/math/c8fd9333be03c0844063f11d489c0956c8be7168.png" alt="B := A^T"/>.</p>
+<p><span class="math">\(B := A^T\)</span>.</p>
 <dl class="function">
 <dt id="Transpose__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Transpose</tt><big>(</big>const Matrix&lt;T&gt;&amp; <em>A</em>, Matrix&lt;T&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Transpose__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -342,7 +343,7 @@ void <tt class="descname">Transpose</tt><big>(</big>const Matrix&lt;T&gt;&amp; <
 <dt id="Transpose__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Transpose</tt><big>(</big>const DistMatrix&lt;T, U, V&gt;&amp; <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Transpose__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distributed version (templated over the datatype and the individual
-distributions of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and <img class="math" src="../_images/math/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" alt="B"/>).</p>
+distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
 </dd></dl>
 
 </div>

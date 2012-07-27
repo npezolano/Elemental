@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
@@ -52,7 +53,7 @@
         
         
   <div class="section" id="tuning-parameters">
-<h1>Tuning parameters<a class="headerlink" href="#tuning-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="lapack-tuning"></span><h1>Tuning parameters<a class="headerlink" href="#tuning-parameters" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="hermitian-to-tridiagonal">
 <h2>Hermitian to tridiagonal<a class="headerlink" href="#hermitian-to-tridiagonal" title="Permalink to this headline">¶</a></h2>
 <p>Two different basic strategies are available for the reduction to tridiagonal
@@ -70,12 +71,12 @@ of symmetric eigensolvers</em>&#8221;.</li>
 </ol>
 <p>There is clearly a small penalty associated with the extra redistributions
 necessary for the second approach, but the benefit from using a square process
-grid is usually quite signficant. By default, <tt class="docutils literal"><span class="pre">HermitianTridiag</span></tt> will run the
-standard algorithm (approach 1) unless the matrix is already distributed over a
-square process grid. The reasoning is that good performance depends upon a
-&#8220;good&#8221; ordering of the square (say, <img class="math" src="../_images/math/455c594dd9ed4ef499ac32dc7b157014c31bd951.png" alt="\hat p \times \hat p"/>) subgrid,
+grid is usually quite signficant. By default, <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:R:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a> will
+run the standard algorithm (approach 1) unless the matrix is already distributed
+over a square process grid. The reasoning is that good performance depends upon
+a &#8220;good&#8221; ordering of the square (say, <span class="math">\(\hat p \times \hat p\)</span>) subgrid,
 though usually either a row-major or column-major ordering of the first
-<img class="math" src="../_images/math/bcf808bfdb3482cf9bc74d9994e8f21523c2a179.png" alt="\hat p^2"/> processes suffices.</p>
+<span class="math">\(\hat p^2\)</span> processes suffices.</p>
 <dl class="type">
 <dt id="HermitianTridiagApproach">
 <em class="property">type </em><tt class="descname">HermitianTridiagApproach</tt><a class="headerlink" href="#HermitianTridiagApproach" title="Permalink to this definition">¶</a></dt>
@@ -96,7 +97,7 @@ fastest, so it is worthwhile to test it with both the <tt class="docutils litera
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The first algorithm heavily depends upon the performance of distributed
-<tt class="docutils literal"><span class="pre">Symv</span></tt> and <tt class="docutils literal"><span class="pre">Hemv</span></tt> (for real and complex data,
+<a class="reference internal" href="../blas-like/level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> and <a class="reference internal" href="../blas-like/level2.html#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a> (for real and complex data,
 respectively), so users interested in maximizing the performance of the
 first algorithm will likely want to investigate different values for the
 local blocksizes through the routines
@@ -109,8 +110,7 @@ are both 64.</p>
 <dl class="function">
 <dt id="SetHermitianTridiagApproach__HermitianTridiagApproach">
 void <tt class="descname">SetHermitianTridiagApproach</tt><big>(</big><a class="reference internal" href="#HermitianTridiagApproach" title="HermitianTridiagApproach">HermitianTridiagApproach</a> <em>approach</em><big>)</big><a class="headerlink" href="#SetHermitianTridiagApproach__HermitianTridiagApproach" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the algorithm used by subsequent calls to
-<tt class="docutils literal"><span class="pre">HermitianTridiag</span></tt>.</p>
+<dd><p>Sets the algorithm used by subsequent calls to <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:R:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -123,8 +123,8 @@ to tridiagonal form.</p>
 <dl class="function">
 <dt id="SetHermitianTridiagGridOrder__GridOrder">
 void <tt class="descname">SetHermitianTridiagGridOrder</tt><big>(</big><a class="reference internal" href="../core/environment.html#GridOrder" title="GridOrder">GridOrder</a> <em>order</em><big>)</big><a class="headerlink" href="#SetHermitianTridiagGridOrder__GridOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the ordering to use for the first <img class="math" src="../_images/math/bcf808bfdb3482cf9bc74d9994e8f21523c2a179.png" alt="\hat p^2"/> processes in the
-construction of the <img class="math" src="../_images/math/455c594dd9ed4ef499ac32dc7b157014c31bd951.png" alt="\hat p \times \hat p"/> subgrid. This is only
+<dd><p>Sets the ordering to use for the first <span class="math">\(\hat p^2\)</span> processes in the
+construction of the <span class="math">\(\hat p \times \hat p\)</span> subgrid. This is only
 relevant to the <tt class="docutils literal"><span class="pre">HERMITIAN_TRIDIAG_SQUARE</span></tt> approach.</p>
 </dd></dl>
 

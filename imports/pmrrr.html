@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Imported library routines" href="../imports.html" />
@@ -66,7 +67,7 @@ while the implementations are in the folder
 <dt id="pmrrr::Estimate__struct">
 <em class="property">type </em>struct <tt class="descclassname">pmrrr::</tt><tt class="descname">Estimate</tt><a class="headerlink" href="#pmrrr::Estimate__struct" title="Permalink to this definition">¶</a></dt>
 <dd><p>For returning upper bounds on the number of local and global eigenvalues
-with eigenvalues lying in the specified interval, <img class="math" src="../_images/math/cdf3085063293f29962808ba253dec1faa9866fb.png" alt="(a,b]"/>.</p>
+with eigenvalues lying in the specified interval, <span class="math">\((a,b]\)</span>.</p>
 <dl class="member">
 <dt id="pmrrr::Estimate::numLocalEigenvalues__i">
 int <tt class="descname">numLocalEigenvalues</tt><a class="headerlink" href="#pmrrr::Estimate::numLocalEigenvalues__i" title="Permalink to this definition">¶</a></dt>
@@ -129,7 +130,7 @@ diagonal <cite>d</cite> and subdiagonal <cite>e</cite>: the eigenvalues will be 
 <dl class="function">
 <dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.double.double">
 <a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only compute the eigenvalues lying within the interval <img class="math" src="../_images/math/cdf3085063293f29962808ba253dec1faa9866fb.png" alt="(a,b]"/>.</p>
+<dd><p>Only compute the eigenvalues lying within the interval <span class="math">\((a,b]\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -152,7 +153,7 @@ within the specified interval.</p>
 <dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.i.i">
 <a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only compute the eigenvalues with indices ranging from <tt class="docutils literal"><span class="pre">a</span></tt> to <tt class="docutils literal"><span class="pre">b</span></tt>, where
-<img class="math" src="../_images/math/7981a36d5e79f5ce44bc0ca8bccd33fa5167000b.png" alt="0 \le a \le b &lt; n"/>.</p>
+<span class="math">\(0 \le a \le b &lt; n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">

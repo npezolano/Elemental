@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Imported library routines" href="../imports.html" />
@@ -593,8 +594,8 @@ on process <cite>i</cite>.</p>
 <dt id="mpi::Reduce__TCP.TP.i.mpi::Op.i.mpi::Comm">
 void <tt class="descclassname">mpi::</tt><tt class="descname">Reduce</tt><big>(</big>const T* <em>sendBuf</em>, T* <em>recvBuf</em>, int <em>count</em>, <a class="reference internal" href="#mpi::Op" title="mpi::Op">mpi::Op</a> <em>op</em>, int <em>root</em>, <a class="reference internal" href="#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><big>)</big><a class="headerlink" href="#mpi::Reduce__TCP.TP.i.mpi::Op.i.mpi::Comm" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>root</cite> process receives the result of performing</p>
-<p><img class="math" src="../_images/math/6e83a9b5aaaaeb498df4731faf8441e46bee1f8b.png" alt="S_{p-1} + (S_{n-2} + \cdots (S_2 + (S_1 + S_0)) \cdots )"/>,
-where <img class="math" src="../_images/math/9e0ec34cd8860ceb97113f81ba768ba739ad5166.png" alt="S_i"/> represents the send buffer of process <cite>i</cite>, and <img class="math" src="../_images/math/77cf26be132ef93923e082ee4153b2cb0ef44a50.png" alt="+"/>
+<p><span class="math">\(S_{p-1} + (S_{n-2} + \cdots (S_2 + (S_1 + S_0)) \cdots )\)</span>,
+where <span class="math">\(S_i\)</span> represents the send buffer of process <cite>i</cite>, and <span class="math">\(+\)</span>
 represents the operation specified by <cite>op</cite>.</p>
 </dd></dl>
 

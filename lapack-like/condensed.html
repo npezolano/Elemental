@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
@@ -96,7 +97,7 @@ be inferred since the Householder vectors must be unit length); the scales
 with proper phases are returned in the column vector <cite>t</cite>.</p>
 </dd></dl>
 
-<p>Please see the <em>Tuning parameters</em> section for extensive information on
+<p>Please see the <a class="reference internal" href="tuning.html#lapack-tuning"><em>Tuning parameters</em></a> section for extensive information on
 maximizing the performance of Householder tridiagonalization.</p>
 </div>
 <div class="section" id="general-to-hessenberg">
@@ -106,8 +107,8 @@ writing the reductions to tridiagonal and bidiagonal form.</p>
 </div>
 <div class="section" id="general-to-bidiagonal">
 <h2>General to bidiagonal<a class="headerlink" href="#general-to-bidiagonal" title="Permalink to this headline">¶</a></h2>
-<p>Reduces a general fully-populated <img class="math" src="../_images/math/dc5c773a00becebf2fe78e775d5953e138efea9e.png" alt="m \times n"/> matrix to bidiagonal form
-through two-sided Householder transformations; when the <img class="math" src="../_images/math/8da67e35e9c517fa132e6b7d8b548f3940e80d2f.png" alt="m \ge n"/>, the
+<p>Reduces a general fully-populated <span class="math">\(m \times n\)</span> matrix to bidiagonal form
+through two-sided Householder transformations; when the <span class="math">\(m \ge n\)</span>, the
 result is upper bidiagonal, otherwise it is lower bidiagonal. This routine is
 most commonly used as a preprocessing step in computing the SVD of a general
 matrix.</p>
@@ -134,7 +135,7 @@ matrix <cite>A</cite> with the resulting bidiagonal matrix and stores the scaled
 Householder vectors in the remainder of the matrix.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <img class="math" src="../_images/math/9b2142770fa24b44536073e58e97ca948a989965.png" alt="m &lt; n"/> case is not yet supported.</p>
+<p class="last">The <span class="math">\(m &lt; n\)</span> case is not yet supported.</p>
 </div>
 </dd></dl>
 
@@ -145,7 +146,7 @@ void <tt class="descname">Bidiag</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&
 returned in the vectors <cite>tP</cite> and <cite>tQ</cite>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <img class="math" src="../_images/math/9b2142770fa24b44536073e58e97ca948a989965.png" alt="m &lt; n"/> case is not yet supported.</p>
+<p class="last">The <span class="math">\(m &lt; n\)</span> case is not yet supported.</p>
 </div>
 </dd></dl>
 

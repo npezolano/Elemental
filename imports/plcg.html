@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Imported library routines" href="../imports.html" />
@@ -135,25 +136,25 @@ into the next lower 16 bits.</p>
 <dl class="function">
 <dt id="plcg::AddWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64">
 <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <tt class="descclassname">plcg::</tt><tt class="descname">AddWith64BitMod</tt><big>(</big><a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>a</em>, <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>b</em><big>)</big><a class="headerlink" href="#plcg::AddWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <img class="math" src="../_images/math/2825a0824bcdf253459598863e27c77047145027.png" alt="a+b \mod 2^{64}"/>.</p>
+<dd><p>Return <span class="math">\(a+b \mod 2^{64}\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="plcg::MultiplyWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64">
 <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <tt class="descclassname">plcg::</tt><tt class="descname">MultiplyWith64BitMod</tt><big>(</big><a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>a</em>, <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>b</em><big>)</big><a class="headerlink" href="#plcg::MultiplyWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <img class="math" src="../_images/math/3701aef25cfbceaf9b1cc3cb9362b9796bae6801.png" alt="ab \mod 2^{64}"/>.</p>
+<dd><p>Return <span class="math">\(ab \mod 2^{64}\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="plcg::IntegerPowerWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64">
 <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <tt class="descclassname">plcg::</tt><tt class="descname">IntegerPowerWith64BitMod</tt><big>(</big><a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>x</em>, <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>n</em><big>)</big><a class="headerlink" href="#plcg::IntegerPowerWith64BitMod__plcg::ExpandedUInt64.plcg::ExpandedUInt64" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <img class="math" src="../_images/math/b58f610822e21ee8e4381b6302d5be01d057a6f0.png" alt="x^n \mod 2^{64}"/>.</p>
+<dd><p>Return <span class="math">\(x^n \mod 2^{64}\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="plcg::Halve__plcg::ExpandedUInt64R">
 void <tt class="descclassname">plcg::</tt><tt class="descname">Halve</tt><big>(</big><a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64&amp;</a> <em>a</em><big>)</big><a class="headerlink" href="#plcg::Halve__plcg::ExpandedUInt64R" title="Permalink to this definition">¶</a></dt>
-<dd><p><img class="math" src="../_images/math/308aefeef1cc5d038e8ce97fe87d2cdfa9fac1d5.png" alt="a := a/2"/>.</p>
+<dd><p><span class="math">\(a := a/2\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -186,7 +187,7 @@ and then advance to our next local state.</p>
 <dl class="function">
 <dt id="plcg::ManualLcg__plcg::ExpandedUInt64.plcg::ExpandedUInt64.plcg::ExpandedUInt64R">
 void <tt class="descclassname">plcg::</tt><tt class="descname">ManualLcg</tt><big>(</big><a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>a</em>, <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64</a> <em>c</em>, <a class="reference internal" href="#plcg::ExpandedUInt64__struct" title="plcg::ExpandedUInt64">plcg::ExpandedUInt64&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#plcg::ManualLcg__plcg::ExpandedUInt64.plcg::ExpandedUInt64.plcg::ExpandedUInt64R" title="Permalink to this definition">¶</a></dt>
-<dd><p><img class="math" src="../_images/math/c6d4cda2205e29bfa583acb8b862cad6a579aff2.png" alt="X := a X + c \mod 2^{64}"/>.</p>
+<dd><p><span class="math">\(X := a X + c \mod 2^{64}\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -195,13 +196,13 @@ void <tt class="descclassname">plcg::</tt><tt class="descname">ManualLcg</tt><bi
 <dl class="function">
 <dt id="plcg::SerialUniform">
 R <tt class="descclassname">plcg::</tt><tt class="descname">SerialUniform</tt><big>(</big><big>)</big><a class="headerlink" href="#plcg::SerialUniform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a uniform sample from <img class="math" src="../_images/math/101678300d1aa11009468da8419aaf2c57b795bd.png" alt="(0,1]"/> using the serial LCG.</p>
+<dd><p>Return a uniform sample from <span class="math">\((0,1]\)</span> using the serial LCG.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="plcg::ParallelUniform">
 R <tt class="descclassname">plcg::</tt><tt class="descname">ParallelUniform</tt><big>(</big><big>)</big><a class="headerlink" href="#plcg::ParallelUniform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a uniform sample from <img class="math" src="../_images/math/101678300d1aa11009468da8419aaf2c57b795bd.png" alt="(0,1]"/> using the parallel LCG.</p>
+<dd><p>Return a uniform sample from <span class="math">\((0,1]\)</span> using the parallel LCG.</p>
 </dd></dl>
 
 <dl class="function">

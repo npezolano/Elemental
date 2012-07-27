@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
@@ -55,11 +56,12 @@
 <h1>Factorizations<a class="headerlink" href="#factorizations" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="cholesky-factorization">
 <h2>Cholesky factorization<a class="headerlink" href="#cholesky-factorization" title="Permalink to this headline">¶</a></h2>
-<p>It is well-known that Hermitian positive-definite (HPD) matrices can be decomposed
-into the form <img class="math" src="../_images/math/ca933b554415dd7d2a237b58d30efca48f7ec6fa.png" alt="A = L L^H"/> or <img class="math" src="../_images/math/02578cfe6f06b317410d2505d9105fe146e719dd.png" alt="A = U^H U"/>, where <img class="math" src="../_images/math/0c8f8ffdd9a7883937052d43dd13b0e5143e3c4b.png" alt="L=U^H"/> is lower
-triangular, and Cholesky factorization provides such an <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> (or <img class="math" src="../_images/math/e2bbebb3bd73f1ae5c64098ab0244f739abf7ca4.png" alt="U"/>)
-given an HPD <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>. If <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is found to be numerically indefinite, then
-a <tt class="docutils literal"><span class="pre">NonHPDMatrixException</span></tt> will be thrown.</p>
+<p>It is well-known that Hermitian positive-definite (HPD) matrices can be
+decomposed into the form <span class="math">\(A = L L^H\)</span> or <span class="math">\(A = U^H U\)</span>, where
+<span class="math">\(L=U^H\)</span> is lower triangular, and Cholesky factorization provides such an
+<span class="math">\(L\)</span> (or <span class="math">\(U\)</span>) given an HPD <span class="math">\(A\)</span>. If <span class="math">\(A\)</span> is found to be
+numerically indefinite, then a <a class="reference internal" href="../core/environment.html#NonHPDMatrixException" title="NonHPDMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">NonHPDMatrixException</span></tt></a> will be
+thrown.</p>
 <dl class="function">
 <dt id="Cholesky__UpperOrLower.Matrix:F:R">
 void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Cholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
@@ -73,18 +75,19 @@ void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal"
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">See HPSDCholesky for a generalization which also works for semi-definite
-matrices.</p>
+<p class="last">See <a class="reference internal" href="functions.html#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="HPSDCholesky"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HPSDCholesky()</span></tt></a> for a generalization which also works for
+semi-definite matrices.</p>
 </div>
 </div>
 <div class="section" id="factorization">
-<h2><img class="math" src="../_images/math/f9a9d97ab57bd3e6f7118795d745c60c8bad5c66.png" alt="LDL^H"/> factorization<a class="headerlink" href="#factorization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="math">\(LDL^H\)</span> factorization<a class="headerlink" href="#factorization" title="Permalink to this headline">¶</a></h2>
 <p>Though the Cholesky factorization is ideal for most HPD matrices, there exist
 many Hermitian matrices whose eigenvalues are not all positive. The
-<img class="math" src="../_images/math/f9a9d97ab57bd3e6f7118795d745c60c8bad5c66.png" alt="LDL^H"/> factorization exists as slight relaxation of the Cholesky
-factorization, i.e., it computes lower-triangular (with unit diagonal) <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/>
-and diagonal <img class="math" src="../_images/math/9ffb448918db29f2a72f8f87f421b3b3cad18f95.png" alt="D"/> such that <img class="math" src="../_images/math/3f4b793dfcea5224f0856af622de1316bd7c481c.png" alt="A = L D L^H"/>. If <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is found to
-be numerically singular, then a <tt class="docutils literal"><span class="pre">SingularMatrixException</span></tt> will be thrown.</p>
+<span class="math">\(LDL^H\)</span> factorization exists as slight relaxation of the Cholesky
+factorization, i.e., it computes lower-triangular (with unit diagonal) <span class="math">\(L\)</span>
+and diagonal <span class="math">\(D\)</span> such that <span class="math">\(A = L D L^H\)</span>. If <span class="math">\(A\)</span> is found to
+be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
+thrown.</p>
 <blockquote>
 <div><div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -99,9 +102,9 @@ void <tt class="descname">LDLH</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><b
 <dl class="function">
 <dt id="LDLH__DistMatrix:F:R">
 void <tt class="descname">LDLH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLH__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the strictly lower triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with the strictly lower
-portion of <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> (<img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> implicitly has ones on its diagonal) and
-the diagonal with <img class="math" src="../_images/math/9ffb448918db29f2a72f8f87f421b3b3cad18f95.png" alt="D"/>.</p>
+<dd><p>Overwrite the strictly lower triangle of <span class="math">\(A\)</span> with the strictly lower
+portion of <span class="math">\(L\)</span> (<span class="math">\(L\)</span> implicitly has ones on its diagonal) and
+the diagonal with <span class="math">\(D\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -117,10 +120,11 @@ void <tt class="descname">LDLH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</e
 
 </div>
 <div class="section" id="id1">
-<h2><img class="math" src="../_images/math/5fbc3d9844e93a5532a86bf869c414323a828464.png" alt="LDL^T"/> factorization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>While the <img class="math" src="../_images/math/f9a9d97ab57bd3e6f7118795d745c60c8bad5c66.png" alt="LDL^H"/> factorization targets Hermitian matrices, the
-<img class="math" src="../_images/math/5fbc3d9844e93a5532a86bf869c414323a828464.png" alt="LDL^T"/> factorization targets symmetric matrices. If <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is found to
-be numerically singular, then a <tt class="docutils literal"><span class="pre">SingularMatrixException</span></tt> will be thrown.</p>
+<h2><span class="math">\(LDL^T\)</span> factorization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>While the <span class="math">\(LDL^H\)</span> factorization targets Hermitian matrices, the
+<span class="math">\(LDL^T\)</span> factorization targets symmetric matrices. If <span class="math">\(A\)</span> is found to
+be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
+thrown.</p>
 <blockquote>
 <div><div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -135,9 +139,9 @@ void <tt class="descname">LDLT</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><b
 <dl class="function">
 <dt id="LDLT__DistMatrix:F:R">
 void <tt class="descname">LDLT</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLT__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the strictly lower triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with the strictly lower
-portion of <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> (<img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> implicitly has ones on its diagonal) and
-the diagonal with <img class="math" src="../_images/math/9ffb448918db29f2a72f8f87f421b3b3cad18f95.png" alt="D"/>.</p>
+<dd><p>Overwrite the strictly lower triangle of <span class="math">\(A\)</span> with the strictly lower
+portion of <span class="math">\(L\)</span> (<span class="math">\(L\)</span> implicitly has ones on its diagonal) and
+the diagonal with <span class="math">\(D\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -153,16 +157,16 @@ void <tt class="descname">LDLT</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</e
 
 </div>
 <div class="section" id="id2">
-<h2><img class="math" src="../_images/math/f41c1b0893f231128abe8ae33a92b366d6c65db3.png" alt="LU"/> factorization<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Given <img class="math" src="../_images/math/1c2fab72748873ecfc7df7bdce77d384a402b85e.png" alt="A \in \mathbb{F}^{m \times n}"/>, an LU factorization
+<h2><span class="math">\(LU\)</span> factorization<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Given <span class="math">\(A \in \mathbb{F}^{m \times n}\)</span>, an LU factorization
 (without pivoting) finds a unit lower-trapezoidal
-<img class="math" src="../_images/math/9640bc9cb5eb21d4658c0927606cae77c54307a1.png" alt="L \in \mathbb{F}^{m \times \mbox{min}(m,n)}"/> and upper-trapezoidal
-<img class="math" src="../_images/math/96c7e15222187caa96d9c26ee8d6529a283a7cb1.png" alt="U \in \mathbb{F}^{\mbox{min}(m,n) \times n}"/> such that <img class="math" src="../_images/math/e0e894fc27280eb4f3c8090acd60bd31469dd325.png" alt="A=LU"/>.
-Since <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> is required to have its diaganal entries set to one: the upper
-portion of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> can be overwritten with <cite>U</cite>, and the strictly lower
-portion of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> can be overwritten with the strictly lower portion of
-<img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/>. If <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is found to be numerically singular, then a
-<tt class="docutils literal"><span class="pre">SingularMatrixException</span></tt> will be thrown.</p>
+<span class="math">\(L \in \mathbb{F}^{m \times \mbox{min}(m,n)}\)</span> and upper-trapezoidal
+<span class="math">\(U \in \mathbb{F}^{\mbox{min}(m,n) \times n}\)</span> such that <span class="math">\(A=LU\)</span>.
+Since <span class="math">\(L\)</span> is required to have its diaganal entries set to one: the upper
+portion of <span class="math">\(A\)</span> can be overwritten with <cite>U</cite>, and the strictly lower
+portion of <span class="math">\(A\)</span> can be overwritten with the strictly lower portion of
+<span class="math">\(L\)</span>. If <span class="math">\(A\)</span> is found to be numerically singular, then a
+<a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be thrown.</p>
 <dl class="function">
 <dt id="LU__Matrix:F:R">
 void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
@@ -171,15 +175,15 @@ void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big
 <dl class="function">
 <dt id="LU__DistMatrix:F:R">
 void <tt class="descname">LU</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrites <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with its LU decomposition.</p>
+<dd><p>Overwrites <span class="math">\(A\)</span> with its LU decomposition.</p>
 </dd></dl>
 
 <p>Since LU factorization without pivoting is known to be unstable for general
-matrices, it is standard practice to pivot the rows of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> during the
+matrices, it is standard practice to pivot the rows of <span class="math">\(A\)</span> during the
 factorization (this is called partial pivoting since the columns are not also
 pivoted). An LU factorization with partial pivoting therefore computes
-<img class="math" src="../_images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P"/>, <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/>, and <img class="math" src="../_images/math/e2bbebb3bd73f1ae5c64098ab0244f739abf7ca4.png" alt="U"/> such that <img class="math" src="../_images/math/d38165f6cb26decf3c20b44fe86276382079540a.png" alt="PA=LU"/>, where <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/>
-and <img class="math" src="../_images/math/e2bbebb3bd73f1ae5c64098ab0244f739abf7ca4.png" alt="U"/> are as described above and <img class="math" src="../_images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P"/> is a permutation matrix.</p>
+<span class="math">\(P\)</span>, <span class="math">\(L\)</span>, and <span class="math">\(U\)</span> such that <span class="math">\(PA=LU\)</span>, where <span class="math">\(L\)</span>
+and <span class="math">\(U\)</span> are as described above and <span class="math">\(P\)</span> is a permutation matrix.</p>
 <dl class="function">
 <dt id="LU__Matrix:F:R.Matrix:i:R">
 void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
@@ -188,22 +192,22 @@ void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Ma
 <dl class="function">
 <dt id="LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R">
 void <tt class="descname">LU</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F, VC, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrites the matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with the LU decomposition of
-<img class="math" src="../_images/math/377291318df52e4f013ab2bf28ee82454a9e57da.png" alt="PA"/>, where <img class="math" src="../_images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P"/> is represented by the pivot vector <cite>p</cite>.</p>
+<dd><p>Overwrites the matrix <span class="math">\(A\)</span> with the LU decomposition of
+<span class="math">\(PA\)</span>, where <span class="math">\(P\)</span> is represented by the pivot vector <cite>p</cite>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id3">
-<h2><img class="math" src="../_images/math/74a751df89f77e97ef080654dfb03f981240a469.png" alt="LQ"/> factorization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Given <img class="math" src="../_images/math/1c2fab72748873ecfc7df7bdce77d384a402b85e.png" alt="A \in \mathbb{F}^{m \times n}"/>, an LQ factorization typically
-computes an implicit unitary matrix <img class="math" src="../_images/math/350b87880eb3ff999ce290afe5bf0b37772b2619.png" alt="\hat Q \in \mathbb{F}^{n \times n}"/>
-such that <img class="math" src="../_images/math/0ea6c3f8acf02fd0bc642d3830a01b862c4ec102.png" alt="\hat L \equiv A\hat Q^H"/> is lower trapezoidal. One can then
-form the thin factors <img class="math" src="../_images/math/9640bc9cb5eb21d4658c0927606cae77c54307a1.png" alt="L \in \mathbb{F}^{m \times \mbox{min}(m,n)}"/> and
-<img class="math" src="../_images/math/d49ab7cc53001411840bd21b11551361cce2d5b0.png" alt="Q \in \mathbb{F}^{\mbox{min}(m,n) \times n}"/> by setting
-<img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> and <img class="math" src="../_images/math/9866e3a998d628ba0941eb4fea0666ac391d149a.png" alt="Q"/> to first <img class="math" src="../_images/math/10bced5734b166a2b3e98bd41b9a685058d00276.png" alt="\mbox{min}(m,n)"/> columns and rows of
-<img class="math" src="../_images/math/2c7a47d0801ad18fef7eb893049d253206414038.png" alt="\hat L"/> and <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/>, respectively. Upon completion <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> is
-stored in the lower trapezoid of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and the Householder reflectors
-representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/> are stored within the rows of the strictly upper
+<h2><span class="math">\(LQ\)</span> factorization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Given <span class="math">\(A \in \mathbb{F}^{m \times n}\)</span>, an LQ factorization typically
+computes an implicit unitary matrix <span class="math">\(\hat Q \in \mathbb{F}^{n \times n}\)</span>
+such that <span class="math">\(\hat L \equiv A\hat Q^H\)</span> is lower trapezoidal. One can then
+form the thin factors <span class="math">\(L \in \mathbb{F}^{m \times \mbox{min}(m,n)}\)</span> and
+<span class="math">\(Q \in \mathbb{F}^{\mbox{min}(m,n) \times n}\)</span> by setting
+<span class="math">\(L\)</span> and <span class="math">\(Q\)</span> to first <span class="math">\(\mbox{min}(m,n)\)</span> columns and rows of
+<span class="math">\(\hat L\)</span> and <span class="math">\(\hat Q\)</span>, respectively. Upon completion <span class="math">\(L\)</span> is
+stored in the lower trapezoid of <span class="math">\(A\)</span> and the Householder reflectors
+representing <span class="math">\(\hat Q\)</span> are stored within the rows of the strictly upper
 trapezoid.</p>
 <dl class="function">
 <dt id="LQ__Matrix:R:R">
@@ -213,8 +217,8 @@ void <tt class="descname">LQ</tt><big>(</big>Matrix&lt;R&gt;&amp; <em>A</em><big
 <dl class="function">
 <dt id="LQ__DistMatrix:R:R">
 void <tt class="descname">LQ</tt><big>(</big>DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the real matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> and the
-Householder reflectors representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/>.</p>
+<dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
+Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -225,24 +229,24 @@ void <tt class="descname">LQ</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp;
 <dl class="function">
 <dt id="LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
 void <tt class="descname">LQ</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the complex matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with <img class="math" src="../_images/math/859ccf4cd60c7bc6b8fa1afc9a42dc811a826d6f.png" alt="L"/> and the
-Householder reflectors representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/>; unlike the real case,
+<dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
+Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
 phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id4">
-<h2><img class="math" src="../_images/math/9a7c52aff9dd9987076c0ac4fecccf59b6ed8bdb.png" alt="QR"/> factorization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Given <img class="math" src="../_images/math/1c2fab72748873ecfc7df7bdce77d384a402b85e.png" alt="A \in \mathbb{F}^{m \times n}"/>, a QR factorization typically
-computes an implicit unitary matrix <img class="math" src="../_images/math/f6619777f036b478a6a5e2a71655fc5984de09b8.png" alt="\hat Q \in \mathbb{F}^{m \times m}"/>
-such that <img class="math" src="../_images/math/d6fc02a2f5c982cdf2cf24648efc7344cd124836.png" alt="\hat R \equiv \hat Q^H A"/> is upper trapezoidal. One can then
-form the thin factors <img class="math" src="../_images/math/68460bcd70ed6627ee7778301eee28a1f8a3ec81.png" alt="Q \in \mathbb{F}^{m \times \mbox{min}(m,n)}"/> and
-<img class="math" src="../_images/math/4328076fdd1a3436949d56c98c084ab409835d7a.png" alt="R \in \mathbb{F}^{\mbox{min}(m,n) \times n}"/> by setting
-<img class="math" src="../_images/math/9866e3a998d628ba0941eb4fea0666ac391d149a.png" alt="Q"/> and <img class="math" src="../_images/math/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" alt="R"/> to first <img class="math" src="../_images/math/10bced5734b166a2b3e98bd41b9a685058d00276.png" alt="\mbox{min}(m,n)"/> columns and rows of
-<img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/> and <img class="math" src="../_images/math/58512140524ff3265930c33ef59a0aef537fe271.png" alt="\hat R"/>, respectively. Upon completion <img class="math" src="../_images/math/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" alt="R"/> is
-stored in the upper trapezoid of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> and the Householder reflectors
-representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/> are stored within the columns of the strictly lower
+<h2><span class="math">\(QR\)</span> factorization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Given <span class="math">\(A \in \mathbb{F}^{m \times n}\)</span>, a QR factorization typically
+computes an implicit unitary matrix <span class="math">\(\hat Q \in \mathbb{F}^{m \times m}\)</span>
+such that <span class="math">\(\hat R \equiv \hat Q^H A\)</span> is upper trapezoidal. One can then
+form the thin factors <span class="math">\(Q \in \mathbb{F}^{m \times \mbox{min}(m,n)}\)</span> and
+<span class="math">\(R \in \mathbb{F}^{\mbox{min}(m,n) \times n}\)</span> by setting
+<span class="math">\(Q\)</span> and <span class="math">\(R\)</span> to first <span class="math">\(\mbox{min}(m,n)\)</span> columns and rows of
+<span class="math">\(\hat Q\)</span> and <span class="math">\(\hat R\)</span>, respectively. Upon completion <span class="math">\(R\)</span> is
+stored in the upper trapezoid of <span class="math">\(A\)</span> and the Householder reflectors
+representing <span class="math">\(\hat Q\)</span> are stored within the columns of the strictly lower
 trapezoid.</p>
 <dl class="function">
 <dt id="QR__Matrix:R:R">
@@ -252,8 +256,8 @@ void <tt class="descname">QR</tt><big>(</big>Matrix&lt;R&gt;&amp; <em>A</em><big
 <dl class="function">
 <dt id="QR__DistMatrix:R:R">
 void <tt class="descname">QR</tt><big>(</big>DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the real matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with <img class="math" src="../_images/math/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" alt="R"/> and the
-Householder reflectors representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/>.</p>
+<dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
+Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -264,8 +268,8 @@ void <tt class="descname">QR</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp;
 <dl class="function">
 <dt id="QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
 void <tt class="descname">QR</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the complex matrix <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> with <img class="math" src="../_images/math/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" alt="R"/> and the
-Householder reflectors representing <img class="math" src="../_images/math/298596ed0f27c869bb9f8e2fcc113098bebe982b.png" alt="\hat Q"/>; unlike the real case,
+<dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
+Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
 phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>

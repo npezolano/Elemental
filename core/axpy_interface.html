@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
@@ -54,7 +55,7 @@
   <div class="section" id="the-axpy-interface">
 <h1>The Axpy interface<a class="headerlink" href="#the-axpy-interface" title="Permalink to this headline">¶</a></h1>
 <p>The Axpy interface is Elemental&#8217;s version of the PLAPACK Axpy interface, where
-<em>Axpy</em>  is derived from the BLAS shorthand for <img class="math" src="../_images/math/e9f26f3c91f19d510485873b15f652eba13a72d6.png" alt="Y := \alpha X + Y"/>
+<em>Axpy</em>  is derived from the BLAS shorthand for <span class="math">\(Y := \alpha X + Y\)</span>
 (Alpha X Plus Y). Rather than always requiring users to manually fill their
 distributed matrix, this interface provides a mechanism so that individual processes
 can independently submit local submatrices which will be automatically redistributed
@@ -213,9 +214,9 @@ the only sensical value of <tt class="docutils literal"><span class="pre">type</
 void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, Matrix&lt;T&gt;&amp; <em>Z</em>, int <em>i</em>, int <em>j</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Axpy__T.Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the interface was previously attached in the <tt class="docutils literal"><span class="pre">LOCAL_TO_GLOBAL</span></tt>
 direction, then the matrix <tt class="docutils literal"><span class="pre">\alpha</span> <span class="pre">Z</span></tt> will be added onto the associated
-distributed matrix starting at the <img class="math" src="../_images/math/887919dfbc86eebc29e0373f98f97dbf23a0ae23.png" alt="(i,j)"/> global index; otherwise
-<img class="math" src="../_images/math/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" alt="\alpha"/> times the submatrix of the associated distributed matrix,
-which starts at index <img class="math" src="../_images/math/887919dfbc86eebc29e0373f98f97dbf23a0ae23.png" alt="(i,j)"/> and is of the same size as <tt class="docutils literal"><span class="pre">Z</span></tt>, will
+distributed matrix starting at the <span class="math">\((i,j)\)</span> global index; otherwise
+<span class="math">\(\alpha\)</span> times the submatrix of the associated distributed matrix,
+which starts at index <span class="math">\((i,j)\)</span> and is of the same size as <tt class="docutils literal"><span class="pre">Z</span></tt>, will
 be added onto <tt class="docutils literal"><span class="pre">Z</span></tt>.</p>
 </dd></dl>
 

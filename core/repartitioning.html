@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
@@ -57,13 +58,13 @@
 <h2>RepartitionUp<a class="headerlink" href="#repartitionup" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/7f5dd138c3a93f55aead0957c080b5266344a89a.png" alt="A = \left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right),"/></p>
-</div><p>and a blocksize, <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/>, turn the two-way partition into the three-way
+\[\begin{split}A = \left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right),\end{split}\]</div>
+<p>and a blocksize, <span class="math">\(n_b\)</span>, turn the two-way partition into the three-way
 partition</p>
 <div class="math">
-<p><img src="../_images/math/36e0603adbfb6ad74037d9c2c870578c49d407de.png" alt="\left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right) =
-\left(\begin{array}{c} A_0 \\ A_1 \\ \hline A_2 \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/36c7f3f828cf12ab9cafeffad282468a95219600.png" alt="A_1"/> is of height <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/> and <img class="math" src="../_images/math/13aefdaef180c313001d3e16c24c6b057eecea91.png" alt="A_2 = A_B"/>.</p>
+\[\begin{split}\left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right) =
+\left(\begin{array}{c} A_0 \\ A_1 \\ \hline A_2 \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_1\)</span> is of height <span class="math">\(n_b\)</span> and <span class="math">\(A_2 = A_B\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionUp( Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; A0, Matrix&lt;T&gt;&amp; A1, Matrix&lt;T&gt;&amp; AB, Matrix&lt;T&gt;&amp; A2, int bsize=Blocksize() )</tt></dt>
@@ -99,13 +100,13 @@ to the following:</p>
 <h2>RepartitionDown<a class="headerlink" href="#repartitiondown" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/7f5dd138c3a93f55aead0957c080b5266344a89a.png" alt="A = \left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right),"/></p>
-</div><p>and a blocksize, <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/>, turn the two-way partition into the three-way
+\[\begin{split}A = \left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right),\end{split}\]</div>
+<p>and a blocksize, <span class="math">\(n_b\)</span>, turn the two-way partition into the three-way
 partition</p>
 <div class="math">
-<p><img src="../_images/math/0b529934ad76bc91c2b9af14fc9adbf61e5d440a.png" alt="\left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right) =
-\left(\begin{array}{c} A_0 \\ \hline A_1 \\ A_2 \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/36c7f3f828cf12ab9cafeffad282468a95219600.png" alt="A_1"/> is of height <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/> and <img class="math" src="../_images/math/ffbea899845a378c94351147866e814d4926cec3.png" alt="A_0 = A_T"/>.</p>
+\[\begin{split}\left(\begin{array}{c} A_T \\ \hline A_B \end{array}\right) =
+\left(\begin{array}{c} A_0 \\ \hline A_1 \\ A_2 \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_1\)</span> is of height <span class="math">\(n_b\)</span> and <span class="math">\(A_0 = A_T\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionDown( Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; A0, Matrix&lt;T&gt;&amp; A1, Matrix&lt;T&gt;&amp; AB, Matrix&lt;T&gt;&amp; A2, int bsize=Blocksize() )</tt></dt>
@@ -141,13 +142,13 @@ to the following:</p>
 <h2>RepartitionLeft<a class="headerlink" href="#repartitionleft" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/0ce507353c1db08c0ca8f8f21a43b1d82b076f70.png" alt="A = \left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right),"/></p>
-</div><p>and a blocksize, <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/>, turn the two-way partition into the three-way
+\[\begin{split}A = \left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
+<p>and a blocksize, <span class="math">\(n_b\)</span>, turn the two-way partition into the three-way
 partition</p>
 <div class="math">
-<p><img src="../_images/math/1d970be5044bf88760adfcf248d2941fc9181d93.png" alt="\left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right) =
-\left(\begin{array}{cc|c} A_0 &amp; A_1 &amp; A_2 \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/36c7f3f828cf12ab9cafeffad282468a95219600.png" alt="A_1"/> is of width <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/> and <img class="math" src="../_images/math/334981337b7ae435e7ab6854f1719ee93a5c3839.png" alt="A_2=A_R"/>.</p>
+\[\begin{split}\left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right) =
+\left(\begin{array}{cc|c} A_0 &amp; A_1 &amp; A_2 \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_1\)</span> is of width <span class="math">\(n_b\)</span> and <span class="math">\(A_2=A_R\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionLeft( Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, Matrix&lt;T&gt;&amp; A0, Matrix&lt;T&gt;&amp; A1, Matrix&lt;T&gt;&amp; A2, int bsize=Blocksize() )</tt></dt>
@@ -181,13 +182,13 @@ to the following:</p>
 <h2>RepartitionRight<a class="headerlink" href="#repartitionright" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/0ce507353c1db08c0ca8f8f21a43b1d82b076f70.png" alt="A = \left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right),"/></p>
-</div><p>and a blocksize, <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/>, turn the two-way partition into the three-way
+\[\begin{split}A = \left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
+<p>and a blocksize, <span class="math">\(n_b\)</span>, turn the two-way partition into the three-way
 partition</p>
 <div class="math">
-<p><img src="../_images/math/e3f85e97758fc7c4eb10988b9a35ee82fb2cae20.png" alt="\left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right) =
-\left(\begin{array}{c|cc} A_0 &amp; A_1 &amp; A_2 \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/36c7f3f828cf12ab9cafeffad282468a95219600.png" alt="A_1"/> is of width <img class="math" src="../_images/math/470e31942b5204d0b59d83c3266c5fcb5e230fb7.png" alt="n_b"/> and <img class="math" src="../_images/math/249ea0a73b8e557b666ea6a01037d1e473798b0f.png" alt="A_0=A_L"/>.</p>
+\[\begin{split}\left(\begin{array}{c|c} A_L &amp; A_R \end{array}\right) =
+\left(\begin{array}{c|cc} A_0 &amp; A_1 &amp; A_2 \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_1\)</span> is of width <span class="math">\(n_b\)</span> and <span class="math">\(A_0=A_L\)</span>.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionRight( Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, Matrix&lt;T&gt;&amp; A0, Matrix&lt;T&gt;&amp; A1, Matrix&lt;T&gt;&amp; A2, int bsize=Blocksize() )</tt></dt>
@@ -221,18 +222,18 @@ to the following:</p>
 <h2>RepartitionUpDiagonal<a class="headerlink" href="#repartitionupdiagonal" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/5dbd7d987d50346f52fbd3daf03aa187f7f80c39.png" alt="A = \left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\ \hline A_{BL} &amp; A_{BR}
-          \end{array}\right),"/></p>
-</div><p>turn the two-by-two partition into the three-by-three partition</p>
+\[\begin{split}A = \left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\ \hline A_{BL} &amp; A_{BR}
+          \end{array}\right),\end{split}\]</div>
+<p>turn the two-by-two partition into the three-by-three partition</p>
 <div class="math">
-<p><img src="../_images/math/c0cc4356a24f264484ad4d08ff3f28838eac9349.png" alt="\left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\
+\[\begin{split}\left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\
                          \hline
                          A_{BL} &amp; A_{BR} \end{array}\right) =
 \left(\begin{array}{cc|c} A_{00} &amp; A_{01} &amp; A_{02} \\
                           A_{10} &amp; A_{11} &amp; A_{12} \\
                           \hline
-                          A_{20} &amp; A_{21} &amp; A_{22} \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/e26b63cf52b85e36ddb448caf62ff9fc413bce8a.png" alt="A_{11}"/> is <img class="math" src="../_images/math/775c2a50795b396909d158f7bc970ef531344aac.png" alt="n_b \times n_b"/> and the corresponding quadrants are equivalent.</p>
+                          A_{20} &amp; A_{21} &amp; A_{22} \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_{11}\)</span> is <span class="math">\(n_b \times n_b\)</span> and the corresponding quadrants are equivalent.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionUpDiagonal( Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; A00, Matrix&lt;T&gt;&amp; A01, Matrix&lt;T&gt;&amp; A02, Matrix&lt;T&gt;&amp; A10, Matrix&lt;T&gt;&amp; A11, Matrix&lt;T&gt;&amp; A12, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, Matrix&lt;T&gt;&amp; A20, Matrix&lt;T&gt;&amp; A21, Matrix&lt;T&gt;&amp; A22, int bsize=Blocksize() )</tt></dt>
@@ -268,18 +269,18 @@ to the following:</p>
 <h2>RepartitionDownDiagonal<a class="headerlink" href="#repartitiondowndiagonal" title="Permalink to this headline">¶</a></h2>
 <p>Given the partition</p>
 <div class="math">
-<p><img src="../_images/math/5dbd7d987d50346f52fbd3daf03aa187f7f80c39.png" alt="A = \left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\ \hline A_{BL} &amp; A_{BR}
-          \end{array}\right),"/></p>
-</div><p>turn the two-by-two partition into the three-by-three partition</p>
+\[\begin{split}A = \left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\ \hline A_{BL} &amp; A_{BR}
+          \end{array}\right),\end{split}\]</div>
+<p>turn the two-by-two partition into the three-by-three partition</p>
 <div class="math">
-<p><img src="../_images/math/3285a67220873be64397ba19cabb3b2fea755b78.png" alt="\left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\
+\[\begin{split}\left(\begin{array}{c|c} A_{TL} &amp; A_{TR} \\
                          \hline
                          A_{BL} &amp; A_{BR} \end{array}\right) =
 \left(\begin{array}{c|cc} A_{00} &amp; A_{01} &amp; A_{02} \\
                           \hline
                           A_{10} &amp; A_{11} &amp; A_{12} \\
-                          A_{20} &amp; A_{21} &amp; A_{22} \end{array}\right),"/></p>
-</div><p>where <img class="math" src="../_images/math/e26b63cf52b85e36ddb448caf62ff9fc413bce8a.png" alt="A_{11}"/> is <img class="math" src="../_images/math/775c2a50795b396909d158f7bc970ef531344aac.png" alt="n_b \times n_b"/> and the corresponding quadrants are equivalent.</p>
+                          A_{20} &amp; A_{21} &amp; A_{22} \end{array}\right),\end{split}\]</div>
+<p>where <span class="math">\(A_{11}\)</span> is <span class="math">\(n_b \times n_b\)</span> and the corresponding quadrants are equivalent.</p>
 <dl class="function">
 <dt>
 <tt class="descname">void RepartitionDownDiagonal( Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; A00, Matrix&lt;T&gt;&amp; A01, Matrix&lt;T&gt;&amp; A02, Matrix&lt;T&gt;&amp; A10, Matrix&lt;T&gt;&amp; A11, Matrix&lt;T&gt;&amp; A12, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, Matrix&lt;T&gt;&amp; A20, Matrix&lt;T&gt;&amp; A21, Matrix&lt;T&gt;&amp; A22, int bsize=Blocksize() )</tt></dt>

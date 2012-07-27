@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Basic linear algebra" href="../blas-like.html" />
@@ -59,9 +60,9 @@ implementations are in <a class="reference external" href="https://github.com/po
 <div class="section" id="gemv">
 <h2>Gemv<a class="headerlink" href="#gemv" title="Permalink to this headline">¶</a></h2>
 <p>General matrix-vector multiply:
-<img class="math" src="../_images/math/fa4dd1ded1d16242a5c69461e7678dfb2e5d0afa.png" alt="y := \alpha \mbox{op}(A) x + \beta y"/>,
-where <img class="math" src="../_images/math/7fc24681030cd4fbb78b30e05fb2ca510195f6f5.png" alt="\mbox{op}(A)"/> can be <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>, <img class="math" src="../_images/math/4a113a49a168242ef8398e336b3e7bd9bef597e6.png" alt="A^T"/>, or <img class="math" src="../_images/math/7b82dd68a42b65efdc9ac248cb183e9b6982c654.png" alt="A^H"/>.
-Whether or not <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/> are stored as row vectors, they will
+<span class="math">\(y := \alpha \mbox{op}(A) x + \beta y\)</span>,
+where <span class="math">\(\mbox{op}(A)\)</span> can be <span class="math">\(A\)</span>, <span class="math">\(A^T\)</span>, or <span class="math">\(A^H\)</span>.
+Whether or not <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are stored as row vectors, they will
 be interpreted as column vectors.</p>
 <dl class="function">
 <dt id="Gemv__Orientation.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R">
@@ -78,7 +79,7 @@ void <tt class="descname">Gemv</tt><big>(</big><a class="reference internal" hre
 </div>
 <div class="section" id="ger">
 <h2>Ger<a class="headerlink" href="#ger" title="Permalink to this headline">¶</a></h2>
-<p>General rank-one update: <img class="math" src="../_images/math/a715601517104d722795af8c095d7984ef909101.png" alt="A := \alpha x y^H + A"/>. <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/>
+<p>General rank-one update: <span class="math">\(A := \alpha x y^H + A\)</span>. <span class="math">\(x\)</span> and <span class="math">\(y\)</span>
 are free to be stored as either row or column vectors, but they will be
 interpreted as column vectors.</p>
 <dl class="function">
@@ -96,7 +97,7 @@ void <tt class="descname">Ger</tt><big>(</big>T <em>alpha</em>, const DistMatrix
 </div>
 <div class="section" id="gerc">
 <h2>Gerc<a class="headerlink" href="#gerc" title="Permalink to this headline">¶</a></h2>
-<p>This is the same as <tt class="docutils literal"><span class="pre">Ger</span></tt>, but the name is provided because it exists
+<p>This is the same as <a class="reference internal" href="#Ger__T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R" title="Ger"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Ger()</span></tt></a>, but the name is provided because it exists
 in the BLAS.</p>
 <dl class="function">
 <dt id="Gerc__T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R">
@@ -113,9 +114,9 @@ void <tt class="descname">Gerc</tt><big>(</big>T <em>alpha</em>, const DistMatri
 </div>
 <div class="section" id="geru">
 <h2>Geru<a class="headerlink" href="#geru" title="Permalink to this headline">¶</a></h2>
-<p>General rank-one update (unconjugated): <img class="math" src="../_images/math/c0cc4dd2635666312c73134781b03a13833b902d.png" alt="A := \alpha x y^T + A"/>. <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/>
-are free to be stored as either row or column vectors, but they will be
-interpreted as column vectors.</p>
+<p>General rank-one update (unconjugated): <span class="math">\(A := \alpha x y^T + A\)</span>. <span class="math">\(x\)</span>
+and <span class="math">\(y\)</span> are free to be stored as either row or column vectors, but they
+will be interpreted as column vectors.</p>
 <dl class="function">
 <dt id="Geru__T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Geru</tt><big>(</big>T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, const Matrix&lt;T&gt;&amp; <em>y</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Geru__T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -131,8 +132,8 @@ void <tt class="descname">Geru</tt><big>(</big>T <em>alpha</em>, const DistMatri
 </div>
 <div class="section" id="hemv">
 <h2>Hemv<a class="headerlink" href="#hemv" title="Permalink to this headline">¶</a></h2>
-<p>Hermitian matrix-vector multiply: <img class="math" src="../_images/math/8b1bf0f00fbd87968ea839435c17c78efbc6eded.png" alt="y := \alpha A x + \beta y"/>, where
-<img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is Hermitian.</p>
+<p>Hermitian matrix-vector multiply: <span class="math">\(y := \alpha A x + \beta y\)</span>, where
+<span class="math">\(A\)</span> is Hermitian.</p>
 <dl class="function">
 <dt id="Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R">
 void <tt class="descname">Hemv</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>A</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, T <em>beta</em>, Matrix&lt;T&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -145,14 +146,14 @@ void <tt class="descname">Hemv</tt><big>(</big><a class="reference internal" hre
 <dd><p>The distributed implementation (templated over the datatype).</p>
 </dd></dl>
 
-<p>Please see <tt class="docutils literal"><span class="pre">SetLocalHemvBlocksize&lt;T&gt;(</span> <span class="pre">int</span> <span class="pre">blocksize</span> <span class="pre">)</span></tt> and
-<tt class="docutils literal"><span class="pre">int</span> <span class="pre">LocalHemvBlocksize&lt;T&gt;()</span></tt> in the <em>Tuning parameters</em> section for
-information on tuning the distributed <tt class="docutils literal"><span class="pre">Hemv</span></tt>.</p>
+<p>Please see <a class="reference internal" href="tuning.html#SetLocalHemvBlocksize:T:__i" title="SetLocalHemvBlocksize&lt;T&gt;"><tt class="xref cpp cpp-func docutils literal"><span class="pre">SetLocalHemvBlocksize&lt;T&gt;()</span></tt></a> and
+<a class="reference internal" href="tuning.html#LocalHemvBlocksize:T:" title="LocalHemvBlocksize&lt;T&gt;"><tt class="xref cpp cpp-func docutils literal"><span class="pre">LocalHemvBlocksize&lt;T&gt;()</span></tt></a> in the <a class="reference internal" href="tuning.html#blas-tuning"><em>Tuning parameters</em></a> section for
+information on tuning the distributed <a class="reference internal" href="#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a>.</p>
 </div>
 <div class="section" id="her">
 <h2>Her<a class="headerlink" href="#her" title="Permalink to this headline">¶</a></h2>
-<p>Hermitian rank-one update: implicitly performs <img class="math" src="../_images/math/b25fc235dcb33b88a863aed9585ac583c27bf04a.png" alt="A := \alpha x x^H + A"/>,
-where only the triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> specified by <cite>uplo</cite> is updated.</p>
+<p>Hermitian rank-one update: implicitly performs <span class="math">\(A := \alpha x x^H + A\)</span>,
+where only the triangle of <span class="math">\(A\)</span> specified by <cite>uplo</cite> is updated.</p>
 <dl class="function">
 <dt id="Her__UpperOrLower.T.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Her</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Her__UpperOrLower.T.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -169,8 +170,8 @@ void <tt class="descname">Her</tt><big>(</big><a class="reference internal" href
 <div class="section" id="her2">
 <h2>Her2<a class="headerlink" href="#her2" title="Permalink to this headline">¶</a></h2>
 <p>Hermitian rank-two update: implicitly performs
-<img class="math" src="../_images/math/2ba80f9399575769c5dcd374933b8e3acdad7e06.png" alt="A := \alpha ( x y^H + y x^H ) + A"/>,
-where only the triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> specified by <cite>uplo</cite> is updated.</p>
+<span class="math">\(A := \alpha ( x y^H + y x^H ) + A\)</span>,
+where only the triangle of <span class="math">\(A\)</span> specified by <cite>uplo</cite> is updated.</p>
 <dl class="function">
 <dt id="Her2__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Her2</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, const Matrix&lt;T&gt;&amp; <em>y</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Her2__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -186,8 +187,8 @@ void <tt class="descname">Her2</tt><big>(</big><a class="reference internal" hre
 </div>
 <div class="section" id="symv">
 <h2>Symv<a class="headerlink" href="#symv" title="Permalink to this headline">¶</a></h2>
-<p>Symmetric matrix-vector multiply: <img class="math" src="../_images/math/8b1bf0f00fbd87968ea839435c17c78efbc6eded.png" alt="y := \alpha A x + \beta y"/>, where
-<img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is symmetric.</p>
+<p>Symmetric matrix-vector multiply: <span class="math">\(y := \alpha A x + \beta y\)</span>, where
+<span class="math">\(A\)</span> is symmetric.</p>
 <dl class="function">
 <dt id="Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R">
 void <tt class="descname">Symv</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>A</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, T <em>beta</em>, Matrix&lt;T&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -200,14 +201,14 @@ void <tt class="descname">Symv</tt><big>(</big><a class="reference internal" hre
 <dd><p>The distributed implementation (templated over the datatype).</p>
 </dd></dl>
 
-<p>Please see <tt class="docutils literal"><span class="pre">SetLocalSymvBlocksize&lt;T&gt;(</span> <span class="pre">int</span> <span class="pre">blocksize</span> <span class="pre">)</span></tt> and
-<tt class="docutils literal"><span class="pre">int</span> <span class="pre">LocalSymvBlocksize&lt;T&gt;()</span></tt> in the <em>Tuning parameters</em> section for
-information on tuning the distributed <tt class="docutils literal"><span class="pre">Symv</span></tt>.</p>
+<p>Please see <a class="reference internal" href="tuning.html#SetLocalSymvBlocksize:T:__i" title="SetLocalSymvBlocksize&lt;T&gt;"><tt class="xref cpp cpp-func docutils literal"><span class="pre">SetLocalSymvBlocksize&lt;T&gt;()</span></tt></a> and
+<a class="reference internal" href="tuning.html#LocalSymvBlocksize:T:" title="LocalSymvBlocksize&lt;T&gt;"><tt class="xref cpp cpp-func docutils literal"><span class="pre">LocalSymvBlocksize&lt;T&gt;()</span></tt></a> in the <a class="reference internal" href="tuning.html#blas-tuning"><em>Tuning parameters</em></a> section for
+information on tuning the distributed <a class="reference internal" href="#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a>.</p>
 </div>
 <div class="section" id="syr">
 <h2>Syr<a class="headerlink" href="#syr" title="Permalink to this headline">¶</a></h2>
-<p>Symmetric rank-one update: implicitly performs <img class="math" src="../_images/math/60f2228f5d9b787516af5dd5ffff73a8d6d68566.png" alt="A := \alpha x x^T + A"/>,
-where only the triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> specified by <cite>uplo</cite> is updated.</p>
+<p>Symmetric rank-one update: implicitly performs <span class="math">\(A := \alpha x x^T + A\)</span>,
+where only the triangle of <span class="math">\(A\)</span> specified by <cite>uplo</cite> is updated.</p>
 <dl class="function">
 <dt id="Syr__UpperOrLower.T.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Syr</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Syr__UpperOrLower.T.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -224,8 +225,8 @@ void <tt class="descname">Syr</tt><big>(</big><a class="reference internal" href
 <div class="section" id="syr2">
 <h2>Syr2<a class="headerlink" href="#syr2" title="Permalink to this headline">¶</a></h2>
 <p>Symmetric rank-two update: implicitly performs
-<img class="math" src="../_images/math/0447e12195681e7f2cdc628c0aa47ea39f468dab.png" alt="A := \alpha ( x y^T + y x^T ) + A"/>,
-where only the triangle of <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> specified by <cite>uplo</cite> is updated.</p>
+<span class="math">\(A := \alpha ( x y^T + y x^T ) + A\)</span>,
+where only the triangle of <span class="math">\(A\)</span> specified by <cite>uplo</cite> is updated.</p>
 <dl class="function">
 <dt id="Syr2__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Syr2</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>x</em>, const Matrix&lt;T&gt;&amp; <em>y</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Syr2__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
@@ -241,14 +242,14 @@ void <tt class="descname">Syr2</tt><big>(</big><a class="reference internal" hre
 </div>
 <div class="section" id="trmv">
 <h2>Trmv<a class="headerlink" href="#trmv" title="Permalink to this headline">¶</a></h2>
-<p>Not yet written. Please call Trmm.</p>
+<p>Not yet written. Please call <a class="reference internal" href="level3.html#Trmm__LeftOrRight.UpperOrLower.Orientation.UnitOrNonUnit.T.Matrix:T:CR.Matrix:T:R" title="Trmm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Trmm()</span></tt></a> for now.</p>
 </div>
 <div class="section" id="trsv">
 <h2>Trsv<a class="headerlink" href="#trsv" title="Permalink to this headline">¶</a></h2>
 <p>Triangular solve with a vector: computes
-<img class="math" src="../_images/math/ae100e20d819dc49c5a2857ec628c645382ccd58.png" alt="x := \mbox{op}(A)^{-1} x"/>, where <img class="math" src="../_images/math/7fc24681030cd4fbb78b30e05fb2ca510195f6f5.png" alt="\mbox{op}(A)"/> is either
-<img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/>, <img class="math" src="../_images/math/4a113a49a168242ef8398e336b3e7bd9bef597e6.png" alt="A^T"/>, or <img class="math" src="../_images/math/7b82dd68a42b65efdc9ac248cb183e9b6982c654.png" alt="A^H"/>, and <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> is treated an either a
-lower or upper triangular matrix, depending upon <cite>uplo</cite>. <img class="math" src="../_images/math/019e9892786e493964e145e7c5cf7b700314e53b.png" alt="A"/> can also be
+<span class="math">\(x := \mbox{op}(A)^{-1} x\)</span>, where <span class="math">\(\mbox{op}(A)\)</span> is either
+<span class="math">\(A\)</span>, <span class="math">\(A^T\)</span>, or <span class="math">\(A^H\)</span>, and <span class="math">\(A\)</span> is treated an either a
+lower or upper triangular matrix, depending upon <cite>uplo</cite>. <span class="math">\(A\)</span> can also be
 treated as implicitly having a unit-diagonal if <cite>diag</cite> is set to <tt class="docutils literal"><span class="pre">UNIT</span></tt>.</p>
 <dl class="function">
 <dt id="Trsv__UpperOrLower.Orientation.UnitOrNonUnit.Matrix:F:CR.Matrix:F:R">

@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Basic linear algebra" href="../blas-like.html" />
@@ -52,7 +53,7 @@
         
         
   <div class="section" id="tuning-parameters">
-<h1>Tuning parameters<a class="headerlink" href="#tuning-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="blas-tuning"></span><h1>Tuning parameters<a class="headerlink" href="#tuning-parameters" title="Permalink to this headline">¶</a></h1>
 <p>The following tuning parameters have been exposed since they are
 system-dependent and can have a large impact on performance. The first two sets
 of tuning parameters, those of <tt class="docutils literal"><span class="pre">LocalHemvBlocksize</span></tt> and
@@ -62,7 +63,7 @@ of tuning parameters, those of <tt class="docutils literal"><span class="pre">Lo
 <dl class="function">
 <dt id="SetLocalHemvBlocksize:T:__i">
 void <tt class="descname">SetLocalHemvBlocksize&lt;T&gt;</tt><big>(</big>int <em>blocksize</em><big>)</big><a class="headerlink" href="#SetLocalHemvBlocksize:T:__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the local blocksize for the distributed <tt class="docutils literal"><span class="pre">Hemv</span></tt> routine for
+<dd><p>Sets the local blocksize for the distributed <a class="reference internal" href="level2.html#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a> routine for
 datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is set to 64 by
 default and is important for the reduction of a complex Hermitian
 matrix to real symmetric tridiagonal form.</p>
@@ -71,7 +72,7 @@ matrix to real symmetric tridiagonal form.</p>
 <dl class="function">
 <dt id="LocalHemvBlocksize:T:">
 int <tt class="descname">LocalHemvBlocksize&lt;T&gt;</tt><big>(</big><big>)</big><a class="headerlink" href="#LocalHemvBlocksize:T:" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the local <tt class="docutils literal"><span class="pre">Hemv</span></tt> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
+<dd><p>Retrieves the local <a class="reference internal" href="level2.html#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
 </dd></dl>
 
 </div>
@@ -80,7 +81,7 @@ int <tt class="descname">LocalHemvBlocksize&lt;T&gt;</tt><big>(</big><big>)</big
 <dl class="function">
 <dt id="SetLocalSymvBlocksize:T:__i">
 void <tt class="descname">SetLocalSymvBlocksize&lt;T&gt;</tt><big>(</big>int <em>blocksize</em><big>)</big><a class="headerlink" href="#SetLocalSymvBlocksize:T:__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the local blocksize for the distributed <tt class="docutils literal"><span class="pre">Symv</span></tt> routine for
+<dd><p>Sets the local blocksize for the distributed <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> routine for
 datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is set to 64 by default and is important for the reduction
 of a real symmetric matrix to symmetric tridiagonal form.</p>
 </dd></dl>
@@ -88,7 +89,7 @@ of a real symmetric matrix to symmetric tridiagonal form.</p>
 <dl class="function">
 <dt id="LocalSymvBlocksize:T:">
 int <tt class="descname">LocalSymvBlocksize&lt;T&gt;</tt><big>(</big><big>)</big><a class="headerlink" href="#LocalSymvBlocksize:T:" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the local <tt class="docutils literal"><span class="pre">Symv</span></tt> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
+<dd><p>Retrieves the local <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
 </dd></dl>
 
 </div>
@@ -100,7 +101,7 @@ void <tt class="descname">SetLocalTrrkBlocksize&lt;T&gt;</tt><big>(</big>int <em
 <dd><p>Sets the local blocksize for the distributed
 <tt class="docutils literal"><span class="pre">internal::LocalTrrk</span></tt> routine for datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is
 set to 64 by default and is important for routines that perform distributed
-<tt class="docutils literal"><span class="pre">Syrk</span></tt> or <tt class="docutils literal"><span class="pre">Herk</span></tt> updates, e.g., Cholesky factorization.</p>
+<a class="reference internal" href="level3.html#Syrk__UpperOrLower.Orientation.T.Matrix:T:CR.T.Matrix:T:R" title="Syrk"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Syrk()</span></tt></a> or <a class="reference internal" href="level3.html#Herk__UpperOrLower.Orientation.T.Matrix:T:CR.T.Matrix:T:R" title="Herk"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Herk()</span></tt></a> updates, e.g., Cholesky factorization.</p>
 </dd></dl>
 
 <dl class="function">
@@ -119,7 +120,7 @@ void <tt class="descname">SetLocalTrr2kBlocksize&lt;T&gt;</tt><big>(</big>int <e
 <dd><p>Sets the local blocksize for the distributed
 <tt class="docutils literal"><span class="pre">internal::LocalTrr2k</span></tt> routine for datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is
 set to 64 by default and is important for routines that perform distributed
-<tt class="docutils literal"><span class="pre">Syr2k</span></tt> or <tt class="docutils literal"><span class="pre">Her2k</span></tt> updates, e.g., Householder
+<a class="reference internal" href="level3.html#Syr2k__UpperOrLower.Orientation.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Syr2k"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Syr2k()</span></tt></a> or <a class="reference internal" href="level3.html#Her2k__UpperOrLower.Orientation.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Her2k"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Her2k()</span></tt></a> updates, e.g., Householder
 tridiagonalization.</p>
 </dd></dl>
 
