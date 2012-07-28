@@ -65,12 +65,12 @@ added in the near future.</p>
 <p>For computing norms of fully-populated matrices.</p>
 <dl class="function">
 <dt id="Norm__Matrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="Norm__DistMatrix:F.U.V:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const DistMatrix&lt;F, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big>const DistMatrix&lt;F, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -78,18 +78,18 @@ added in the near future.</p>
 <h2>HermitianNorm<a class="headerlink" href="#hermitiannorm" title="Permalink to this headline">¶</a></h2>
 <p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
 Hermitian with the data stored in the triangle specified by
-<a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+<a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
 Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
 <a class="reference internal" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="HermitianNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianNorm()</span></tt></a> currently only supports the standard matrix
 distribution.</p>
 <dl class="function">
 <dt id="HermitianNorm__UpperOrLower.Matrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -97,18 +97,18 @@ distribution.</p>
 <h2>SymmetricNorm<a class="headerlink" href="#symmetricnorm" title="Permalink to this headline">¶</a></h2>
 <p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
 symmetric with the data stored in the triangle specified by
-<a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+<a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
 Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
 <a class="reference internal" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="SymmetricNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">SymmetricNorm()</span></tt></a> currently only supports the standard matrix
 distribution.</p>
 <dl class="function">
 <dt id="SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

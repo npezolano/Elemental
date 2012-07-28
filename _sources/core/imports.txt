@@ -1,5 +1,5 @@
 Imported library routines
-*************************
+=========================
 Since one of the goals of Elemental is to provide high-performance 
 datatype-independent parallel routines, yet Elemental's dependencies are 
 datatype-dependent, it is convenient to first build a thin datatype-independent

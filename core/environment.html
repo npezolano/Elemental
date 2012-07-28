@@ -31,7 +31,7 @@
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="The Matrix class" href="matrix.html" />
-    <link rel="prev" title="Core functionality" href="../core.html" /> 
+    <link rel="prev" title="PMRRR" href="imports/pmrrr.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
@@ -41,7 +41,7 @@
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="../core.html">Core functionality</a>
+        «&#160;&#160;<a href="imports/pmrrr.html">PMRRR</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
@@ -676,6 +676,35 @@ void <tt class="descname">DumpCallStack</tt><big>(</big><big>)</big><a class="he
 </dd></dl>
 
 </div>
+<div class="section" id="indexing-utilities">
+<h2>Indexing utilities<a class="headerlink" href="#indexing-utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Shift__Int.Int.Int">
+Int <tt class="descname">Shift</tt><big>(</big>Int <em>rank</em>, Int <em>firstRank</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#Shift__Int.Int.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a element-wise cyclic distribution over <tt class="docutils literal"><span class="pre">numProcs</span></tt> processes,
+where the first entry is owned by the process with rank <tt class="docutils literal"><span class="pre">firstRank</span></tt>,
+this routine returns the first entry owned by the process with rank
+<tt class="docutils literal"><span class="pre">rank</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LocalLength__Int.Int.Int">
+Int <tt class="descname">LocalLength</tt><big>(</big>Int <em>n</em>, Int <em>shift</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#LocalLength__Int.Int.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <tt class="docutils literal"><span class="pre">numProcs</span></tt>
+processes with shift as defined above, this routine returns the number of
+entries of the vector which are owned by this process.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LocalLength__Int.Int.Int.Int">
+Int <tt class="descname">LocalLength</tt><big>(</big>Int <em>n</em>, Int <em>rank</em>, Int <em>firstRank</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#LocalLength__Int.Int.Int.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <tt class="docutils literal"><span class="pre">numProcs</span></tt>
+processes, with the first entry owned by process <tt class="docutils literal"><span class="pre">firstRank</span></tt>, this routine
+returns the number of entries locally owned by the process with rank
+<tt class="docutils literal"><span class="pre">rank</span></tt>.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="default-process-grid">
 <h2>Default process grid<a class="headerlink" href="#default-process-grid" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -699,7 +728,7 @@ manually specify a process grid, e.g.,</p>
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="../core.html">Core functionality</a>
+        «&#160;&#160;<a href="imports/pmrrr.html">PMRRR</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;

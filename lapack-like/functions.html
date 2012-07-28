@@ -75,7 +75,7 @@ eigensolver, only double-precision results are supported as of now.</p>
 </div>
 <dl class="function">
 <dt id="RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR">
-void <tt class="descname">RealHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, const RealFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">RealHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, const RealFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies the eigenvalues of the passed-in Hermitian matrix by replacing
 each eigenvalue <span class="math">\(\omega_i\)</span> with <span class="math">\(f(\omega_i) \in \mathbb{R}\)</span>.
 <tt class="docutils literal"><span class="pre">RealFunctor</span></tt> is any
@@ -85,7 +85,7 @@ See <a class="reference external" href="https://github.com/poulson/Elemental/tre
 
 <dl class="function">
 <dt id="ComplexHermitianFunction__UpperOrLower.DistMatrix:Complex:R::R.ComplexFunctorCR">
-void <tt class="descname">ComplexHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, const ComplexFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#ComplexHermitianFunction__UpperOrLower.DistMatrix:Complex:R::R.ComplexFunctorCR" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">ComplexHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, const ComplexFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#ComplexHermitianFunction__UpperOrLower.DistMatrix:Complex:R::R.ComplexFunctorCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies the eigenvalues of the passed-in complex Hermitian matrix by
 replacing each eigenvalue <span class="math">\(\omega_i\)</span> with
 <span class="math">\(f(\omega_i) \in \mathbb{C}\)</span>. <tt class="docutils literal"><span class="pre">ComplexFunctor</span></tt> can be any class
@@ -113,7 +113,7 @@ singular value.</p>
 
 <dl class="function">
 <dt id="HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R">
- <tt class="descname">HermitianPseudoinverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+ <tt class="descname">HermitianPseudoinverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the pseudoinverse of a Hermitian matrix through a customized version
 of <a class="reference internal" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="RealHermitianFunction"><tt class="xref cpp cpp-func docutils literal"><span class="pre">RealHermitianFunction()</span></tt></a> which used the eigenvalue mapping
 function</p>
@@ -141,7 +141,7 @@ is guaranteed to exist as long as <span class="math">\(A\)</span> is diagonaliza
 <span class="math">\(\sqrt{\lambda} = \sqrt{r} e^{i\theta/2}\)</span>.</p>
 <dl class="function">
 <dt id="HPSDSquareRoot__UpperOrLower.DistMatrix:F:R">
-void <tt class="descname">HPSDSquareRoot</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPSDSquareRoot__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HPSDSquareRoot</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPSDSquareRoot__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hermitian matrices with non-negative eigenvalues have a natural matrix
 square root which remains Hermitian. This routine attempts to overwrite a
 matrix with its square root and throws a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException" title="NonHPSDMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a>
@@ -168,7 +168,7 @@ QR and LQ factorizations of <span class="math">\(B\)</span> yield Cholesky facto
 then a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException" title="NonHPSDMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> will be thrown.</p>
 <dl class="function">
 <dt id="HPSDCholesky__UpperOrLower.DistMatrix:F:R">
-void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the <cite>uplo</cite> triangle of the potentially singular matrix <cite>A</cite> with its Cholesky factor.</p>
 </dd></dl>
 

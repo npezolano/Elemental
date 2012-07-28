@@ -92,14 +92,14 @@ algorithm from Fig. 9.</p>
 is thrown.</p>
 <dl class="function">
 <dt id="HPDInverse__UpperOrLower.Matrix:F:R">
-void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPDInverse__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPDInverse__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the <cite>uplo</cite> triangle of the HPD matrix <cite>A</cite> with the same
 triangle of the inverse of <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="HPDInverse__UpperOrLower.DistMatrix:F:R">
-void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPDInverse__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HPDInverse__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but for a distributed matrix.</p>
 </dd></dl>
 
@@ -109,14 +109,14 @@ void <tt class="descname">HPDInverse</tt><big>(</big><a class="reference interna
 <p>Inverts a (possibly unit-diagonal) triangular matrix in-place.</p>
 <dl class="function">
 <dt id="TriangularInverse__UpperOrLower.UnitOrNonUnit.Matrix:F:R">
-void <tt class="descname">TriangularInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TriangularInverse__UpperOrLower.UnitOrNonUnit.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">TriangularInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TriangularInverse__UpperOrLower.UnitOrNonUnit.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverts the triangle of <cite>A</cite> specified by the parameter <cite>uplo</cite>;
 if <cite>diag</cite> is set to <cite>UNIT</cite>, then <cite>A</cite> is treated as unit-diagonal.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="TriangularInverse__UpperOrLower.UnitOrNonUnit.DistMatrix:F:R">
-void <tt class="descname">TriangularInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TriangularInverse__UpperOrLower.UnitOrNonUnit.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">TriangularInverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#TriangularInverse__UpperOrLower.UnitOrNonUnit.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but for a distributed matrix.</p>
 </dd></dl>
 

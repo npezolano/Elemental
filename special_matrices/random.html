@@ -121,25 +121,25 @@ complex plane and then perform a similarity transformation using a random
 Householder transform.</p>
 <dl class="function">
 <dt id="NormalUniformSpectrum__i.Matrix:Complex:R::R.Complex:R:.R">
-void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Complex&lt;R&gt; <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.Matrix:Complex:R::R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.Matrix:Complex:R::R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the <span class="math">\(n \times n\)</span> serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> with a spectrum sampled uniformly from the ball <span class="math">\(B_{\mathrm{radius}}(\mathrm{center})\)</span> (templated over the real datatype, <cite>R</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="NormalUniformSpectrum__i.DistMatrix:Complex:R:.U.V:R.Complex:R:.R">
-void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em>, Complex&lt;R&gt; <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.DistMatrix:Complex:R:.U.V:R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.DistMatrix:Complex:R:.U.V:R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the <span class="math">\(n \times n\)</span> distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> with a spectrum sampled uniformly from the ball <span class="math">\(B_{\mathrm{radius}}(\mathrm{center})\)</span> (templated over the real datatype, <cite>R</cite>, and the distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeNormalUniformSpectrum__Matrix:Complex:R::R.Complex:R:.R">
-void <tt class="descname">MakeNormalUniformSpectrum</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Complex&lt;R&gt; <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeNormalUniformSpectrum__Matrix:Complex:R::R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeNormalUniformSpectrum</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeNormalUniformSpectrum__Matrix:Complex:R::R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sample the entries of the square serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> from the ball in the complex plane centered at <tt class="docutils literal"><span class="pre">center</span></tt> with radius <tt class="docutils literal"><span class="pre">radius</span></tt> (templated over the real datatype, <cite>R</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeNormalUniformSpectrum__DistMatrix:Complex:R:.U.V:R.Complex:R:.R">
-void <tt class="descname">MakeNormalUniformSpectrum</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em>, Complex&lt;R&gt; <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeNormalUniformSpectrum__DistMatrix:Complex:R:.U.V:R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeNormalUniformSpectrum</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeNormalUniformSpectrum__DistMatrix:Complex:R:.U.V:R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sample the entries of the square distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> from the ball in the complex plane centered at <tt class="docutils literal"><span class="pre">center</span></tt> with radius <tt class="docutils literal"><span class="pre">radius</span></tt> (templated over the real datatype, <cite>R</cite>, and the distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
