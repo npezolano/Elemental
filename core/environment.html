@@ -54,6 +54,11 @@
         
   <div class="section" id="environment">
 <h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the routines and data structures which help set up
+Elemental&#8217;s programming environment: it discusses initialization of Elemental,
+call stack manipulation, a custom data structure for complex data, many routines
+for manipulating real and complex data, a litany of custom enums, and a few
+useful routines for simplifying index calculations.</p>
 <div class="section" id="set-up-and-clean-up">
 <h2>Set up and clean up<a class="headerlink" href="#set-up-and-clean-up" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -119,6 +124,106 @@ simply push a new value onto a stack
 <dt id="PopBlocksizeStack">
 void <tt class="descname">PopBlocksizeStack</tt><big>(</big><big>)</big><a class="headerlink" href="#PopBlocksizeStack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pops the stack of blocksizes. See above.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="default-process-grid">
+<h2>Default process grid<a class="headerlink" href="#default-process-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="DefaultGrid">
+Grid&amp; <tt class="descname">DefaultGrid</tt><big>(</big><big>)</big><a class="headerlink" href="#DefaultGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a process grid built over <tt class="xref cpp cpp-type docutils literal"><span class="pre">mpi::COMM_WORLD</span></tt>. This is
+typically used as a means of allowing instances of the
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:" title="DistMatrix&lt;T, MC, MR&gt;"><tt class="xref cpp cpp-class docutils literal"><span class="pre">DistMatrix&lt;T,MC,MR&gt;</span></tt></a> class to be constructed without having to
+manually specify a process grid, e.g.,</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="c1">// Build a 10 x 10 distributed matrix over mpi::COMM_WORLD</span>
+<span class="n">elem</span><span class="o">::</span><span class="n">DistMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">MC</span><span class="p">,</span><span class="n">MR</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="call-stack-manipulation">
+<h2>Call stack manipulation<a class="headerlink" href="#call-stack-manipulation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following call stack manipulation routines are only available in
+non-release builds (i.e., PureDebug and HybridDebug) and are meant to allow
+for the call stack to be printed (via <a class="reference internal" href="#DumpCallStack" title="DumpCallStack"><tt class="xref cpp cpp-func docutils literal"><span class="pre">DumpCallStack()</span></tt></a>) when an
+exception is caught.</p>
+</div>
+<dl class="function">
+<dt id="PushCallStack__ss">
+void <tt class="descname">PushCallStack</tt><big>(</big>std::string <em>s</em><big>)</big><a class="headerlink" href="#PushCallStack__ss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push the given routine name onto the call stack.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="PopCallStack">
+void <tt class="descname">PopCallStack</tt><big>(</big><big>)</big><a class="headerlink" href="#PopCallStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the routine name at the top of the call stack.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="DumpCallStack">
+void <tt class="descname">DumpCallStack</tt><big>(</big><big>)</big><a class="headerlink" href="#DumpCallStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print (and empty) the contents of the call stack.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="custom-exceptions">
+<h2>Custom exceptions<a class="headerlink" href="#custom-exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="SingularMatrixException">
+<em class="property">class </em><tt class="descname">SingularMatrixException</tt><a class="headerlink" href="#SingularMatrixException" title="Permalink to this definition">¶</a></dt>
+<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
+a singular matrix is unexpectedly encountered.</p>
+<dl class="function">
+<dt id="SingularMatrixException::SingularMatrixException__cCP">
+ <tt class="descname">SingularMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was singular&quot;</em><big>)</big><a class="headerlink" href="#SingularMatrixException::SingularMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds an instance of the exception which allows one to optionally
+specify the error message.</p>
+</dd></dl>
+
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">SingularMatrixException</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="NonHPDMatrixException">
+<em class="property">class </em><tt class="descname">NonHPDMatrixException</tt><a class="headerlink" href="#NonHPDMatrixException" title="Permalink to this definition">¶</a></dt>
+<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
+a non positive-definite Hermitian matrix is unexpectedly encountered
+(e.g., during Cholesky factorization).</p>
+<dl class="function">
+<dt id="NonHPDMatrixException::NonHPDMatrixException__cCP">
+ <tt class="descname">NonHPDMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was not HPD&quot;</em><big>)</big><a class="headerlink" href="#NonHPDMatrixException::NonHPDMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds an instance of the exception which allows one to optionally
+specify the error message.</p>
+</dd></dl>
+
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">NonHPDMatrixException</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="NonHPSDMatrixException">
+<em class="property">class </em><tt class="descname">NonHPSDMatrixException</tt><a class="headerlink" href="#NonHPSDMatrixException" title="Permalink to this definition">¶</a></dt>
+<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
+a non positive semi-definite Hermitian matrix is unexpectedly encountered
+(e.g., during computation of the square root of a Hermitian matrix).</p>
+<dl class="function">
+<dt id="NonHPSDMatrixException::NonHPSDMatrixException__cCP">
+ <tt class="descname">NonHPSDMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was not HPSD&quot;</em><big>)</big><a class="headerlink" href="#NonHPSDMatrixException::NonHPSDMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds an instance of the exception which allows one to optionally
+specify the error message.</p>
+</dd></dl>
+
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">NonHPSDMatrixException</span><span class="p">();</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -592,90 +697,6 @@ stating whether or not a triangular matrix&#8217;s diagonal is explicitly stored
 </dd></dl>
 
 </div>
-<div class="section" id="custom-exceptions">
-<h2>Custom exceptions<a class="headerlink" href="#custom-exceptions" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="SingularMatrixException">
-<em class="property">class </em><tt class="descname">SingularMatrixException</tt><a class="headerlink" href="#SingularMatrixException" title="Permalink to this definition">¶</a></dt>
-<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
-a singular matrix is unexpectedly encountered.</p>
-<dl class="function">
-<dt id="SingularMatrixException::SingularMatrixException__cCP">
- <tt class="descname">SingularMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was singular&quot;</em><big>)</big><a class="headerlink" href="#SingularMatrixException::SingularMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds an instance of the exception which allows one to optionally
-specify the error message.</p>
-</dd></dl>
-
-<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">SingularMatrixException</span><span class="p">();</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="class">
-<dt id="NonHPDMatrixException">
-<em class="property">class </em><tt class="descname">NonHPDMatrixException</tt><a class="headerlink" href="#NonHPDMatrixException" title="Permalink to this definition">¶</a></dt>
-<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
-a non positive-definite Hermitian matrix is unexpectedly encountered
-(e.g., during Cholesky factorization).</p>
-<dl class="function">
-<dt id="NonHPDMatrixException::NonHPDMatrixException__cCP">
- <tt class="descname">NonHPDMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was not HPD&quot;</em><big>)</big><a class="headerlink" href="#NonHPDMatrixException::NonHPDMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds an instance of the exception which allows one to optionally
-specify the error message.</p>
-</dd></dl>
-
-<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">NonHPDMatrixException</span><span class="p">();</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="class">
-<dt id="NonHPSDMatrixException">
-<em class="property">class </em><tt class="descname">NonHPSDMatrixException</tt><a class="headerlink" href="#NonHPSDMatrixException" title="Permalink to this definition">¶</a></dt>
-<dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
-a non positive semi-definite Hermitian matrix is unexpectedly encountered
-(e.g., during computation of the square root of a Hermitian matrix).</p>
-<dl class="function">
-<dt id="NonHPSDMatrixException::NonHPSDMatrixException__cCP">
- <tt class="descname">NonHPSDMatrixException</tt><big>(</big>const char* <em>msg</em><em>=&quot;Matrix was not HPSD&quot;</em><big>)</big><a class="headerlink" href="#NonHPSDMatrixException::NonHPSDMatrixException__cCP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds an instance of the exception which allows one to optionally
-specify the error message.</p>
-</dd></dl>
-
-<div class="highlight-cpp"><div class="highlight"><pre><span class="k">throw</span> <span class="n">elem</span><span class="o">::</span><span class="n">NonHPSDMatrixException</span><span class="p">();</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="call-stack-manipulation">
-<h2>Call stack manipulation<a class="headerlink" href="#call-stack-manipulation" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The following call stack manipulation routines are only available in
-non-release builds (i.e., PureDebug and HybridDebug) and are meant to allow
-for the call stack to be printed (ala DumpCallStack) when an
-exception is caught.</p>
-</div>
-<dl class="function">
-<dt id="PushCallStack__ss">
-void <tt class="descname">PushCallStack</tt><big>(</big>std::string <em>s</em><big>)</big><a class="headerlink" href="#PushCallStack__ss" title="Permalink to this definition">¶</a></dt>
-<dd><p>Push the given routine name onto the call stack.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="PopCallStack">
-void <tt class="descname">PopCallStack</tt><big>(</big><big>)</big><a class="headerlink" href="#PopCallStack" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove the routine name at the top of the call stack.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DumpCallStack">
-void <tt class="descname">DumpCallStack</tt><big>(</big><big>)</big><a class="headerlink" href="#DumpCallStack" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print (and empty) the contents of the call stack.</p>
-</dd></dl>
-
-</div>
 <div class="section" id="indexing-utilities">
 <h2>Indexing utilities<a class="headerlink" href="#indexing-utilities" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -702,22 +723,6 @@ Int <tt class="descname">LocalLength</tt><big>(</big>Int <em>n</em>, Int <em>ran
 processes, with the first entry owned by process <tt class="docutils literal"><span class="pre">firstRank</span></tt>, this routine
 returns the number of entries locally owned by the process with rank
 <tt class="docutils literal"><span class="pre">rank</span></tt>.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="default-process-grid">
-<h2>Default process grid<a class="headerlink" href="#default-process-grid" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="DefaultGrid">
-Grid&amp; <tt class="descname">DefaultGrid</tt><big>(</big><big>)</big><a class="headerlink" href="#DefaultGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a process grid built over <tt class="xref cpp cpp-type docutils literal"><span class="pre">mpi::COMM_WORLD</span></tt>. This is
-typically used as a means of allowing instances of the
-<a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:" title="DistMatrix&lt;T, MC, MR&gt;"><tt class="xref cpp cpp-class docutils literal"><span class="pre">DistMatrix&lt;T,MC,MR&gt;</span></tt></a> class to be constructed without having to
-manually specify a process grid, e.g.,</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="c1">// Build a 10 x 10 distributed matrix over mpi::COMM_WORLD</span>
-<span class="n">elem</span><span class="o">::</span><span class="n">DistMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">MC</span><span class="p">,</span><span class="n">MR</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </div>
