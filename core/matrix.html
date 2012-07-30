@@ -115,25 +115,6 @@ to view the bottom-right <span class="math">\(6 \times 7\)</span> submatrix usin
 <span class="math">\((4,3)\)</span>. In general, to view the <span class="math">\(M \times N\)</span> submatrix starting
 at entry <span class="math">\((i,j)\)</span>, one would call <tt class="docutils literal"><span class="pre">ABR.View(</span> <span class="pre">A,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">M,</span> <span class="pre">N</span> <span class="pre">);</span></tt>.</p>
 <dl class="type">
-<dt id="Matrix:R:__class">
-<em class="property">type </em>class <tt class="descname">Matrix&lt;R&gt;</tt><a class="headerlink" href="#Matrix:R:__class" title="Permalink to this definition">¶</a></dt>
-<dd><p>Signifies that the underlying datatype <cite>R</cite> is real.</p>
-</dd></dl>
-
-<dl class="type">
-<dt id="Matrix:Complex:R::__class">
-<em class="property">type </em>class <tt class="descname">Matrix&lt;Complex&lt;R&gt;&gt;</tt><a class="headerlink" href="#Matrix:Complex:R::__class" title="Permalink to this definition">¶</a></dt>
-<dd><p>Signifies that the underlying datatype <tt class="xref cpp cpp-type docutils literal"><span class="pre">Complex&lt;R&gt;</span></tt> is complex
-with the base type being <cite>R</cite>.</p>
-</dd></dl>
-
-<dl class="type">
-<dt id="Matrix:F:__class">
-<em class="property">type </em>class <tt class="descname">Matrix&lt;F&gt;</tt><a class="headerlink" href="#Matrix:F:__class" title="Permalink to this definition">¶</a></dt>
-<dd><p>Signifies that the underlying datatype <cite>F</cite> is a field.</p>
-</dd></dl>
-
-<dl class="type">
 <dt id="Matrix:T:__class">
 <em class="property">type </em>class <tt class="descname">Matrix&lt;T&gt;</tt><a class="headerlink" href="#Matrix:T:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p>The most general case, where the underlying datatype <cite>T</cite> is only assumed to
@@ -511,6 +492,31 @@ leading dimension equal to <cite>ldim</cite> (which must be greater than or equa
 
 </dd></dl>
 
+<div class="section" id="special-cases-used-in-elemental">
+<h2>Special cases used in Elemental<a class="headerlink" href="#special-cases-used-in-elemental" title="Permalink to this headline">¶</a></h2>
+<p>This list of special cases is here to help clarify the notation used throughout
+Elemental&#8217;s source (as well as this documentation). These are all special
+cases of <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">Matrix&lt;T&gt;</span></tt></a>.</p>
+<dl class="type">
+<dt id="Matrix:R:__class">
+<em class="property">type </em>class <tt class="descname">Matrix&lt;R&gt;</tt><a class="headerlink" href="#Matrix:R:__class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to denote that the underlying datatype <cite>R</cite> is real.</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="Matrix:Complex:R::__class">
+<em class="property">type </em>class <tt class="descname">Matrix&lt;Complex&lt;R&gt;&gt;</tt><a class="headerlink" href="#Matrix:Complex:R::__class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to denote that the underlying datatype <tt class="xref cpp cpp-type docutils literal"><span class="pre">Complex&lt;R&gt;</span></tt> is
+complex with base type <cite>R</cite>.</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="Matrix:F:__class">
+<em class="property">type </em>class <tt class="descname">Matrix&lt;F&gt;</tt><a class="headerlink" href="#Matrix:F:__class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to denote that the underlying datatype <cite>F</cite> is a field.</p>
+</dd></dl>
+
+</div>
 </div>
 
 

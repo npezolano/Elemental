@@ -56,10 +56,10 @@
 <h1>The Grid class<a class="headerlink" href="#the-grid-class" title="Permalink to this headline">¶</a></h1>
 <p>This class is responsible for converting MPI communicators into a
 two-dimensional process grid meant for distributing matrices (ala the
-soon-to-be-discussed <tt class="xref cpp cpp-class docutils literal"><span class="pre">DistMatrix&lt;T,U,V&gt;</span></tt> class).</p>
-<dl class="class">
-<dt id="Grid">
-<em class="property">class </em><tt class="descname">Grid</tt><a class="headerlink" href="#Grid" title="Permalink to this definition">¶</a></dt>
+soon-to-be-discussed <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T,U,V&gt;</span></tt></a> class).</p>
+<dl class="type">
+<dt id="Grid__class">
+<em class="property">type </em>class <tt class="descname">Grid</tt><a class="headerlink" href="#Grid__class" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="function">
 <dt id="Grid::Grid__mpi::Comm">
  <tt class="descname">Grid</tt><big>(</big><a class="reference internal" href="imports/mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><em>=mpi::COMM_WORLD </em><big>)</big><a class="headerlink" href="#Grid::Grid__mpi::Comm" title="Permalink to this definition">¶</a></dt>
@@ -338,13 +338,13 @@ diagonal of the tesselation of the process grid.</p>
 <p class="rubric">Grid comparison functions</p>
 <dl class="function">
 <dt id="eq-operator__GridCR.GridCR">
-bool <tt class="descname">operator==</tt><big>(</big>const Grid&amp; <em>A</em>, const Grid&amp; <em>B</em><big>)</big><a class="headerlink" href="#eq-operator__GridCR.GridCR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator==</tt><big>(</big><a class="reference internal" href="#Grid__class" title="Grid">const Grid&amp;</a> <em>A</em>, <a class="reference internal" href="#Grid__class" title="Grid">const Grid&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#eq-operator__GridCR.GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or not !A! and !B! are the same process grid.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="neq-operator__GridCR.GridCR">
-bool <tt class="descname">operator!=</tt><big>(</big>const Grid&amp; <em>A</em>, const Grid&amp; <em>B</em><big>)</big><a class="headerlink" href="#neq-operator__GridCR.GridCR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator!=</tt><big>(</big><a class="reference internal" href="#Grid__class" title="Grid">const Grid&amp;</a> <em>A</em>, <a class="reference internal" href="#Grid__class" title="Grid">const Grid&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#neq-operator__GridCR.GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or not !A! and !B! are different process grids.</p>
 </dd></dl>
 
