@@ -65,7 +65,7 @@ useful routines for simplifying index calculations.</p>
 <dt id="Initialize__iR.cPPR">
 void <tt class="descname">Initialize</tt><big>(</big>int&amp; <em>argc</em>, char**&amp; <em>argv</em><big>)</big><a class="headerlink" href="#Initialize__iR.cPPR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes Elemental and (if necessary) MPI. The usage is very similar to
-<tt class="docutils literal"><span class="pre">MPI_Init</span></tt>, but the <tt class="docutils literal"><span class="pre">argc</span></tt> and <tt class="docutils literal"><span class="pre">argv</span></tt> can be directly passed in.</p>
+<tt class="docutils literal"><span class="pre">MPI_Init</span></tt>, but the <cite>argc</cite> and <cite>argv</cite> can be directly passed in.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;elemental.hpp&quot;</span>
 
 <span class="kt">int</span>
@@ -134,7 +134,7 @@ void <tt class="descname">PopBlocksizeStack</tt><big>(</big><big>)</big><a class
 Grid&amp; <tt class="descname">DefaultGrid</tt><big>(</big><big>)</big><a class="headerlink" href="#DefaultGrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a process grid built over <tt class="xref cpp cpp-type docutils literal"><span class="pre">mpi::COMM_WORLD</span></tt>. This is
 typically used as a means of allowing instances of the
-<a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:" title="DistMatrix&lt;T, MC, MR&gt;"><tt class="xref cpp cpp-class docutils literal"><span class="pre">DistMatrix&lt;T,MC,MR&gt;</span></tt></a> class to be constructed without having to
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T,MC,MR&gt;</span></tt></a> class to be constructed without having to
 manually specify a process grid, e.g.,</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="c1">// Build a 10 x 10 distributed matrix over mpi::COMM_WORLD</span>
 <span class="n">elem</span><span class="o">::</span><span class="n">DistMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">MC</span><span class="p">,</span><span class="n">MR</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span>
@@ -173,9 +173,9 @@ void <tt class="descname">DumpCallStack</tt><big>(</big><big>)</big><a class="he
 </div>
 <div class="section" id="custom-exceptions">
 <h2>Custom exceptions<a class="headerlink" href="#custom-exceptions" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="SingularMatrixException">
-<em class="property">class </em><tt class="descname">SingularMatrixException</tt><a class="headerlink" href="#SingularMatrixException" title="Permalink to this definition">¶</a></dt>
+<dl class="type">
+<dt id="SingularMatrixException__class">
+<em class="property">type </em>class <tt class="descname">SingularMatrixException</tt><a class="headerlink" href="#SingularMatrixException__class" title="Permalink to this definition">¶</a></dt>
 <dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
 a singular matrix is unexpectedly encountered.</p>
 <dl class="function">
@@ -190,9 +190,9 @@ specify the error message.</p>
 </div>
 </dd></dl>
 
-<dl class="class">
-<dt id="NonHPDMatrixException">
-<em class="property">class </em><tt class="descname">NonHPDMatrixException</tt><a class="headerlink" href="#NonHPDMatrixException" title="Permalink to this definition">¶</a></dt>
+<dl class="type">
+<dt id="NonHPDMatrixException__class">
+<em class="property">type </em>class <tt class="descname">NonHPDMatrixException</tt><a class="headerlink" href="#NonHPDMatrixException__class" title="Permalink to this definition">¶</a></dt>
 <dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
 a non positive-definite Hermitian matrix is unexpectedly encountered
 (e.g., during Cholesky factorization).</p>
@@ -208,9 +208,9 @@ specify the error message.</p>
 </div>
 </dd></dl>
 
-<dl class="class">
-<dt id="NonHPSDMatrixException">
-<em class="property">class </em><tt class="descname">NonHPSDMatrixException</tt><a class="headerlink" href="#NonHPSDMatrixException" title="Permalink to this definition">¶</a></dt>
+<dl class="type">
+<dt id="NonHPSDMatrixException__class">
+<em class="property">type </em>class <tt class="descname">NonHPSDMatrixException</tt><a class="headerlink" href="#NonHPSDMatrixException__class" title="Permalink to this definition">¶</a></dt>
 <dd><p>An extension of <tt class="docutils literal"><span class="pre">std::runtime_error</span></tt> which is meant to be thrown when
 a non positive semi-definite Hermitian matrix is unexpectedly encountered
 (e.g., during computation of the square root of a Hermitian matrix).</p>
@@ -230,106 +230,106 @@ specify the error message.</p>
 <div class="section" id="complex-data">
 <h2>Complex data<a class="headerlink" href="#complex-data" title="Permalink to this headline">¶</a></h2>
 <dl class="type">
-<dt id="Complex:R:__struct">
-<em class="property">type </em>struct <tt class="descname">Complex&lt;R&gt;</tt><a class="headerlink" href="#Complex:R:__struct" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">class struct Complex&lt;R&gt;</tt></dt>
 <dd><dl class="type">
-<dt id="Complex:R:::BaseType__R">
-<em class="property">type </em>R <tt class="descname">BaseType</tt><a class="headerlink" href="#Complex:R:::BaseType__R" title="Permalink to this definition">¶</a></dt>
+<dt id="BaseType__R">
+<em class="property">type </em>R <tt class="descname">BaseType</tt><a class="headerlink" href="#BaseType__R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="Complex:R:::real__R">
-R <tt class="descname">real</tt><a class="headerlink" href="#Complex:R:::real__R" title="Permalink to this definition">¶</a></dt>
+<dt id="real__R">
+R <tt class="descname">real</tt><a class="headerlink" href="#real__R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The real part of the complex number</p>
 </dd></dl>
 
 <dl class="member">
-<dt id="Complex:R:::imag__R">
-R <tt class="descname">imag</tt><a class="headerlink" href="#Complex:R:::imag__R" title="Permalink to this definition">¶</a></dt>
+<dt id="imag__R">
+R <tt class="descname">imag</tt><a class="headerlink" href="#imag__R" title="Permalink to this definition">¶</a></dt>
 <dd><p>The imaginary part of the complex number</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::Complex">
- <tt class="descname">Complex</tt><big>(</big><big>)</big><a class="headerlink" href="#Complex:R:::Complex" title="Permalink to this definition">¶</a></dt>
+<dt id="Complex">
+ <tt class="descname">Complex</tt><big>(</big><big>)</big><a class="headerlink" href="#Complex" title="Permalink to this definition">¶</a></dt>
 <dd><p>This default constructor is a no-op.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::Complex__R">
- <tt class="descname">Complex</tt><big>(</big>R <em>a</em><big>)</big><a class="headerlink" href="#Complex:R:::Complex__R" title="Permalink to this definition">¶</a></dt>
+<dt id="Complex__R">
+ <tt class="descname">Complex</tt><big>(</big>R <em>a</em><big>)</big><a class="headerlink" href="#Complex__R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construction from a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::Complex__R.R">
- <tt class="descname">Complex</tt><big>(</big>R <em>a</em>, R <em>b</em><big>)</big><a class="headerlink" href="#Complex:R:::Complex__R.R" title="Permalink to this definition">¶</a></dt>
+<dt id="Complex__R.R">
+ <tt class="descname">Complex</tt><big>(</big>R <em>a</em>, R <em>b</em><big>)</big><a class="headerlink" href="#Complex__R.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construction from a complex value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::Complex__std::complex:R:CR">
- <tt class="descname">Complex</tt><big>(</big>const std::complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::Complex__std::complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="Complex__std::complex:R:CR">
+ <tt class="descname">Complex</tt><big>(</big>const std::complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex__std::complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construction from an <tt class="docutils literal"><span class="pre">std::complex&lt;R&gt;</span></tt> instance.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::assign-operator__RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
+<dt id="assign-operator__RCR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assignment from a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::add-assign-operator__RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator+=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::add-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
+<dt id="add-assign-operator__RCR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator+=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#add-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increment with a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::sub-assign-operator__RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator-=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::sub-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
+<dt id="sub-assign-operator__RCR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator-=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#sub-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decrement with a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::operator*=__RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator*=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::operator*=__RCR" title="Permalink to this definition">¶</a></dt>
+<dt id="operator*=__RCR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator*=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#operator*=__RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale with a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::div-assign-operator__RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator/=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::div-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
+<dt id="div-assign-operator__RCR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator/=</tt><big>(</big>const R&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#div-assign-operator__RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Divide with a real value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::assign-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="assign-operator__Complex:R:CR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assignment from a complex value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::add-assign-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator+=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::add-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="add-assign-operator__Complex:R:CR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator+=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#add-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increment with a complex value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::sub-assign-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator-=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::sub-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="sub-assign-operator__Complex:R:CR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator-=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#sub-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decrement with a complex value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::operator*=__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator*=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::operator*=__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="operator*=__Complex:R:CR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator*=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#operator*=__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale with a complex value.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Complex:R:::div-assign-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;&amp;</a> <tt class="descname">operator/=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#Complex:R:::div-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="div-assign-operator__Complex:R:CR">
+Complex&lt;R&gt;&amp; <tt class="descname">operator/=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#div-assign-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Divide with a complex value.</p>
 </dd></dl>
 
@@ -341,7 +341,7 @@ R <tt class="descname">imag</tt><a class="headerlink" href="#Complex:R:::imag__R
 <dd><dl class="type">
 <dt id="Base:F:::type">
 <em class="property">type </em><tt class="descname">type</tt><a class="headerlink" href="#Base:F:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The underlying real datatype of the (potentially complex) datatype <tt class="docutils literal"><span class="pre">F</span></tt>.
+<dd><p>The underlying real datatype of the (potentially complex) datatype <cite>F</cite>.
 For example, <tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;Complex&lt;double&gt;</span> <span class="pre">&gt;::type</span></tt> and
 <tt class="docutils literal"><span class="pre">typename</span> <span class="pre">Base&lt;double&gt;::type</span></tt> are both equivalent to <tt class="docutils literal"><span class="pre">double</span></tt>.
 This is often extremely useful in implementing routines which are
@@ -353,127 +353,127 @@ datatypes.</p>
 
 <dl class="function">
 <dt id="add-operator__Complex:R:CR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator+</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator+</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) addition.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="add-operator__Complex:R:CR.RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator+</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator+</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) addition.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="add-operator__RCR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator+</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator+</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#add-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) addition.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sub-operator__Complex:R:CR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator-</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator-</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) subtraction.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sub-operator__Complex:R:CR.RR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator-</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR.RR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator-</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR.RR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) subtraction.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sub-operator__RCR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator-</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator-</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#sub-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) subtraction.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mul-operator__Complex:R:CR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator*</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator*</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) multiplication.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mul-operator__Complex:R:CR.RR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator*</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__Complex:R:CR.RR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator*</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__Complex:R:CR.RR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) multiplication.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mul-operator__RCR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator*</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator*</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#mul-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) multiplication.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="div-operator__Complex:R:CR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator/</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator/</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) division.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="div-operator__Complex:R:CR.RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator/</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator/</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) division.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="div-operator__RCR.Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator/</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator/</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#div-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) division.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="add-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator+</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator+</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#add-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns <cite>alpha</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sub-operator__Complex:R:CR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">operator-</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">operator-</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em><big>)</big><a class="headerlink" href="#sub-operator__Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns negative <cite>alpha</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="eq-operator__Complex:R:CR.Complex:R:CR">
-bool <tt class="descname">operator==</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator==</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) equality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="eq-operator__Complex:R:CR.RCR">
-bool <tt class="descname">operator==</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator==</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) equality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="eq-operator__RCR.Complex:R:CR">
-bool <tt class="descname">operator==</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator==</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#eq-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) equality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="neq-operator__Complex:R:CR.Complex:R:CR">
-bool <tt class="descname">operator!=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator!=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__Complex:R:CR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,complex) inequality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="neq-operator__Complex:R:CR.RCR">
-bool <tt class="descname">operator!=</tt><big>(</big><a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator!=</tt><big>(</big>const Complex&lt;R&gt;&amp; <em>alpha</em>, const R&amp; <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__Complex:R:CR.RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(complex,real) inequality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="neq-operator__RCR.Complex:R:CR">
-bool <tt class="descname">operator!=</tt><big>(</big>const R&amp; <em>alpha</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">const Complex&lt;R&gt;&amp;</a> <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
+bool <tt class="descname">operator!=</tt><big>(</big>const R&amp; <em>alpha</em>, const Complex&lt;R&gt;&amp; <em>beta</em><big>)</big><a class="headerlink" href="#neq-operator__RCR.Complex:R:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>(real,complex) inequality check.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="lshift-operator__osR.Complex:R:">
-std::ostream&amp; <tt class="descname">operator&lt;&lt;</tt><big>(</big>std::ostream&amp; <em>os</em>, <a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>alpha</em><big>)</big><a class="headerlink" href="#lshift-operator__osR.Complex:R:" title="Permalink to this definition">¶</a></dt>
+std::ostream&amp; <tt class="descname">operator&lt;&lt;</tt><big>(</big>std::ostream&amp; <em>os</em>, Complex&lt;R&gt; <em>alpha</em><big>)</big><a class="headerlink" href="#lshift-operator__osR.Complex:R:" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pretty prints <cite>alpha</cite> in the form <tt class="docutils literal"><span class="pre">a+bi</span></tt>.</p>
 </dd></dl>
 
@@ -568,7 +568,7 @@ F <tt class="descname">Sinh</tt><big>(</big>const F&amp; <em>alpha</em><big>)</b
 
 <dl class="function">
 <dt id="Polar__RCR.RCR">
-<a class="reference internal" href="#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <tt class="descname">Polar</tt><big>(</big>const R&amp; <em>r</em>, const R&amp; <em>theta</em><em>=0 </em><big>)</big><a class="headerlink" href="#Polar__RCR.RCR" title="Permalink to this definition">¶</a></dt>
+Complex&lt;R&gt; <tt class="descname">Polar</tt><big>(</big>const R&amp; <em>r</em>, const R&amp; <em>theta</em><em>=0 </em><big>)</big><a class="headerlink" href="#Polar__RCR.RCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the complex variable constructed from the polar coordinates
 <span class="math">\((r,\theta)\)</span>.</p>
 </dd></dl>
@@ -702,16 +702,16 @@ stating whether or not a triangular matrix&#8217;s diagonal is explicitly stored
 <dl class="function">
 <dt id="Shift__Int.Int.Int">
 Int <tt class="descname">Shift</tt><big>(</big>Int <em>rank</em>, Int <em>firstRank</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#Shift__Int.Int.Int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a element-wise cyclic distribution over <tt class="docutils literal"><span class="pre">numProcs</span></tt> processes,
-where the first entry is owned by the process with rank <tt class="docutils literal"><span class="pre">firstRank</span></tt>,
+<dd><p>Given a element-wise cyclic distribution over <cite>numProcs</cite> processes,
+where the first entry is owned by the process with rank <cite>firstRank</cite>,
 this routine returns the first entry owned by the process with rank
-<tt class="docutils literal"><span class="pre">rank</span></tt>.</p>
+<cite>rank</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="LocalLength__Int.Int.Int">
 Int <tt class="descname">LocalLength</tt><big>(</big>Int <em>n</em>, Int <em>shift</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#LocalLength__Int.Int.Int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <tt class="docutils literal"><span class="pre">numProcs</span></tt>
+<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <cite>numProcs</cite>
 processes with shift as defined above, this routine returns the number of
 entries of the vector which are owned by this process.</p>
 </dd></dl>
@@ -719,10 +719,10 @@ entries of the vector which are owned by this process.</p>
 <dl class="function">
 <dt id="LocalLength__Int.Int.Int.Int">
 Int <tt class="descname">LocalLength</tt><big>(</big>Int <em>n</em>, Int <em>rank</em>, Int <em>firstRank</em>, Int <em>numProcs</em><big>)</big><a class="headerlink" href="#LocalLength__Int.Int.Int.Int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <tt class="docutils literal"><span class="pre">numProcs</span></tt>
-processes, with the first entry owned by process <tt class="docutils literal"><span class="pre">firstRank</span></tt>, this routine
+<dd><p>Given a vector with <span class="math">\(n\)</span> entries distributed over <cite>numProcs</cite>
+processes, with the first entry owned by process <cite>firstRank</cite>, this routine
 returns the number of entries locally owned by the process with rank
-<tt class="docutils literal"><span class="pre">rank</span></tt>.</p>
+<cite>rank</cite>.</p>
 </dd></dl>
 
 </div>

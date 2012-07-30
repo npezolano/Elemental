@@ -180,14 +180,14 @@ attached to a distributed matrix before any Axpy&#8217;s can occur.</p>
 
 <dl class="function">
 <dt id="AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:R">
- <tt class="descname">AxpyInterface</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, DistMatrix&lt;T, MC, MR&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
+ <tt class="descname">AxpyInterface</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize an interface to the distributed matrix <tt class="docutils literal"><span class="pre">Z</span></tt>, where <tt class="docutils literal"><span class="pre">type</span></tt>
 can be either <tt class="docutils literal"><span class="pre">LOCAL_TO_GLOBAL</span></tt> or <tt class="docutils literal"><span class="pre">GLOBAL_TO_LOCAL</span></tt>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:CR">
- <tt class="descname">AxpyInterface</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, const DistMatrix&lt;T, MC, MR&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
+ <tt class="descname">AxpyInterface</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::AxpyInterface__AxpyType.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize an interface to the (unmodifiable) distributed matrix <tt class="docutils literal"><span class="pre">Z</span></tt>;
 since <tt class="docutils literal"><span class="pre">Z</span></tt> cannot be modified, the only sensical <tt class="docutils literal"><span class="pre">AxpyType</span></tt> is
 <tt class="docutils literal"><span class="pre">GLOBAL_TO_LOCAL</span></tt>. The <tt class="docutils literal"><span class="pre">AxpyType</span></tt> argument was kept in order to be
@@ -196,14 +196,14 @@ consistent with the previous routine.</p>
 
 <dl class="function">
 <dt id="AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:R">
-void <tt class="descname">Attach</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, DistMatrix&lt;T, MC, MR&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Attach</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attach to the distributed matrix <tt class="docutils literal"><span class="pre">Z</span></tt>, where <tt class="docutils literal"><span class="pre">type</span></tt> can be either
 <tt class="docutils literal"><span class="pre">LOCAL_TO_GLOBAL</span></tt> or <tt class="docutils literal"><span class="pre">GLOBAL_TO_LOCAL</span></tt>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:CR">
-void <tt class="descname">Attach</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, const DistMatrix&lt;T, MC, MR&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Attach</tt><big>(</big><a class="reference internal" href="#AxpyType" title="AxpyType">AxpyType</a> <em>type</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Attach__AxpyType.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attach to the (unmodifiable) distributed matrix <tt class="docutils literal"><span class="pre">Z</span></tt>; as mentioned above,
 the only sensical value of <tt class="docutils literal"><span class="pre">type</span></tt> is <tt class="docutils literal"><span class="pre">GLOBAL_TO_LOCAL</span></tt>, but the
 <tt class="docutils literal"><span class="pre">AxpyType</span></tt> argument was kept for consistency.</p>
@@ -211,7 +211,7 @@ the only sensical value of <tt class="docutils literal"><span class="pre">type</
 
 <dl class="function">
 <dt id="AxpyInterface:T:::Axpy__T.Matrix:T:R.i.i">
-void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, Matrix&lt;T&gt;&amp; <em>Z</em>, int <em>i</em>, int <em>j</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Axpy__T.Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>Z</em>, int <em>i</em>, int <em>j</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Axpy__T.Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the interface was previously attached in the <tt class="docutils literal"><span class="pre">LOCAL_TO_GLOBAL</span></tt>
 direction, then the matrix <tt class="docutils literal"><span class="pre">\alpha</span> <span class="pre">Z</span></tt> will be added onto the associated
 distributed matrix starting at the <span class="math">\((i,j)\)</span> global index; otherwise
@@ -222,7 +222,7 @@ be added onto <tt class="docutils literal"><span class="pre">Z</span></tt>.</p>
 
 <dl class="function">
 <dt id="AxpyInterface:T:::Axpy__T.Matrix:T:CR.i.i">
-void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, const Matrix&lt;T&gt;&amp; <em>Z</em>, int <em>i</em>, int <em>j</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Axpy__T.Matrix:T:CR.i.i" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>Z</em>, int <em>i</em>, int <em>j</em><big>)</big><a class="headerlink" href="#AxpyInterface:T:::Axpy__T.Matrix:T:CR.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but since <tt class="docutils literal"><span class="pre">Z</span></tt> is unmodifiable, the attachment must have
 been in the <tt class="docutils literal"><span class="pre">LOCAL_TO_GLOBAL</span></tt> direction.</p>
 </dd></dl>

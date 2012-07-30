@@ -60,16 +60,16 @@
 decomposed into the form <span class="math">\(A = L L^H\)</span> or <span class="math">\(A = U^H U\)</span>, where
 <span class="math">\(L=U^H\)</span> is lower triangular, and Cholesky factorization provides such an
 <span class="math">\(L\)</span> (or <span class="math">\(U\)</span>) given an HPD <span class="math">\(A\)</span>. If <span class="math">\(A\)</span> is found to be
-numerically indefinite, then a <a class="reference internal" href="../core/environment.html#NonHPDMatrixException" title="NonHPDMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">NonHPDMatrixException</span></tt></a> will be
+numerically indefinite, then a <a class="reference internal" href="../core/environment.html#NonHPDMatrixException__class" title="NonHPDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPDMatrixException</span></tt></a> will be
 thrown.</p>
 <dl class="function">
 <dt id="Cholesky__UpperOrLower.Matrix:F:R">
-void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Cholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="Cholesky__UpperOrLower.DistMatrix:F:R">
-void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Cholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the <cite>uplo</cite> triangle of the HPD matrix <cite>A</cite> with its Cholesky factor.</p>
 </dd></dl>
 
@@ -86,7 +86,7 @@ many Hermitian matrices whose eigenvalues are not all positive. The
 <span class="math">\(LDL^H\)</span> factorization exists as slight relaxation of the Cholesky
 factorization, i.e., it computes lower-triangular (with unit diagonal) <span class="math">\(L\)</span>
 and diagonal <span class="math">\(D\)</span> such that <span class="math">\(A = L D L^H\)</span>. If <span class="math">\(A\)</span> is found to
-be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
+be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException__class" title="SingularMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
 thrown.</p>
 <blockquote>
 <div><div class="admonition warning">
@@ -96,12 +96,12 @@ thrown.</p>
 </div></blockquote>
 <dl class="function">
 <dt id="LDLH__Matrix:F:R">
-void <tt class="descname">LDLH</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLH__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLH</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LDLH__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LDLH__DistMatrix:F:R">
-void <tt class="descname">LDLH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLH__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLH</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LDLH__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the strictly lower triangle of <span class="math">\(A\)</span> with the strictly lower
 portion of <span class="math">\(L\)</span> (<span class="math">\(L\)</span> implicitly has ones on its diagonal) and
 the diagonal with <span class="math">\(D\)</span>.</p>
@@ -109,13 +109,13 @@ the diagonal with <span class="math">\(D\)</span>.</p>
 
 <dl class="function">
 <dt id="LDLH__Matrix:F:R.Matrix:F:R">
-void <tt class="descname">LDLH</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLH__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLH</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>d</em><big>)</big><a class="headerlink" href="#LDLH__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LDLH__DistMatrix:F:R.DistMatrix:F.MC.STAR:R">
-void <tt class="descname">LDLH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F, MC, STAR&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLH__DistMatrix:F:R.DistMatrix:F.MC.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but also return the diagonal in the column vector <tt class="docutils literal"><span class="pre">d</span></tt>.</p>
+void <tt class="descname">LDLH</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;F, MC, STAR&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLH__DistMatrix:F:R.DistMatrix:F.MC.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as above, but also return the diagonal in the column vector <cite>d</cite>.</p>
 </dd></dl>
 
 </div>
@@ -123,7 +123,7 @@ void <tt class="descname">LDLH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</e
 <h2><span class="math">\(LDL^T\)</span> factorization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>While the <span class="math">\(LDL^H\)</span> factorization targets Hermitian matrices, the
 <span class="math">\(LDL^T\)</span> factorization targets symmetric matrices. If <span class="math">\(A\)</span> is found to
-be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
+be numerically singular, then a <a class="reference internal" href="../core/environment.html#SingularMatrixException__class" title="SingularMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be
 thrown.</p>
 <blockquote>
 <div><div class="admonition warning">
@@ -133,12 +133,12 @@ thrown.</p>
 </div></blockquote>
 <dl class="function">
 <dt id="LDLT__Matrix:F:R">
-void <tt class="descname">LDLT</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLT__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLT</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LDLT__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LDLT__DistMatrix:F:R">
-void <tt class="descname">LDLT</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LDLT__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLT</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LDLT__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the strictly lower triangle of <span class="math">\(A\)</span> with the strictly lower
 portion of <span class="math">\(L\)</span> (<span class="math">\(L\)</span> implicitly has ones on its diagonal) and
 the diagonal with <span class="math">\(D\)</span>.</p>
@@ -146,13 +146,13 @@ the diagonal with <span class="math">\(D\)</span>.</p>
 
 <dl class="function">
 <dt id="LDLT__Matrix:F:R.Matrix:F:R">
-void <tt class="descname">LDLT</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLT__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LDLT</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>d</em><big>)</big><a class="headerlink" href="#LDLT__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LDLT__DistMatrix:F:R.DistMatrix:F.MC.STAR:R">
-void <tt class="descname">LDLT</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F, MC, STAR&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLT__DistMatrix:F:R.DistMatrix:F.MC.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but also return the diagonal in the vector <tt class="docutils literal"><span class="pre">d</span></tt>.</p>
+void <tt class="descname">LDLT</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;F, MC, STAR&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#LDLT__DistMatrix:F:R.DistMatrix:F.MC.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as above, but also return the diagonal in the vector <cite>d</cite>.</p>
 </dd></dl>
 
 </div>
@@ -166,15 +166,15 @@ Since <span class="math">\(L\)</span> is required to have its diaganal entries s
 portion of <span class="math">\(A\)</span> can be overwritten with <cite>U</cite>, and the strictly lower
 portion of <span class="math">\(A\)</span> can be overwritten with the strictly lower portion of
 <span class="math">\(L\)</span>. If <span class="math">\(A\)</span> is found to be numerically singular, then a
-<a class="reference internal" href="../core/environment.html#SingularMatrixException" title="SingularMatrixException"><tt class="xref cpp cpp-class docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be thrown.</p>
+<a class="reference internal" href="../core/environment.html#SingularMatrixException__class" title="SingularMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">SingularMatrixException</span></tt></a> will be thrown.</p>
 <dl class="function">
 <dt id="LU__Matrix:F:R">
-void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LU__DistMatrix:F:R">
-void <tt class="descname">LU</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites <span class="math">\(A\)</span> with its LU decomposition.</p>
 </dd></dl>
 
@@ -186,12 +186,12 @@ pivoted). An LU factorization with partial pivoting therefore computes
 and <span class="math">\(U\)</span> are as described above and <span class="math">\(P\)</span> is a permutation matrix.</p>
 <dl class="function">
 <dt id="LU__Matrix:F:R.Matrix:i:R">
-void <tt class="descname">LU</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R">
-void <tt class="descname">LU</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F, VC, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;F, VC, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the matrix <span class="math">\(A\)</span> with the LU decomposition of
 <span class="math">\(PA\)</span>, where <span class="math">\(P\)</span> is represented by the pivot vector <cite>p</cite>.</p>
 </dd></dl>
@@ -211,24 +211,24 @@ representing <span class="math">\(\hat Q\)</span> are stored within the rows of 
 trapezoid.</p>
 <dl class="function">
 <dt id="LQ__Matrix:R:R">
-void <tt class="descname">LQ</tt><big>(</big>Matrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LQ__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LQ__DistMatrix:R:R">
-void <tt class="descname">LQ</tt><big>(</big>DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
 Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="LQ__Matrix:Complex:R::R.Matrix:Complex:R::R">
-void <tt class="descname">LQ</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#LQ__Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#LQ__Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
-void <tt class="descname">LQ</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
 Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
 phase information is needed in order to define the (generalized)
@@ -250,24 +250,24 @@ representing <span class="math">\(\hat Q\)</span> are stored within the columns 
 trapezoid.</p>
 <dl class="function">
 <dt id="QR__Matrix:R:R">
-void <tt class="descname">QR</tt><big>(</big>Matrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#QR__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="QR__DistMatrix:R:R">
-void <tt class="descname">QR</tt><big>(</big>DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
 Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="QR__Matrix:Complex:R::R.Matrix:Complex:R::R">
-void <tt class="descname">QR</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#QR__Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#QR__Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
-void <tt class="descname">QR</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
 Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
 phase information is needed in order to define the (generalized)

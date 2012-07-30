@@ -64,12 +64,12 @@ successive triangular solves against <span class="math">\(B\)</span>:</p>
 \[B := A^{-1} B = (L L^H)^{-1} B = L^{-H} L^{-1} B\]</div>
 <dl class="function">
 <dt id="CholeskySolve__UpperOrLower.Matrix:F:R.Matrix:F:R">
-void <tt class="descname">CholeskySolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#CholeskySolve__UpperOrLower.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">CholeskySolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#CholeskySolve__UpperOrLower.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="CholeskySolve__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R">
-void <tt class="descname">CholeskySolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#CholeskySolve__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">CholeskySolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#CholeskySolve__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite <cite>B</cite> with the solution to <span class="math">\(AX=B\)</span>, where <cite>A</cite> is Hermitian
 positive-definite and only the triangle of <cite>A</cite> specified by <cite>uplo</cite> is
 accessed.</p>
@@ -83,12 +83,12 @@ accessed.</p>
 (partially pivoted) Gaussian elimination.</p>
 <dl class="function">
 <dt id="GaussianElimination__Matrix:F:R.Matrix:F:R">
-void <tt class="descname">GaussianElimination</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#GaussianElimination__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">GaussianElimination</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#GaussianElimination__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="GaussianElimination__DistMatrix:F:R.DistMatrix:F:R">
-void <tt class="descname">GaussianElimination</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#GaussianElimination__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">GaussianElimination</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#GaussianElimination__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upon completion, <span class="math">\(A\)</span> will have been overwritten with Gaussian
 elimination and <span class="math">\(B\)</span> will be overwritten with <span class="math">\(X\)</span>.</p>
 </dd></dl>
@@ -108,12 +108,12 @@ If <span class="math">\(m \ge n\)</span>, then the first step is to form the QR 
 </ul>
 <dl class="function">
 <dt id="HouseholderSolve__Orientation.Matrix:F:R.Matrix:F:CR.Matrix:F:R">
-void <tt class="descname">HouseholderSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, Matrix&lt;F&gt;&amp; <em>A</em>, const Matrix&lt;F&gt;&amp; <em>B</em>, Matrix&lt;F&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#HouseholderSolve__Orientation.Matrix:F:R.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HouseholderSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#HouseholderSolve__Orientation.Matrix:F:R.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="HouseholderSolve__Orientation.DistMatrix:F:R.DistMatrix:F:CR.DistMatrix:F:R">
-void <tt class="descname">HouseholderSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, const DistMatrix&lt;F&gt;&amp; <em>B</em>, DistMatrix&lt;F&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#HouseholderSolve__Orientation.DistMatrix:F:R.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HouseholderSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#HouseholderSolve__Orientation.DistMatrix:F:R.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>If <cite>orientation</cite> is set to <tt class="docutils literal"><span class="pre">NORMAL</span></tt>, then solve <span class="math">\(AX=B\)</span>, otherwise
 <cite>orientation</cite> must be equal to <tt class="docutils literal"><span class="pre">ADJOINT</span></tt> and <span class="math">\(A^H X=B\)</span> will
 be solved. Upon completion, <span class="math">\(A\)</span> is overwritten with its QR or LQ
@@ -127,12 +127,12 @@ factorization, and <span class="math">\(X\)</span> is overwritten with the solut
 right-hand sides.</p>
 <dl class="function">
 <dt id="SolveAfterCholesky__UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:R">
-void <tt class="descname">SolveAfterCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterCholesky__UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterCholesky__UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SolveAfterCholesky__UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F:R">
-void <tt class="descname">SolveAfterCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterCholesky__UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterCholesky__UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update <span class="math">\(B := A^{-1} B\)</span>, <span class="math">\(B := A^{-T} B\)</span>, or
 <span class="math">\(B := A^{-H} B\)</span>, where one triangle of <span class="math">\(A\)</span> has been overwritten
 with its Cholesky factor.</p>
@@ -145,12 +145,12 @@ with its Cholesky factor.</p>
 solve against one or more right-hand sides.</p>
 <dl class="function">
 <dt id="SolveAfterLU__Orientation.Matrix:F:CR.Matrix:F:R">
-void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:F:R">
-void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update <span class="math">\(B := A^{-1} B\)</span>, <span class="math">\(B := A^{-T} B\)</span>, or
 <span class="math">\(B := A^{-H} B\)</span>, where <span class="math">\(A\)</span> has been overwritten with its LU
 factors (without partial pivoting).</p>
@@ -158,12 +158,12 @@ factors (without partial pivoting).</p>
 
 <dl class="function">
 <dt id="SolveAfterLU__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:F:R">
-void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const Matrix&lt;F&gt;&amp; <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em>, Matrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R">
-void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, const DistMatrix&lt;F&gt;&amp; <em>A</em>, const DistMatrix&lt;int, VC, STAR&gt;&amp; <em>p</em>, DistMatrix&lt;F&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SolveAfterLU</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, VC, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update <span class="math">\(B := A^{-1} B\)</span>, <span class="math">\(B := A^{-T} B\)</span>, or
 <span class="math">\(B := A^{-H} B\)</span>, where <span class="math">\(A\)</span> has been overwritten with
 its LU factors with partial pivoting, which satisfy <span class="math">\(P A = L U\)</span>, where

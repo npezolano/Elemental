@@ -190,14 +190,14 @@ void <tt class="descname">SortEig</tt><big>(</big>DistMatrix&lt;R, VR, STAR&gt;&
 
 <dl class="function">
 <dt id="SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:R:R">
-void <tt class="descname">SortEig</tt><big>(</big>DistMatrix&lt;R, VR, STAR&gt;&amp; <em>w</em>, DistMatrix&lt;R&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SortEig</tt><big>(</big>DistMatrix&lt;R, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort a set of real eigenpairs into non-decreasing order (based on the
 eigenvalues).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:Complex:R::R">
-void <tt class="descname">SortEig</tt><big>(</big>DistMatrix&lt;R, VR, STAR&gt;&amp; <em>w</em>, DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SortEig</tt><big>(</big>DistMatrix&lt;R, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort a set of real eigenvalues and complex eigenvectors into non-decreasing
 order (based on the eigenvalues).</p>
 </dd></dl>
@@ -478,7 +478,7 @@ Then an SVD of <span class="math">\(A\)</span> can easily be computed as</p>
 flips introduced by negative eigenvalues.</p>
 <dl class="function">
 <dt id="HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.DistMatrix:F:R">
-void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em>, DistMatrix&lt;F&gt;&amp; <em>U</em>, DistMatrix&lt;F&gt;&amp; <em>V</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>U</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>V</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a vector of singular values, <span class="math">\(s\)</span>, and the left and right
 singular vector matrices, <span class="math">\(U\)</span> and <span class="math">\(V\)</span>, such that
 <span class="math">\(A=U \mathrm{diag}(s) V^H\)</span>.</p>
@@ -486,7 +486,7 @@ singular vector matrices, <span class="math">\(U\)</span> and <span class="math"
 
 <dl class="function">
 <dt id="HermitianSingularValues__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
-void <tt class="descname">HermitianSingularValues</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#HermitianSingularValues__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianSingularValues</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#HermitianSingularValues__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the singular values of <span class="math">\(A\)</span> in <cite>s</cite>. Note that the appropriate
 triangle of <cite>A</cite> is overwritten during computation.</p>
 </dd></dl>
@@ -502,12 +502,12 @@ the <em>polar decomposition</em> of <span class="math">\(A\)</span> and can be c
 computed through Halley iteration.</p>
 <dl class="function">
 <dt id="Polar__Matrix:F:R.Matrix:F:R">
-void <tt class="descname">Polar</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;F&gt;&amp; <em>P</em><big>)</big><a class="headerlink" href="#Polar__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Polar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>P</em><big>)</big><a class="headerlink" href="#Polar__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="Polar__DistMatrix:F:R.DistMatrix:F:R">
-void <tt class="descname">Polar</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;F&gt;&amp; <em>P</em><big>)</big><a class="headerlink" href="#Polar__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Polar</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>P</em><big>)</big><a class="headerlink" href="#Polar__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the polar decomposition of <span class="math">\(A\)</span>, <span class="math">\(A=QP\)</span>, returning
 <span class="math">\(Q\)</span> within <cite>A</cite> and <span class="math">\(P\)</span> within <cite>P</cite>. The current implementation
 first computes the SVD.</p>
@@ -515,24 +515,24 @@ first computes the SVD.</p>
 
 <dl class="function">
 <dt id="Halley__Matrix:F:R.typename-Base:F:::type">
-void <tt class="descname">Halley</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Halley</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="Halley__DistMatrix:F:R.typename-Base:F:::type">
-void <tt class="descname">Halley</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Halley</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites <span class="math">\(A\)</span> with the <span class="math">\(Q\)</span> from the polar decomposition using
 a simple QR-based Halley iteration. <strong>TODO: better explanation</strong></p>
 </dd></dl>
 
 <dl class="function">
 <dt id="QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">QDWH</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">QDWH</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites <span class="math">\(A\)</span> with the <span class="math">\(Q\)</span> from the polar decomposition using
 a QR-based dynamically weighted Halley iteration.
 <strong>TODO: better explanation</strong></p>
@@ -549,23 +549,23 @@ triplet <span class="math">\((U,\Sigma,V)\)</span> such that</p>
 non-negative entries.</p>
 <dl class="function">
 <dt id="SVD__Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R">
-void <tt class="descname">SVD</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em>, Matrix&lt;F&gt;&amp; <em>V</em><big>)</big><a class="headerlink" href="#SVD__Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SVD</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>V</em><big>)</big><a class="headerlink" href="#SVD__Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SVD__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R">
-void <tt class="descname">SVD</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em>, DistMatrix&lt;F&gt;&amp; <em>V</em><big>)</big><a class="headerlink" href="#SVD__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SVD</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>V</em><big>)</big><a class="headerlink" href="#SVD__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites <cite>A</cite> with <span class="math">\(U\)</span>, <cite>s</cite> with the diagonal entries of <span class="math">\(\Sigma\)</span>, and <cite>V</cite> with <span class="math">\(V\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="SingularValues__Matrix:F:R.Matrix:typename-Base:F:::type:R">
-void <tt class="descname">SingularValues</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__Matrix:F:R.Matrix:typename-Base:F:::type:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SingularValues</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__Matrix:F:R.Matrix:typename-Base:F:::type:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="SingularValues__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
-void <tt class="descname">SingularValues</tt><big>(</big>DistMatrix&lt;F&gt;&amp; <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">SingularValues</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Forms the singular values of <span class="math">\(A\)</span> in <cite>s</cite>. Note that <cite>A</cite> is overwritten in order to compute the singular values.</p>
 </dd></dl>
 

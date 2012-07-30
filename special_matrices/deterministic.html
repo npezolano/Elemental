@@ -64,13 +64,13 @@ vectors <span class="math">\(x\)</span> and <span class="math">\(y\)</span> such
 is the <span class="math">\(j\)</span>&#8216;th entry of <span class="math">\(y\)</span>.</p>
 <dl class="function">
 <dt id="Cauchy__std::vector:F:CR.std::vector:F:CR.Matrix:F:R">
-void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a serial Cauchy matrix using the defining vectors, <span class="math">\(x\)</span> and <span class="math">\(y\)</span> (templated over the datatype, <cite>F</cite>, which must be a field).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Cauchy__std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R">
-void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, DistMatrix&lt;F, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a distributed Cauchy matrix using the defining vectors, <span class="math">\(x\)</span> and <span class="math">\(y\)</span> (templated over the datatype, <cite>F</cite>, which must be a field, as well as the distribution scheme of <tt class="docutils literal"><span class="pre">A</span></tt>, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -86,13 +86,13 @@ entry of <span class="math">\(s\)</span>, <span class="math">\(\chi_i\)</span> i
 is the <span class="math">\(j\)</span>&#8216;th entry of <span class="math">\(y\)</span>.</p>
 <dl class="function">
 <dt id="CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.Matrix:F:R">
-void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a serial Cauchy-like matrix using the defining vectors: <span class="math">\(r\)</span>, <span class="math">\(s\)</span>, <span class="math">\(x\)</span>, and <span class="math">\(y\)</span> (templated over the datatype, <cite>F</cite>, which must be a field).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R">
-void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, DistMatrix&lt;F, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a distributed Cauchy-like matrix using the defining vectors: <span class="math">\(r\)</span>, <span class="math">\(s\)</span>, <span class="math">\(x\)</span>, and <span class="math">\(y\)</span> (templated over the datatype, <cite>F</cite>, which must be a field, as well as the distribution scheme of <tt class="docutils literal"><span class="pre">A</span></tt>, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -106,13 +106,13 @@ such that</p>
 <p>where <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of vector <span class="math">\(b\)</span>.</p>
 <dl class="function">
 <dt id="Circulant__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a serial circulant matrix (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Circulant__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a distributed circulant matrix (templated over the datatype, <cite>T</cite>, and distribution scheme of <tt class="docutils literal"><span class="pre">A</span></tt>, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -124,13 +124,13 @@ void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&a
 <span class="math">\(i = j\)</span>.</p>
 <dl class="function">
 <dt id="Diagonal__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, Matrix&lt;T&gt;&amp; <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a serial diagonal matrix from the vector of diagonal values, <span class="math">\(d\)</span> (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Diagonal__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a distributed diagonal matrix from the vector of diagonal values, <span class="math">\(d\)</span> (templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -142,25 +142,25 @@ void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&am
 \[\alpha_{i,j} = \frac{e^{-2\pi i j / n}}{\sqrt{n}}.\]</div>
 <dl class="function">
 <dt id="DiscreteFourier__i.Matrix:Complex:R::R">
-void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the sequential matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> DFT matrix (templated over the real datatype, <cite>R</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="DiscreteFourier__i.DistMatrix:Complex:R:.U.V:R">
-void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> DFT matrix (templated over the real datatype, <cite>R</cite>, and distribution scheme of <tt class="docutils literal"><span class="pre">A</span></tt>, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeDiscreteFourier__Matrix:Complex:R::R">
-void <tt class="descname">MakeDiscreteFourier</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeDiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the existing <span class="math">\(n \times n\)</span> serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a discrete Fourier matrix (templated over the real datatype, <cite>R</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeDiscreteFourier__DistMatrix:Complex:R:.U.V:R">
-void <tt class="descname">MakeDiscreteFourier</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeDiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the existing <span class="math">\(n \times n\)</span> serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a discrete Fourier matrix (templated over the real datatype, <cite>R</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -175,13 +175,13 @@ exists a vector <span class="math">\(b\)</span> such that</p>
 <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of the vector <span class="math">\(b\)</span>.</p>
 <dl class="function">
 <dt id="Hankel__i.i.std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an <span class="math">\(m \times n\)</span> Hankel matrix from the generate vector, <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Hankel__i.i.std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an <span class="math">\(m \times n\)</span> Hankel matrix from the generate vector, <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -192,25 +192,25 @@ void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>,
 entry <span class="math">\((i,j)\)</span> is equal to <span class="math">\(1/(i+j+1)\)</span>.</p>
 <dl class="function">
 <dt id="Hilbert__i.Matrix:F:R">
-void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the <span class="math">\(n \times n\)</span> Hilbert matrix <tt class="docutils literal"><span class="pre">A</span></tt> (templated over the datatype, <cite>F</cite>, which must be a field).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Hilbert__i.DistMatrix:F.U.V:R">
-void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, DistMatrix&lt;F, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the <span class="math">\(n \times n\)</span> Hilbert matrix <tt class="docutils literal"><span class="pre">A</span></tt> (templated over the datatype, <cite>F</cite>, which must be a field, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeHilbert__Matrix:F:R">
-void <tt class="descname">MakeHilbert</tt><big>(</big>Matrix&lt;F&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeHilbert__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeHilbert</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeHilbert__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the square serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Hilbert matrix (templated over the datatype, <cite>F</cite>, which must be a field).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeHilbert__DistMatrix:F.U.V:R">
-void <tt class="descname">MakeHilbert</tt><big>(</big>DistMatrix&lt;F, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeHilbert__DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeHilbert</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeHilbert__DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the square distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Hilbert matrix (templated over the datatype, <cite>F</cite>, which must be a field, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -223,25 +223,25 @@ reasons, we generalize this definition to nonsquare, <span class="math">\(m \tim
 matrices.</p>
 <dl class="function">
 <dt id="Identity__i.i.Matrix:T:R">
-void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(m \times n\)</span> identity(-like) matrix (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Identity__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(m \times n\)</span> identity(-like) matrix (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeIdentity__Matrix:T:R">
-void <tt class="descname">MakeIdentity</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeIdentity__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeIdentity__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be identity-like (templated over datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeIdentity__DistMatrix:T.U.V:R">
-void <tt class="descname">MakeIdentity</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeIdentity__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeIdentity__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be identity-like (templated over datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -251,26 +251,26 @@ void <tt class="descname">MakeIdentity</tt><big>(</big>DistMatrix&lt;T, U, V&gt;
 <p>Create an <span class="math">\(m \times n\)</span> matrix of all ones.</p>
 <dl class="function">
 <dt id="Ones__i.i.Matrix:T:R">
-void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all ones (templated over datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Ones__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all ones (templated over datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <p>Change all entries of the matrix <span class="math">\(A\)</span> to one.</p>
 <dl class="function">
 <dt id="MakeOnes__Matrix:T:R">
-void <tt class="descname">MakeOnes</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeOnes__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeOnes</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeOnes__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the entries of the serial matrix to ones (templated over datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeOnes__DistMatrix:T.U.V:R">
-void <tt class="descname">MakeOnes</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeOnes__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeOnes</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeOnes__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the entries of the distributed matrix to ones (templated over datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -281,25 +281,25 @@ void <tt class="descname">MakeOnes</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp
 super-diagonals of all ones.</p>
 <dl class="function">
 <dt id="OneTwoOne__i.Matrix:T:R">
-void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set <tt class="docutils literal"><span class="pre">A</span></tt> to a serial <span class="math">\(n \times n\)</span> &#8220;1-2-1&#8221; matrix (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="OneTwoOne__i.DistMatrix:T.U.V:R">
-void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set <tt class="docutils literal"><span class="pre">A</span></tt> to a distributed <span class="math">\(n \times n\)</span> &#8220;1-2-1&#8221; matrix (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeOneTwoOne__Matrix:T:R">
-void <tt class="descname">MakeOneTwoOne</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeOneTwoOne__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeOneTwoOne</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeOneTwoOne__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify the entries of the square serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be &#8220;1-2-1&#8221; (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeOneTwoOne__DistMatrix:T.U.V:R">
-void <tt class="descname">MakeOneTwoOne</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeOneTwoOne__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeOneTwoOne</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeOneTwoOne__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify the entries of the square distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be &#8220;1-2-1&#8221; (templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -312,25 +312,25 @@ void <tt class="descname">MakeOneTwoOne</tt><big>(</big>DistMatrix&lt;T, U, V&gt
 <p>where <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of <span class="math">\(b\)</span>.</p>
 <dl class="function">
 <dt id="Toeplitz__i.i.std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> using the generating vector <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Toeplitz__i.i.std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> using the generating vector <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeToeplitz__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Toeplitz matrix using the generating vector <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeToeplitz__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Toeplitz matrix defined from the generating vector <span class="math">\(b\)</span> (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -348,13 +348,13 @@ void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt
 <span class="math">\(-1\)</span> to <span class="math">\(0\)</span>.</p>
 <dl class="function">
 <dt id="Walsh__i.Matrix:T:R.b">
-void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, Matrix&lt;T&gt;&amp; <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.Matrix:T:R.b" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.Matrix:T:R.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th (possibly binary) Walsh matrix (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Walsh__i.DistMatrix:T.U.V:R.b">
-void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.DistMatrix:T.U.V:R.b" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.DistMatrix:T.U.V:R.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th (possibly binary) Walsh matrix (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -367,13 +367,13 @@ void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, DistMatrix&lt;T,
 <p>and sub- and super-diagonals of all ones.</p>
 <dl class="function">
 <dt id="Wilkinson__i.Matrix:T:R">
-void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, Matrix&lt;T&gt;&amp; <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th Wilkinson matrix (templated over the datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Wilkinson__i.DistMatrix:T.U.V:R">
-void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th Wilkinson matrix (templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
@@ -383,26 +383,26 @@ void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, DistMatrix&l
 <p>Create an <span class="math">\(m \times n\)</span> matrix of all zeros.</p>
 <dl class="function">
 <dt id="Zeros__i.i.Matrix:T:R">
-void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the serial matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all zeros (templated over datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Zeros__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the distributed matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all zeros (templated over datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 
 <p>Change all entries of the matrix <span class="math">\(A\)</span> to zero.</p>
 <dl class="function">
 <dt id="MakeZeros__Matrix:T:R">
-void <tt class="descname">MakeZeros</tt><big>(</big>Matrix&lt;T&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeZeros__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeZeros</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeZeros__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the entries of the serial matrix to zero (templated over datatype, <cite>T</cite>).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="MakeZeros__DistMatrix:T.U.V:R">
-void <tt class="descname">MakeZeros</tt><big>(</big>DistMatrix&lt;T, U, V&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#MakeZeros__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">MakeZeros</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeZeros__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the entries of the distributed matrix to zero (templated over datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>).</p>
 </dd></dl>
 

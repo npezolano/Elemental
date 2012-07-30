@@ -63,7 +63,7 @@ transformations). This routine performs said reduction on a Hermitian matrix
 and stores the scaled Householder vectors in place of the introduced zeroes.</p>
 <dl class="function">
 <dt id="HermitianTridiag__UpperOrLower.Matrix:R:R">
-void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.Matrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the main and sub (super) diagonal of the real matrix
 <cite>A</cite> with its similar symmetric tridiagonal matrix and stores the scaled
 Householder vectors below (above) its tridiagonal entries.</p>
@@ -71,7 +71,7 @@ Householder vectors below (above) its tridiagonal entries.</p>
 
 <dl class="function">
 <dt id="HermitianTridiag__UpperOrLower.Matrix:Complex:R::R.Matrix:Complex:R::R">
-void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Similar to above, but the complex Hermitian matrix is reduced to
 real symmetric tridiagonal form, with the added complication of needing to
 also store the phase information for the Householder vectors (the scaling can
@@ -81,7 +81,7 @@ with proper phases are returned in the column vector <cite>t</cite>.</p>
 
 <dl class="function">
 <dt id="HermitianTridiag__UpperOrLower.DistMatrix:R:R">
-void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the main and sub (super) diagonal of the real distributed matrix
 <cite>A</cite> with its similar symmetric tridiagonal matrix and stores the scaled
 Householder vectors below (above) its tridiagonal entries.</p>
@@ -89,7 +89,7 @@ Householder vectors below (above) its tridiagonal entries.</p>
 
 <dl class="function">
 <dt id="HermitianTridiag__UpperOrLower.DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R">
-void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">HermitianTridiag</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>t</em><big>)</big><a class="headerlink" href="#HermitianTridiag__UpperOrLower.DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Similar to above, but the complex Hermitian matrix is reduced to
 real symmetric tridiagonal form, with the added complication of needing to
 also store the phase information for the Householder vectors (the scaling can
@@ -114,7 +114,7 @@ most commonly used as a preprocessing step in computing the SVD of a general
 matrix.</p>
 <dl class="function">
 <dt id="Bidiag__Matrix:R:R">
-void <tt class="descname">Bidiag</tt><big>(</big>Matrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Bidiag__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Bidiag</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Bidiag__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the main and sub (or super) diagonal of the real matrix <cite>A</cite> with
 the resulting bidiagonal matrix and stores the scaled Householder vectors in
 the remainder of the matrix.</p>
@@ -122,14 +122,14 @@ the remainder of the matrix.</p>
 
 <dl class="function">
 <dt id="Bidiag__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:Complex:R::R">
-void <tt class="descname">Bidiag</tt><big>(</big>Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>tP</em>, Matrix&lt;Complex&lt;R&gt;&gt;&amp; <em>tQ</em><big>)</big><a class="headerlink" href="#Bidiag__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Bidiag</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>tP</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>tQ</em><big>)</big><a class="headerlink" href="#Bidiag__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but the complex scalings for the Householder reflectors are
 returned in the vectors <cite>tP</cite> and <cite>tQ</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Bidiag__DistMatrix:R:R">
-void <tt class="descname">Bidiag</tt><big>(</big>DistMatrix&lt;R&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#Bidiag__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Bidiag</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Bidiag__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the main and sub (or super) diagonal of the real distributed
 matrix <cite>A</cite> with the resulting bidiagonal matrix and stores the scaled
 Householder vectors in the remainder of the matrix.</p>
@@ -141,7 +141,7 @@ Householder vectors in the remainder of the matrix.</p>
 
 <dl class="function">
 <dt id="Bidiag__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R.DistMatrix:Complex:R:.STAR.STAR:R">
-void <tt class="descname">Bidiag</tt><big>(</big>DistMatrix&lt;Complex&lt;R&gt;&gt;&amp; <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>tP</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>tQ</em><big>)</big><a class="headerlink" href="#Bidiag__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R.DistMatrix:Complex:R:.STAR.STAR:R" title="Permalink to this definition">¶</a></dt>
+void <tt class="descname">Bidiag</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>tP</em>, DistMatrix&lt;Complex&lt;R&gt;, STAR, STAR&gt;&amp; <em>tQ</em><big>)</big><a class="headerlink" href="#Bidiag__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.STAR.STAR:R.DistMatrix:Complex:R:.STAR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but the complex scalings for the Householder reflectors are
 returned in the vectors <cite>tP</cite> and <cite>tQ</cite>.</p>
 <div class="admonition note">
