@@ -111,16 +111,16 @@ int <tt class="descname">firstLocalEigenvalue</tt><a class="headerlink" href="#p
 <div class="section" id="compute-all-eigenvalues">
 <h2>Compute all eigenvalues<a class="headerlink" href="#compute-all-eigenvalues" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute all of the eigenvalues of the real symmetric tridiagonal matrix with
 diagonal <cite>d</cite> and subdiagonal <cite>e</cite>: the eigenvalues will be stored in
 <cite>w</cite> and the work will be divided among the processors in <cite>comm</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but also compute the corresponding eigenvectors.</p>
 </dd></dl>
 
@@ -128,20 +128,20 @@ diagonal <cite>d</cite> and subdiagonal <cite>e</cite>: the eigenvalues will be 
 <div class="section" id="compute-eigenvalues-within-interval">
 <h2>Compute eigenvalues within interval<a class="headerlink" href="#compute-eigenvalues-within-interval" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.double.double">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm.double.double">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only compute the eigenvalues lying within the interval <span class="math">\((a,b]\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm.double.double">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm.double.double">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but also compute the corresponding eigenvectors.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="pmrrr::EigEstimate__i.doubleCP.doubleCP.mpi::Comm.double.double">
-<a class="reference internal" href="#pmrrr::Estimate__struct" title="pmrrr::Estimate">pmrrr::Estimate</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">EigEstimate</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::EigEstimate__i.doubleCP.doubleCP.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::EigEstimate__i.doubleP.doubleP.mpi::Comm.double.double">
+<a class="reference internal" href="#pmrrr::Estimate__struct" title="pmrrr::Estimate">pmrrr::Estimate</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">EigEstimate</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::EigEstimate__i.doubleP.doubleP.mpi::Comm.double.double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return upper bounds on the number of local and global eigenvalues lying
 within the specified interval.</p>
 </dd></dl>
@@ -150,15 +150,15 @@ within the specified interval.</p>
 <div class="section" id="compute-eigenvalues-in-index-range">
 <h2>Compute eigenvalues in index range<a class="headerlink" href="#compute-eigenvalues-in-index-range" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.i.i">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.mpi::Comm.i.i" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm.i.i">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.mpi::Comm.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only compute the eigenvalues with indices ranging from <tt class="docutils literal"><span class="pre">a</span></tt> to <tt class="docutils literal"><span class="pre">b</span></tt>, where
 <span class="math">\(0 \le a \le b &lt; n\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm.i.i">
-<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, const double* <em>d</em>, const double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleCP.doubleCP.doubleP.doubleP.i.mpi::Comm.i.i" title="Permalink to this definition">¶</a></dt>
+<dt id="pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm.i.i">
+<a class="reference internal" href="#pmrrr::Info__struct" title="pmrrr::Info">pmrrr::Info</a> <tt class="descclassname">pmrrr::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, double* <em>d</em>, double* <em>e</em>, double* <em>w</em>, double* <em>Z</em>, int <em>ldz</em>, <a class="reference internal" href="mpi.html#mpi::Comm" title="mpi::Comm">mpi::Comm</a> <em>comm</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#pmrrr::Eig__i.doubleP.doubleP.doubleP.doubleP.i.mpi::Comm.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but also compute the corresponding eigenvectors.</p>
 </dd></dl>
 
