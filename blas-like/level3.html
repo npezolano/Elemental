@@ -357,13 +357,13 @@ void <tt class="descname">Trsm</tt><big>(</big><a class="reference internal" hre
 which preserves the symmetry of the input matrix,
 either <span class="math">\(A := L^H A L\)</span> or <span class="math">\(A := U A U^H\)</span>.</p>
 <dl class="function">
-<dt id="TwoSidedTrmm__UpperOrLower.Matrix:T:R.Matrix:T:CR">
-void <tt class="descname">TwoSidedTrmm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrmm__UpperOrLower.Matrix:T:R.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoSidedTrmm__UpperOrLower.UnitOrNonUnit.Matrix:T:R.Matrix:T:CR">
+void <tt class="descname">TwoSidedTrmm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrmm__UpperOrLower.UnitOrNonUnit.Matrix:T:R.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="TwoSidedTrmm__UpperOrLower.DistMatrix:T:R.DistMatrix:T:CR">
-void <tt class="descname">TwoSidedTrmm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">DistMatrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">const DistMatrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrmm__UpperOrLower.DistMatrix:T:R.DistMatrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoSidedTrmm__UpperOrLower.UnitOrNonUnit.DistMatrix:T:R.DistMatrix:T:CR">
+void <tt class="descname">TwoSidedTrmm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">DistMatrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">const DistMatrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrmm__UpperOrLower.UnitOrNonUnit.DistMatrix:T:R.DistMatrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -373,13 +373,13 @@ void <tt class="descname">TwoSidedTrmm</tt><big>(</big><a class="reference inter
 preserves the symmetry of the input matrix,
 either <span class="math">\(A := L^{-1} A L^{-H}\)</span> or <span class="math">\(A := U^{-H} A U^{-1}\)</span>.</p>
 <dl class="function">
-<dt id="TwoSidedTrsm__UpperOrLower.Matrix:F:R.Matrix:F:CR">
-void <tt class="descname">TwoSidedTrsm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrsm__UpperOrLower.Matrix:F:R.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoSidedTrsm__UpperOrLower.UnitOrNonUnit.Matrix:F:R.Matrix:F:CR">
+void <tt class="descname">TwoSidedTrsm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrsm__UpperOrLower.UnitOrNonUnit.Matrix:F:R.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="TwoSidedTrsm__UpperOrLower.DistMatrix:F:R.DistMatrix:F:CR">
-void <tt class="descname">TwoSidedTrsm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrsm__UpperOrLower.DistMatrix:F:R.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoSidedTrsm__UpperOrLower.UnitOrNonUnit.DistMatrix:F:R.DistMatrix:F:CR">
+void <tt class="descname">TwoSidedTrsm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#UnitOrNonUnit__enum" title="UnitOrNonUnit">UnitOrNonUnit</a> <em>diag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#TwoSidedTrsm__UpperOrLower.UnitOrNonUnit.DistMatrix:F:R.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
