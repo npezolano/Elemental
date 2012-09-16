@@ -188,15 +188,72 @@ otherwise).</p>
 </dd></dl>
 
 </div>
-<div class="section" id="hegst">
-<h2>Hegst<a class="headerlink" href="#hegst" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bidiagonal-qr">
+<h2>Bidiagonal QR<a class="headerlink" href="#bidiagonal-qr" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::Hegst__i.c.i.FP.i.FCP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">Hegst</tt><big>(</big>int <em>itype</em>, char <em>uplo</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, const F* <em>B</em>, int <em>ldb</em><big>)</big><a class="headerlink" href="#lapack::Hegst__i.c.i.FP.i.FCP.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reduce a well-conditioned generalized Hermitian-definite eigenvalue problem
-to Hermitian standard form. <strong>TODO:</strong> Explain in more detail.</p>
-</dd></dl>
+<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVTrans</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, R* <em>VTrans</em>, int <em>ldvt</em>, R* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
+<dl class="function">
+<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVAdj</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="qr-based-svd">
+<h2>QR-based SVD<a class="headerlink" href="#qr-based-svd" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="lapack::QRSVD__i.i.RP.i.RP.RP.i.RP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em>, R* <em>U</em>, int <em>ldu</em>, R* <em>VTrans</em>, int <em>ldvt</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.RP.i.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="lapack::SingularValues__i.i.RP.i.RP">
+void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SingularValues__i.i.RP.i.RP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lapack::SingularValues__i.i.Complex:R:P.i.RP">
+void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SingularValues__i.i.Complex:R:P.i.RP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="divide-and-conquer-svd">
+<h2>Divide-and-conquer SVD<a class="headerlink" href="#divide-and-conquer-svd" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="lapack::DivideAndConquerSVD__i.i.RP.i.RP.RP.i.RP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em>, R* <em>U</em>, int <em>ldu</em>, R* <em>VTrans</em>, int <em>ldvt</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.RP.i.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="hessenberg-qr">
+<h2>Hessenberg QR<a class="headerlink" href="#hessenberg-qr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="lapack::HessenbergEig__i.RP.i.Complex:R:P">
+void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, R* <em>H</em>, int <em>ldh</em>, Complex&lt;R&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.RP.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P">
+void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, Complex&lt;R&gt;* <em>H</em>, int <em>ldh</em>, Complex&lt;R&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>TODO</strong></p>
 </div>
 </div>
 
