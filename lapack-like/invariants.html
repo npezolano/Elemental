@@ -31,7 +31,7 @@
     <link rel="top" title="Elemental 0.76-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
     <link rel="next" title="Factorizations" href="factorizations.html" />
-    <link rel="prev" title="Norms" href="norms.html" /> 
+    <link rel="prev" title="High-level linear algebra" href="../lapack-like.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
@@ -41,7 +41,7 @@
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="norms.html">Norms</a>
+        «&#160;&#160;<a href="../lapack-like.html">High-level linear algebra</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
@@ -54,6 +54,22 @@
         
   <div class="section" id="invariants">
 <h1>Invariants<a class="headerlink" href="#invariants" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="condition-number">
+<h2>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h2>
+<p>Returns the two-norm condition number</p>
+<div class="math">
+\[\kappa_2(A) = \|A\|_2 \|A^{-1}\|_2.\]</div>
+<dl class="function">
+<dt id="ConditionNumber__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">ConditionNumber</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ConditionNumber__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ConditionNumber__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">ConditionNumber</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ConditionNumber__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
 <div class="section" id="determinant">
 <h2>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
 <p>Though there are many different possible definitions of the determinant of a
@@ -69,22 +85,27 @@ recognizing that <span class="math">\(\mbox{det}(P)=\pm 1\)</span>
 \[\mbox{det}(A) = \mbox{det}(P)\mbox{det}(L)\mbox{det}(U)
               = \mbox{det}(P) \prod_{i=0}^{n-1} \upsilon_{i,i}
               = \pm \prod_{i=0}^{n-1} \upsilon_{i,i},\]</div><p>where <span class="math">\(\upsilon_{i,i}\)</span> is the i&#8217;th diagonal entry of <span class="math">\(U\)</span>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The following functions overwrite the input matrix with its LU factorization
-in order to efficiently compute the determinant.</p>
-</div>
 <dl class="function">
-<dt id="Determinant__Matrix:F:R">
-F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Determinant__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the determinant of the (fully populated) square matrix <cite>A</cite>, which is
-overwritten during the computation.</p>
-</dd></dl>
+<dt id="Determinant__Matrix:F:CR">
+F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Determinant__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
-<dt id="Determinant__DistMatrix:F:R">
-F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Determinant__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but for a distributed matrix.</p>
+<dt id="Determinant__DistMatrix:F:CR">
+F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Determinant__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Determinant__Matrix:F:R.b">
+F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#Determinant__Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Determinant__DistMatrix:F:R.b">
+F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#Determinant__DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the determinant of the (fully populated) square matrix <cite>A</cite>.
+Some of the variants allow for overwriting the input matrix in order to
+avoid forming another temporary matrix.</p>
 </dd></dl>
 
 <dl class="type">
@@ -115,16 +136,125 @@ int <tt class="descname">n</tt><a class="headerlink" href="#SafeProduct:F:::n__i
 </dd></dl>
 
 <dl class="function">
-<dt id="SafeDeterminant__Matrix:F:R">
-<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeDeterminant__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="SafeDeterminant__Matrix:F:CR">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeDeterminant__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeDeterminant__DistMatrix:F:CR">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeDeterminant__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeDeterminant__Matrix:F:R.b">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#SafeDeterminant__Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeDeterminant__DistMatrix:F:R.b">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#SafeDeterminant__DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the determinant of the square matrix <cite>A</cite> in an expanded form
 which is less likely to over/under-flow.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="norm">
+<h2>Norm<a class="headerlink" href="#norm" title="Permalink to this headline">¶</a></h2>
+<p>The following routines can return either
+<span class="math">\(\|A\|_1\)</span>, <span class="math">\(\|A\|_\infty\)</span>, <span class="math">\(\|A\|_F\)</span> (the Frobenius norm),
+the maximum entrywise norm, <span class="math">\(\|A\|_2\)</span>, or <span class="math">\(\|A\|_*\)</span>
+(the nuclear/trace norm) of fully-populated matrices.</p>
 <dl class="function">
-<dt id="SafeDeterminant__DistMatrix:F:R">
-<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeDeterminant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeDeterminant__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but for a distributed matrix.</p>
+<dt id="Norm__Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Norm__DistMatrix:F.U.V:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hermitiannorm">
+<h2>HermitianNorm<a class="headerlink" href="#hermitiannorm" title="Permalink to this headline">¶</a></h2>
+<p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
+Hermitian with the data stored in the triangle specified by
+<a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
+<a class="reference internal" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="HermitianNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianNorm()</span></tt></a> currently only supports the standard matrix
+distribution.</p>
+<dl class="function">
+<dt id="HermitianNorm__UpperOrLower.Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="symmetricnorm">
+<h2>SymmetricNorm<a class="headerlink" href="#symmetricnorm" title="Permalink to this headline">¶</a></h2>
+<p>Same as <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a>, but the (distributed) matrix is implicitly
+symmetric with the data stored in the triangle specified by
+<a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower"><tt class="xref cpp cpp-type docutils literal"><span class="pre">UpperOrLower</span></tt></a>.
+Also, while <a class="reference internal" href="#Norm__Matrix:F:CR.NormType" title="Norm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Norm()</span></tt></a> supports every type of distribution,
+<a class="reference internal" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="SymmetricNorm"><tt class="xref cpp cpp-func docutils literal"><span class="pre">SymmetricNorm()</span></tt></a> currently only supports the standard matrix
+distribution.</p>
+<dl class="function">
+<dt id="SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="two-norm-estimates">
+<h2>Two-norm estimates<a class="headerlink" href="#two-norm-estimates" title="Permalink to this headline">¶</a></h2>
+<p>Since the two-norm is extremely useful, but expensive to compute, it is useful
+to be able to compute rough lower and upper bounds for it. The following
+routines provide cheap, rough estimates. The ability to compute sharper
+estimates will likely be added later.</p>
+<dl class="function">
+<dt id="TwoNormLowerBound__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormLowerBound</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormLowerBound__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TwoNormLowerBound__DistMatrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormLowerBound</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormLowerBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tightest lower bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
+<div class="math">
+\[\|A\|_2 \ge \|A\|_{\mathrm{max}},\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\sqrt{n}} \|A\|_{\infty},\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\sqrt{m}} \|A\|_1,\;\;\mathrm{and}\]</div>
+<div class="math">
+\[\|A\|_2 \ge \frac{1}{\mathrm{min}(m,n)} \|A\|_F.\]</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="TwoNormUpperBound__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormUpperBound</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormUpperBound__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TwoNormUpperBound__DistMatrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormUpperBound</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormUpperBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tightest upper bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
+<div class="math">
+\[\|A\|_2 \le \sqrt{m n} \|A\|_{\mathrm{max}},\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{m} \|A\|_{\infty},\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{n} \|A\|_1,\;\;\mathrm{and}\]</div>
+<div class="math">
+\[\|A\|_2 \le \sqrt{ \|A\|_1 \|A\|_{\infty} }.\]</div>
 </dd></dl>
 
 </div>
@@ -140,13 +270,12 @@ important characterization.</p>
 <dl class="function">
 <dt id="Trace__Matrix:F:CR">
 F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Trace__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the trace of the square matrix <cite>A</cite>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Trace__DistMatrix:F:CR">
 F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Trace__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but for a distributed matrix.</p>
+<dd><p>Return the trace of the square matrix <cite>A</cite>.</p>
 </dd></dl>
 
 </div>
@@ -157,7 +286,7 @@ F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href=
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="norms.html">Norms</a>
+        «&#160;&#160;<a href="../lapack-like.html">High-level linear algebra</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;

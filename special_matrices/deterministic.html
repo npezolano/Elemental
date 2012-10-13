@@ -246,6 +246,31 @@ void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference inter
 </dd></dl>
 
 </div>
+<div class="section" id="legendre">
+<h2>Legendre<a class="headerlink" href="#legendre" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math">\(n \times n\)</span> tridiagonal Jacobi matrix associated with the Legendre
+polynomials. Its main diagonal is zero, and the off-diagonal terms are given
+by</p>
+<div class="math">
+\[\beta_j = \frac{1}{2}\left(1-(2(j+1))^{-2}\right)^{-1/2},\]</div>
+<p>where <span class="math">\(\beta_j\)</span> connects the <span class="math">\(j\)</span>&#8216;th degree of freedom to the
+<span class="math">\(j+1\)</span>&#8216;th degree of freedom, counting from zero.
+The eigenvalues of this matrix lie in <span class="math">\([-1,1]\)</span> and are the locations for
+Gaussian quadrature of order <span class="math">\(n\)</span>. The corresponding weights may be found
+by doubling the square of the first entry of the corresponding normalized
+eigenvector.</p>
+<dl class="function">
+<dt id="Legendre__i.Matrix:F:R">
+void <tt class="descname">Legendre</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Legendre__i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Legendre__i.DistMatrix:F.U.V:R">
+void <tt class="descname">Legendre</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Legendre__i.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> Jacobi matrix.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="ones">
 <h2>Ones<a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h2>
 <p>Create an <span class="math">\(m \times n\)</span> matrix of all ones.</p>
