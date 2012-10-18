@@ -158,6 +158,84 @@ which is less likely to over/under-flow.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="hpddeterminant">
+<h2>HPDDeterminant<a class="headerlink" href="#hpddeterminant" title="Permalink to this headline">¶</a></h2>
+<p>A version of the above determinant specialized for Hermitian positive-definite
+matrices (which will therefore have all positive eigenvalues and a positive
+determinant).</p>
+<dl class="function">
+<dt id="HPDDeterminant__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPDDeterminant__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HPDDeterminant__UpperOrLower.DistMatrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPDDeterminant__UpperOrLower.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HPDDeterminant__UpperOrLower.Matrix:F:R.b">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#HPDDeterminant__UpperOrLower.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HPDDeterminant__UpperOrLower.DistMatrix:F:R.b">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#HPDDeterminant__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the determinant of the (fully populated) Hermitian positive-definite
+matrix <cite>A</cite>.
+Some of the variants allow for overwriting the input matrix in order to
+avoid forming another temporary matrix.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SafeHPDDeterminant__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeHPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeHPDDeterminant__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeHPDDeterminant__UpperOrLower.DistMatrix:F:CR">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeHPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SafeHPDDeterminant__UpperOrLower.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeHPDDeterminant__UpperOrLower.Matrix:F:R.b">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeHPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#SafeHPDDeterminant__UpperOrLower.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SafeHPDDeterminant__UpperOrLower.DistMatrix:F:R.b">
+<a class="reference internal" href="#SafeProduct:F:__struct" title="SafeProduct&lt;F&gt;">SafeProduct&lt;F&gt;</a> <tt class="descname">SafeHPDDeterminant</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#SafeHPDDeterminant__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the determinant of the Hermitian positive-definite matrix <cite>A</cite> in an
+expanded form which is less likely to over/under-flow.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="logbarrier">
+<h2>LogBarrier<a class="headerlink" href="#logbarrier" title="Permalink to this headline">¶</a></h2>
+<p>Uses a careful calculation of the log of the determinant in order to return
+the <em>log barrier</em> of a Hermitian positive-definite matrix <cite>A</cite>,
+<span class="math">\(-\log(\mbox{det}(A))\)</span>.</p>
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.DistMatrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.Matrix:F:R.b">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.DistMatrix:F:R.b">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
 <div class="section" id="norm">
 <h2>Norm<a class="headerlink" href="#norm" title="Permalink to this headline">¶</a></h2>
 <p>The following routines can return either
