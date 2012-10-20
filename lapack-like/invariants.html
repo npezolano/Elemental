@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Invariants &mdash; Elemental 0.76-dev documentation</title>
+    <title>Invariants and inner products &mdash; Elemental 0.76-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -36,7 +36,7 @@
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
           <span>Elemental 0.76-dev documentation</span></a></h1>
-        <h2 class="heading"><span>Invariants</span></h2>
+        <h2 class="heading"><span>Invariants and inner products</span></h2>
       </div>
       <div class="topnav">
       
@@ -52,8 +52,8 @@
       <div class="content">
         
         
-  <div class="section" id="invariants">
-<h1>Invariants<a class="headerlink" href="#invariants" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="invariants-and-inner-products">
+<h1>Invariants and inner products<a class="headerlink" href="#invariants-and-inner-products" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="condition-number">
 <h2>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h2>
 <p>Returns the two-norm condition number</p>
@@ -355,6 +355,21 @@ F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href=
 F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Trace__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the trace of the square matrix <cite>A</cite>.</p>
 </dd></dl>
+
+</div>
+<div class="section" id="hilbertschmidt">
+<h2>HilbertSchmidt<a class="headerlink" href="#hilbertschmidt" title="Permalink to this headline">¶</a></h2>
+<p>The Hilbert-Schmidt inner-product of two <span class="math">\(m \times n\)</span> matrices <span class="math">\(A\)</span>
+and <span class="math">\(B\)</span> is <span class="math">\(\mbox{tr}(A^H B)\)</span>.</p>
+<dl class="function">
+<dt id="HilbertSchmidt__Matrix:F:CR.Matrix:F:CR">
+F <tt class="descname">HilbertSchmidt</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#HilbertSchmidt__Matrix:F:CR.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HilbertSchmidt__DistMatrix:F.U.V:CR.DistMatrix:F.U.V:CR">
+F <tt class="descname">HilbertSchmidt</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#HilbertSchmidt__DistMatrix:F.U.V:CR.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 </div>
