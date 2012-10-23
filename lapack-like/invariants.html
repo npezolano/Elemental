@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Invariants and inner products &mdash; Elemental 0.76-dev documentation</title>
+    <title>Invariants, inner products, and divergences &mdash; Elemental 0.76-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -36,7 +36,7 @@
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
           <span>Elemental 0.76-dev documentation</span></a></h1>
-        <h2 class="heading"><span>Invariants and inner products</span></h2>
+        <h2 class="heading"><span>Invariants, inner products, and divergences</span></h2>
       </div>
       <div class="topnav">
       
@@ -52,8 +52,8 @@
       <div class="content">
         
         
-  <div class="section" id="invariants-and-inner-products">
-<h1>Invariants and inner products<a class="headerlink" href="#invariants-and-inner-products" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="invariants-inner-products-and-divergences">
+<h1>Invariants, inner products, and divergences<a class="headerlink" href="#invariants-inner-products-and-divergences" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="condition-number">
 <h2>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h2>
 <p>Returns the two-norm condition number</p>
@@ -233,6 +233,28 @@ the <em>log barrier</em> of a Hermitian positive-definite matrix <cite>A</cite>,
 <dl class="function">
 <dt id="LogBarrier__UpperOrLower.DistMatrix:F:R.b">
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="logdetdivergence">
+<h2>LogDetDivergence<a class="headerlink" href="#logdetdivergence" title="Permalink to this headline">¶</a></h2>
+<p>The <em>log-det divergence</em> of a pair of <span class="math">\(n \times n\)</span> Hermitian
+positive-definite matrices <span class="math">\(A\)</span> and <span class="math">\(B\)</span> is</p>
+<div class="math">
+\[D_{ld}(A,B) = \mbox{tr}(A B^{-1}) -\log(\mbox{det}(A B^{-1})) - n,\]</div>
+<p>which can be greatly simplified using the Cholesky factors of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.
+In particular, if we set <span class="math">\(Z = L_B^{-1} L_A\)</span>, where <span class="math">\(A=L_A L_A^H\)</span> and
+<span class="math">\(B=L_B L_B^H\)</span> are Cholesky factorizations, then</p>
+<div class="math">
+\[D_{ld}(A,B) = \| Z \|_F^2 - 2 \log(\mbox{det}(Z)) - n.\]</div>
+<dl class="function">
+<dt id="LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
