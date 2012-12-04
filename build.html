@@ -314,7 +314,7 @@ SVD: SVD.cpp
 simply typing <tt class="docutils literal"><span class="pre">make</span></tt> should build the driver.</p>
 <p>The executable can then typically be run with a single process (generating a
 <span class="math">\(300 \times 300\)</span> distributed matrix, using</p>
-<div class="highlight-python"><pre>./SVD 300 300</pre>
+<div class="highlight-python"><pre>./SVD --height 300 --width 300</pre>
 </div>
 <p>and the output should be similar to</p>
 <div class="highlight-python"><pre>||A||_max   = 0.999997
@@ -332,7 +332,7 @@ simply typing <tt class="docutils literal"><span class="pre">make</span></tt> sh
 <p>The driver can be run with several processes using the MPI launcher provided
 by your MPI implementation; a typical way to run the <tt class="docutils literal"><span class="pre">SVD</span></tt> driver on
 eight processes would be:</p>
-<div class="highlight-python"><pre>mpirun -np 8 ./SVD 300 300</pre>
+<div class="highlight-python"><pre>mpirun -np 8 ./SVD --height 300 --width 300</pre>
 </div>
 <p>You can also build a wide variety of example and test drivers
 (unfortunately the line is a little blurred) by using the CMake options:</p>
