@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &mdash; Elemental 0.76-dev documentation</title>
+    <title>Introduction &mdash; Elemental 0.77 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.76-dev',
+        VERSION:     '0.77',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,13 +28,13 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.76-dev documentation" href="index.html" />
+    <link rel="top" title="Elemental 0.77 documentation" href="index.html" />
     <link rel="next" title="Build system" href="build.html" />
     <link rel="prev" title="Welcome to Elemental’s documentation!" href="index.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="index.html">
-          <span>Elemental 0.76-dev documentation</span></a></h1>
+          <span>Elemental 0.77 documentation</span></a></h1>
         <h2 class="heading"><span>Introduction</span></h2>
       </div>
       <div class="topnav">
@@ -77,9 +77,11 @@ why ScaLAPACK or PLAPACK might be more appropriate:</p>
 <li>Elemental does not yet support non-Hermitian eigenvalue problems, but
 ScaLAPACK does.</li>
 <li>Elemental does not yet provide routines for narrowly banded linear systems,
-though ScaLAPACK does.</li>
-<li>Some applications exploit the block distribution format used by PLAPACK
-and ScaLAPACK in order to increase the efficiency of matrix
+though ScaLAPACK does (though you may want to consider the sparse-direct
+solver, <a class="reference external" href="http://github.com/poulson/Clique">Clique</a>, which is built on
+top of Elemental.</li>
+<li>Some applications exploit the block distribution format used by ScaLAPACK
+and PLAPACK in order to increase the efficiency of matrix
 construction. Though it is clearly possible to redistribute the matrix into
 an element-wise distribution format after construction, this might add
 an unnecessary level of complexity.</li>
@@ -123,14 +125,9 @@ Microsoft Windows, and Cygwin), as well as a wide variety of Linux clusters (inc
 <div class="section" id="license-and-copyright">
 <h2>License and copyright<a class="headerlink" href="#license-and-copyright" title="Permalink to this headline">¶</a></h2>
 <p>All files distributed with Elemental are made available under the
-<a class="reference external" href="http://www.opensource.org/licenses/bsd-license.php">New BSD license</a>.
-The vast majority of source files contain the following copyright notice:</p>
-<div class="highlight-python"><pre>Copyright (c) 2009-2012, Jack Poulson
-All rights reserved.
-
-This file is part of Elemental.
-
-Redistribution and use in source and binary forms, with or without
+<a class="reference external" href="http://www.opensource.org/licenses/bsd-license.php">New BSD license</a>,
+which states:</p>
+<div class="highlight-python"><pre>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
  - Redistributions of source code must retain the above copyright notice,
@@ -156,7 +153,11 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.</pre>
 </div>
-<p>For an up-to-date list of exceptions, please see the
+<p>Most source files contain the copyright notice:</p>
+<div class="highlight-python"><pre>Copyright (c) 2009-2012, Jack Poulson
+All rights reserved.</pre>
+</div>
+<p>For an up-to-date list of contributing authors, please see the
 <a class="reference external" href="https://github.com/poulson/Elemental/blob/master/AUTHORS">AUTHORS file</a>.</p>
 </div>
 </div>

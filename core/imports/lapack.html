@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LAPACK &mdash; Elemental 0.76-dev documentation</title>
+    <title>LAPACK &mdash; Elemental 0.77 documentation</title>
     
     <link rel="stylesheet" href="../../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.76-dev',
+        VERSION:     '0.77',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,14 +28,14 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.76-dev documentation" href="../../index.html" />
+    <link rel="top" title="Elemental 0.77 documentation" href="../../index.html" />
     <link rel="up" title="Imported library routines" href="../imports.html" />
     <link rel="next" title="MPI" href="mpi.html" />
     <link rel="prev" title="BLAS" href="blas.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../../index.html">
-          <span>Elemental 0.76-dev documentation</span></a></h1>
+          <span>Elemental 0.77 documentation</span></a></h1>
         <h2 class="heading"><span>LAPACK</span></h2>
       </div>
       <div class="topnav">
@@ -188,20 +188,6 @@ otherwise).</p>
 </dd></dl>
 
 </div>
-<div class="section" id="bidiagonal-qr">
-<h2>Bidiagonal QR<a class="headerlink" href="#bidiagonal-qr" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVTrans</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, R* <em>VTrans</em>, int <em>ldvt</em>, R* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVAdj</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p><strong>TODO</strong></p>
-</div>
 <div class="section" id="qr-based-svd">
 <h2>QR-based SVD<a class="headerlink" href="#qr-based-svd" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -211,10 +197,11 @@ void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>
 
 <dl class="function">
 <dt id="lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p><strong>TODO</strong></p>
+<p>Computes the singular value decomposition of a general matrix by running the
+QR algorithm on the condensed bidiagonal matrix.</p>
 <dl class="function">
 <dt id="lapack::SingularValues__i.i.RP.i.RP">
 void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SingularValues__i.i.RP.i.RP" title="Permalink to this definition">¶</a></dt>
@@ -222,10 +209,11 @@ void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues<
 
 <dl class="function">
 <dt id="lapack::SingularValues__i.i.Complex:R:P.i.RP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SingularValues__i.i.Complex:R:P.i.RP" title="Permalink to this definition">¶</a></dt>
+void <tt class="descclassname">lapack::</tt><tt class="descname">SingularValues</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SingularValues__i.i.Complex:R:P.i.RP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p><strong>TODO</strong></p>
+<p>Computes the singular values of a general matrix by running the QR algorithm
+on the condensed bidiagonal matrix.</p>
 </div>
 <div class="section" id="divide-and-conquer-svd">
 <h2>Divide-and-conquer SVD<a class="headerlink" href="#divide-and-conquer-svd" title="Permalink to this headline">¶</a></h2>
@@ -236,24 +224,39 @@ void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConque
 
 <dl class="function">
 <dt id="lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, Complex&lt;R&gt;* <em>A</em>, int <em>lda</em>, R* <em>s</em>, Complex&lt;R&gt;* <em>U</em>, int <em>ldu</em>, Complex&lt;R&gt;* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p><strong>TODO</strong></p>
+<p>Computes the SVD of a general matrix using a divide-and-conquer algorithm on
+the condensed bidiagonal matrix.</p>
+</div>
+<div class="section" id="bidiagonal-qr">
+<h2>Bidiagonal QR<a class="headerlink" href="#bidiagonal-qr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVTrans</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, R* <em>VTrans</em>, int <em>ldvt</em>, R* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVAdj</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Computes the SVD of a bidiagonal matrix using the QR algorithm.</p>
 </div>
 <div class="section" id="hessenberg-qr">
 <h2>Hessenberg QR<a class="headerlink" href="#hessenberg-qr" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="lapack::HessenbergEig__i.RP.i.Complex:R:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, R* <em>H</em>, int <em>ldh</em>, Complex&lt;R&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.RP.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
+void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, R* <em>H</em>, int <em>ldh</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.RP.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, Complex&lt;R&gt;* <em>H</em>, int <em>ldh</em>, Complex&lt;R&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
+void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>H</em>, int <em>ldh</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p><strong>TODO</strong></p>
+<p>Computes the eigenvalues of an upper Hessenberg matrix using the QR algorithm.</p>
 </div>
 </div>
 
