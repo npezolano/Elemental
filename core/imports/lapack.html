@@ -133,11 +133,12 @@ under/overflow. <cite>R</cite> can be equal to either <cite>float</cite> or <cit
 <p>Given <span class="math">\(\phi, \gamma \in \mathbb{C}^{n \times n}\)</span>, carefully compute
 <span class="math">\(c \in \mathbb{R}\)</span> and <span class="math">\(s, \rho \in \mathbb{C}\)</span> such that</p>
 <div class="math">
-\[\left[\begin{array}{cc}
-  c       & s \\
-  -\bar s & c \end{array}\right]
+\[\begin{split}\left[\begin{array}{cc}
+  c       &amp; s \\
+  -\bar s &amp; c \end{array}\right]
 \left[ \begin{array}{c} \phi \\ \gamma \end{array} \right] =
-\left[ \begin{array}{c} \rho \\ 0 \end{array} \right],\]</div><p>where <span class="math">\(c^2 + |s|^2 = 1\)</span> and the mapping from <span class="math">\((\phi,\gamma) \rightarrow (c,s,\rho)\)</span> is &#8220;as continuous as possible&#8221;, in the manner described by
+\left[ \begin{array}{c} \rho \\ 0 \end{array} \right],\end{split}\]</div>
+<p>where <span class="math">\(c^2 + |s|^2 = 1\)</span> and the mapping from <span class="math">\((\phi,\gamma) \rightarrow (c,s,\rho)\)</span> is &#8220;as continuous as possible&#8221;, in the manner described by
 Kahan and Demmel&#8217;s &#8220;On computing Givens rotations reliably and efficiently&#8221;.</p>
 <dl class="function">
 <dt id="lapack::ComputeGivens__R.R.RP.RP.RP">

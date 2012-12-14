@@ -76,7 +76,8 @@
 matrix <span class="math">\(A \in \mathbb{F}^{n \times n}\)</span>, the simplest one is in terms of
 the product of the eigenvalues (including multiplicity):</p>
 <div class="math">
-\[\mbox{det}(A) = \prod_{i=0}^{n-1} \lambda_i.\]</div><p>Since <span class="math">\(\mbox{det}(AB)=\mbox{det}(A)\mbox{det}(B)\)</span>, we can compute the
+\[\mbox{det}(A) = \prod_{i=0}^{n-1} \lambda_i.\]</div>
+<p>Since <span class="math">\(\mbox{det}(AB)=\mbox{det}(A)\mbox{det}(B)\)</span>, we can compute the
 determinant of an arbitrary matrix in <span class="math">\(\mathcal{O}(n^3)\)</span> work by
 computing its LU decomposition (with partial pivoting), <span class="math">\(PA=LU\)</span>,
 recognizing that <span class="math">\(\mbox{det}(P)=\pm 1\)</span>
@@ -84,7 +85,8 @@ recognizing that <span class="math">\(\mbox{det}(P)=\pm 1\)</span>
 <div class="math">
 \[\mbox{det}(A) = \mbox{det}(P)\mbox{det}(L)\mbox{det}(U)
               = \mbox{det}(P) \prod_{i=0}^{n-1} \upsilon_{i,i}
-              = \pm \prod_{i=0}^{n-1} \upsilon_{i,i},\]</div><p>where <span class="math">\(\upsilon_{i,i}\)</span> is the i&#8217;th diagonal entry of <span class="math">\(U\)</span>.</p>
+              = \pm \prod_{i=0}^{n-1} \upsilon_{i,i},\]</div>
+<p>where <span class="math">\(\upsilon_{i,i}\)</span> is the i&#8217;th diagonal entry of <span class="math">\(U\)</span>.</p>
 <dl class="function">
 <dt id="Determinant__Matrix:F:CR">
 F <tt class="descname">Determinant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Determinant__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
@@ -363,7 +365,8 @@ estimates will likely be added later.</p>
 <p>The two equally useful definitions of the trace of a square matrix
 <span class="math">\(A \in \mathbb{F}^{n \times n}\)</span> are</p>
 <div class="math">
-\[\mbox{tr}(A) = \sum_{i=0}^{n-1} \alpha_{i,i} = \sum_{i=0}^{n-1} \lambda_i,\]</div><p>where <span class="math">\(\alpha_{i,i}\)</span> is the i&#8217;th diagonal entry of <span class="math">\(A\)</span> and
+\[\mbox{tr}(A) = \sum_{i=0}^{n-1} \alpha_{i,i} = \sum_{i=0}^{n-1} \lambda_i,\]</div>
+<p>where <span class="math">\(\alpha_{i,i}\)</span> is the i&#8217;th diagonal entry of <span class="math">\(A\)</span> and
 <span class="math">\(\lambda_i\)</span> is the i&#8217;th eigenvalue (counting multiplicity) of <span class="math">\(A\)</span>.</p>
 <p>Clearly the former equation is easier to compute, but the latter is an
 important characterization.</p>

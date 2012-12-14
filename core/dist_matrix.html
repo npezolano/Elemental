@@ -474,27 +474,29 @@ majority of parallel routines expect the input to be in this form. For a
 individual entries would be owned by the following processes (assuming the
 column and row alignments are both 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  0 & 2 & 4 & 0 & 2 & 4 & 0 \\
-  1 & 3 & 5 & 1 & 3 & 5 & 1 \\
-  0 & 2 & 4 & 0 & 2 & 4 & 0 \\
-  1 & 3 & 5 & 1 & 3 & 5 & 1 \\
-  0 & 2 & 4 & 0 & 2 & 4 & 0 \\
-  1 & 3 & 5 & 1 & 3 & 5 & 1 \\
-  0 & 2 & 4 & 0 & 2 & 4 & 0
-\end{array}\right)\]</div><p>Similarly, if the column alignment is kept at 0 and the row alignment is changed
+\[\begin{split}\left(\begin{array}{ccccccc}
+  0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 \\
+  1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 \\
+  0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 \\
+  1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 \\
+  0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 \\
+  1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 \\
+  0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<p>Similarly, if the column alignment is kept at 0 and the row alignment is changed
 to 2 (meaning that the third process column owns the first column of the
 matrix), the individual entries would be owned as follows:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  4 & 0 & 2 & 4 & 0 & 2 & 4 \\
-  5 & 1 & 3 & 5 & 1 & 3 & 5 \\
-  4 & 0 & 2 & 4 & 0 & 2 & 4 \\
-  5 & 1 & 3 & 5 & 1 & 3 & 5 \\
-  4 & 0 & 2 & 4 & 0 & 2 & 4 \\
-  5 & 1 & 3 & 5 & 1 & 3 & 5 \\
-  4 & 0 & 2 & 4 & 0 & 2 & 4
-\end{array}\right)\]</div><p>It should also be noted that this is the default distribution format for the
+\[\begin{split}\left(\begin{array}{ccccccc}
+  4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 \\
+  5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 \\
+  4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 \\
+  5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 \\
+  4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4 \\
+  5 &amp; 1 &amp; 3 &amp; 5 &amp; 1 &amp; 3 &amp; 5 \\
+  4 &amp; 0 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 4
+\end{array}\right)\end{split}\]</div>
+<p>It should also be noted that this is the default distribution format for the
 <a class="reference internal" href="#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T,U,V&gt;</span></tt></a> class, as <a class="reference internal" href="#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T&gt;</span></tt></a> defaults to
 <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T,MC,MR&gt;</span></tt></a>.</p>
 <dl class="type">
@@ -1150,22 +1152,23 @@ cases of <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title=
 individual entries would be owned by the following processes (assuming the
 column alignment is 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} &
-  \{0,2,4\} & \{0,2,4\} \\
-  \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} &
-  \{1,3,5\} & \{1,3,5\} \\
-  \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} &
-  \{0,2,4\} & \{0,2,4\} \\
-  \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} &
-  \{1,3,5\} & \{1,3,5\} \\
-  \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} &
-  \{0,2,4\} & \{0,2,4\} \\
-  \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} & \{1,3,5\} &
-  \{1,3,5\} & \{1,3,5\} \\
-  \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} & \{0,2,4\} &
-  \{0,2,4\} & \{0,2,4\}
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp;
+  \{0,2,4\} &amp; \{0,2,4\} \\
+  \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp;
+  \{1,3,5\} &amp; \{1,3,5\} \\
+  \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp;
+  \{0,2,4\} &amp; \{0,2,4\} \\
+  \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp;
+  \{1,3,5\} &amp; \{1,3,5\} \\
+  \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp;
+  \{0,2,4\} &amp; \{0,2,4\} \\
+  \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp; \{1,3,5\} &amp;
+  \{1,3,5\} &amp; \{1,3,5\} \\
+  \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp; \{0,2,4\} &amp;
+  \{0,2,4\} &amp; \{0,2,4\}
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.MC.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, MC, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.MC.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1216,15 +1219,16 @@ For a <span class="math">\(7 \times 7\)</span> matrix distributed over a <span c
 grid, individual entries would be owned by the following processes (assuming
 the row alignment is 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} \\
-  \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\} & \{2,3\} & \{4,5\} & \{0,1\}
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} \\
+  \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\} &amp; \{2,3\} &amp; \{4,5\} &amp; \{0,1\}
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.STAR.MR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, MR&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.MR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1276,15 +1280,16 @@ cases of <a class="reference internal" href="#DistMatrix:T.STAR.MR:__class" titl
 individual entries would be owned by the following processes (assuming the
 column and row alignments are both 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  0 & 1 & 0 & 1 & 0 & 1 & 0 \\
-  2 & 3 & 2 & 3 & 2 & 3 & 2 \\
-  4 & 5 & 4 & 5 & 4 & 5 & 4 \\
-  0 & 1 & 0 & 1 & 0 & 1 & 0 \\
-  2 & 3 & 2 & 3 & 2 & 3 & 2 \\
-  4 & 5 & 4 & 5 & 4 & 5 & 4 \\
-  0 & 1 & 0 & 1 & 0 & 1 & 0
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+  2 &amp; 3 &amp; 2 &amp; 3 &amp; 2 &amp; 3 &amp; 2 \\
+  4 &amp; 5 &amp; 4 &amp; 5 &amp; 4 &amp; 5 &amp; 4 \\
+  0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+  2 &amp; 3 &amp; 2 &amp; 3 &amp; 2 &amp; 3 &amp; 2 \\
+  4 &amp; 5 &amp; 4 &amp; 5 &amp; 4 &amp; 5 &amp; 4 \\
+  0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.MR.MC:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, MR, MC&gt;</tt><a class="headerlink" href="#DistMatrix:T.MR.MC:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1336,15 +1341,16 @@ For a <span class="math">\(7 \times 7\)</span> matrix distributed over a <span c
 grid, individual entries would be owned by the following processes (assuming
 the column alignment is 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} \\
-  \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} \\
-  \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} \\
-  \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} \\
-  \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} & \{2,3\} \\
-  \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} & \{4,5\} \\
-  \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\} & \{0,1\}
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} \\
+  \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} \\
+  \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} \\
+  \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} \\
+  \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} &amp; \{2,3\} \\
+  \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} &amp; \{4,5\} \\
+  \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\} &amp; \{0,1\}
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.MR.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, MR, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.MR.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1396,22 +1402,23 @@ For a <span class="math">\(7 \times 7\)</span> matrix distributed over a <span c
 grid, individual entries would be owned by the following processes (assuming
 the column alignment is 0):</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+\[\begin{split}\left(\begin{array}{ccccccc}
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\} \\
-  \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} & \{0,2,4\} & \{1,3,5\} &
+  \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp; \{0,2,4\} &amp; \{1,3,5\} &amp;
   \{0,2,4\}
-\end{array}\right)\]</div><dl class="type">
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.STAR.MC:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, MC&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.MC:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1562,15 +1569,16 @@ symbol is <tt class="docutils literal"><span class="pre">VC</span></tt>. Again u
 with a zero column alignment, each entry of a <span class="math">\(7 \times 7\)</span> matrix
 would be owned by the following sets of processes:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-  1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-  2 & 2 & 2 & 2 & 2 & 2 & 2 \\
-  3 & 3 & 3 & 3 & 3 & 3 & 3 \\
-  4 & 4 & 4 & 4 & 4 & 4 & 4 \\
-  5 & 5 & 5 & 5 & 5 & 5 & 5 \\
-  0 & 0 & 0 & 0 & 0 & 0 & 0
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+  1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+  2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 \\
+  3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 \\
+  4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 \\
+  5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 \\
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.VC.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, VC, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.VC.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1620,15 +1628,16 @@ cases of <a class="reference internal" href="#DistMatrix:T.VC.STAR:__class" titl
 <span class="math">\(2 \times 3\)</span> process grid with a row alignment of zero, a
 <span class="math">\(7 \times 7\)</span> matrix would be distributed as:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0 \\
-0 & 1 & 2 & 3 & 4 & 5 & 0
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.STAR.VC:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, VC&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.VC:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1681,15 +1690,16 @@ symbol is <tt class="docutils literal"><span class="pre">VR</span></tt>. Again u
 with a zero column alignment, each entry of a <span class="math">\(7 \times 7\)</span> matrix
 would be owned by the following sets of processes:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-  2 & 2 & 2 & 2 & 2 & 2 & 2 \\
-  4 & 4 & 4 & 4 & 4 & 4 & 4 \\
-  1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-  3 & 3 & 3 & 3 & 3 & 3 & 3 \\
-  5 & 5 & 5 & 5 & 5 & 5 & 5 \\
-  0 & 0 & 0 & 0 & 0 & 0 & 0
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+  2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 \\
+  4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 &amp; 4 \\
+  1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+  3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 &amp; 3 \\
+  5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 \\
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.VR.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, VR, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.VR.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1739,15 +1749,16 @@ cases of <a class="reference internal" href="#DistMatrix:T.VR.STAR:__class" titl
 <span class="math">\(2 \times 3\)</span> process grid with a row alignment of zero, a
 <span class="math">\(7 \times 7\)</span> matrix would be distributed as:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0 \\
-0 & 2 & 4 & 1 & 3 & 5 & 0
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0 \\
+0 &amp; 2 &amp; 4 &amp; 1 &amp; 3 &amp; 5 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.STAR.VR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, VR&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.VR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
@@ -1798,22 +1809,23 @@ matrix on every process. Again using a <span class="math">\(2 \times 3\)</span> 
 the entries of a <span class="math">\(7 \times 7\)</span> matrix would be owned by the following
 sets of processes:</p>
 <div class="math">
-\[\left(\begin{array}{ccccccc}
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} \\
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\} &
-\{0,1,...,5\} & \{0,1,...,5\} & \{0,1,...,5\}
-\end{array}\right)\]</div><dl class="type">
+\[\begin{split}\left(\begin{array}{ccccccc}
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} \\
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\} &amp;
+\{0,1,...,5\} &amp; \{0,1,...,5\} &amp; \{0,1,...,5\}
+\end{array}\right)\end{split}\]</div>
+<dl class="type">
 <dt id="DistMatrix:T.STAR.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>

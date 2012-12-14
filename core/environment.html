@@ -31,7 +31,7 @@
     <link rel="top" title="Elemental 0.77 documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="The Matrix class" href="matrix.html" />
-    <link rel="prev" title="FLAME" href="imports/flame.html" /> 
+    <link rel="prev" title="libFLAME" href="imports/flame.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
@@ -41,7 +41,7 @@
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="imports/flame.html">FLAME</a>
+        «&#160;&#160;<a href="imports/flame.html">libFLAME</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
@@ -652,11 +652,13 @@ performance. See <a class="reference internal" href="../lapack-like/tuning.html#
 <li><p class="first"><tt class="docutils literal"><span class="pre">ONE_NORM</span></tt>:</p>
 <div class="math">
 \[\|A\|_1 = \max_{\|x\|_1=1} \|Ax\|_1
-        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|\]</div></li>
+        = \max_j \sum_{i=0}^{m-1} |\alpha_{i,j}|\]</div>
+</li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">INFINITY_NORM</span></tt>:</p>
 <div class="math">
 \[\|A\|_{\infty} = \max_{\|x\|_{\infty}=1} \|Ax\|_{\infty}
-               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|\]</div></li>
+               = \max_i \sum_{j=0}^{n-1} |\alpha_{i,j}|\]</div>
+</li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">MAX_NORM</span></tt>:</p>
 <div class="math">
 \[\|A\|_{\mbox{max}} = \max_{i,j} |\alpha_{i,j}|\]</div>
@@ -668,7 +670,8 @@ performance. See <a class="reference internal" href="../lapack-like/tuning.html#
 <li><p class="first"><tt class="docutils literal"><span class="pre">FROBENIUS_NORM</span></tt>:</p>
 <div class="math">
 \[\|A\|_F = \sqrt{\sum_{i=0}^{m-1} \sum_{j=0}^{n-1} |\alpha_{i,j}|^2}
-        = \sum_{i=0}^{\min(m,n)} \sigma_i(A)^2\]</div></li>
+        = \sum_{i=0}^{\min(m,n)} \sigma_i(A)^2\]</div>
+</li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">TWO_NORM</span></tt>:</p>
 <div class="math">
 \[\|A\|_2 = \max_i \sigma_i(A)\]</div>
@@ -741,7 +744,7 @@ returns the number of entries locally owned by the process with rank
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="imports/flame.html">FLAME</a>
+        «&#160;&#160;<a href="imports/flame.html">libFLAME</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;

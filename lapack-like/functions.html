@@ -108,10 +108,11 @@ See <a class="reference external" href="https://github.com/poulson/Elemental/tre
 <dd><p>Computes the pseudoinverse of a general matrix through computing its SVD,
 modifying the singular values with the function</p>
 <div class="math">
-\[f(\sigma) = \left\{\begin{array}{cc}
-  1/\sigma, & \sigma \ge \epsilon \, n \, ||A||_2 \\
-      0,      & \mbox{otherwise}
-\end{array}\right.,\]</div><p>where <span class="math">\(\epsilon\)</span> is the relative machine precision,
+\[\begin{split}f(\sigma) = \left\{\begin{array}{cc}
+  1/\sigma, &amp; \sigma \ge \epsilon \, n \, ||A||_2 \\
+      0,      &amp; \mbox{otherwise}
+\end{array}\right.,\end{split}\]</div>
+<p>where <span class="math">\(\epsilon\)</span> is the relative machine precision,
 <span class="math">\(n\)</span> is the height of <span class="math">\(A\)</span>, and <span class="math">\(\|A\|_2\)</span> is the maximum
 singular value.</p>
 </dd></dl>
@@ -123,10 +124,11 @@ singular value.</p>
 of <a class="reference internal" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="RealHermitianFunction"><tt class="xref cpp cpp-func docutils literal"><span class="pre">RealHermitianFunction()</span></tt></a> which used the eigenvalue mapping
 function</p>
 <div class="math">
-\[f(\omega) = \left\{\begin{array}{cc}
-  1/\omega, & |\omega| \ge \epsilon \, n \, ||A||_2 \\
-      0,      & \mbox{otherwise}
-\end{array}\right.,\]</div><p>where <span class="math">\(\epsilon\)</span> is the relative machine precision,
+\[\begin{split}f(\omega) = \left\{\begin{array}{cc}
+  1/\omega, &amp; |\omega| \ge \epsilon \, n \, ||A||_2 \\
+      0,      &amp; \mbox{otherwise}
+\end{array}\right.,\end{split}\]</div>
+<p>where <span class="math">\(\epsilon\)</span> is the relative machine precision,
 <span class="math">\(n\)</span> is the height of <span class="math">\(A\)</span>, and <span class="math">\(||A||_2\)</span> can be computed
 as the maximum absolute value of the eigenvalues of <span class="math">\(A\)</span>.</p>
 </dd></dl>

@@ -59,7 +59,8 @@
 <p>This routine computes the in-place inverse of a general fully-populated
 (invertible) matrix <span class="math">\(A\)</span> as</p>
 <div class="math">
-\[A^{-1} = U^{-1} L^{-1} P,\]</div><p>where <span class="math">\(PA=LU\)</span> is the result of LU factorization with partial pivoting.
+\[A^{-1} = U^{-1} L^{-1} P,\]</div>
+<p>where <span class="math">\(PA=LU\)</span> is the result of LU factorization with partial pivoting.
 The algorithm essentially factors <span class="math">\(A\)</span>, inverts <span class="math">\(U\)</span> in place,
 solves against <span class="math">\(L\)</span> one block column at a time, and then applies the
 row pivots in reverse order to the columns of the result.</p>
@@ -81,7 +82,8 @@ void <tt class="descname">Inverse</tt><big>(</big><a class="reference internal" 
 <p>This routine uses a custom algorithm for computing the inverse of a
 Hermitian positive-definite matrix <span class="math">\(A\)</span> as</p>
 <div class="math">
-\[A^{-1} = (L L^H)^{-1} = L^{-H} L^{-1},\]</div><p>where <span class="math">\(L\)</span> is the lower Cholesky factor of <span class="math">\(A\)</span> (the upper Cholesky
+\[A^{-1} = (L L^H)^{-1} = L^{-H} L^{-1},\]</div>
+<p>where <span class="math">\(L\)</span> is the lower Cholesky factor of <span class="math">\(A\)</span> (the upper Cholesky
 factor is computed in the case of upper-triangular storage). Rather than
 performing Cholesky factorization, triangular inversion, and then the Hermitian
 triangular outer product in sequence, this routine makes use of the single-sweep
