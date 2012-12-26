@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Build system &mdash; Elemental 0.77 documentation</title>
+    <title>Build system &mdash; Elemental 0.77-dev documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.77',
+        VERSION:     '0.77-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,13 +28,13 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.77 documentation" href="index.html" />
+    <link rel="top" title="Elemental 0.77-dev documentation" href="index.html" />
     <link rel="next" title="Core functionality" href="core.html" />
     <link rel="prev" title="Introduction" href="intro.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="index.html">
-          <span>Elemental 0.77 documentation</span></a></h1>
+          <span>Elemental 0.77-dev documentation</span></a></h1>
         <h2 class="heading"><span>Build system</span></h2>
       </div>
       <div class="topnav">
@@ -347,68 +347,8 @@ eight processes would be:</p>
 <p>Adding Elemental as a dependency into a project which uses CMake for its build
 system is relatively straightforward: simply put an entire copy of the
 Elemental source tree in a subdirectory of your main project folder, say
-<tt class="docutils literal"><span class="pre">external/elemental</span></tt>, and uncomment out the bottom section of Elemental&#8217;s
-<tt class="docutils literal"><span class="pre">CMakeLists.txt</span></tt>, i.e., change</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">################################################################################</span>
-<span class="c"># Uncomment if including Elemental as a subproject in another build system     #</span>
-<span class="c">################################################################################</span>
-<span class="c">#set(LIBRARY_TYPE ${LIBRARY_TYPE} PARENT_SCOPE)</span>
-<span class="c">#set(CMAKE_CXX_FLAGS_${UPPER_BUILD_TYPE} ${CMAKE_CXX_FLAGS_${UPPER_BUILD_TYPE}} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_C_COMPILER ${MPI_C_COMPILER} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_C_INCLUDE_PATH ${MPI_C_INCLUDE_PATH} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_C_COMPILE_FLAGS ${MPI_C_COMPILE_FLAGS} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_C_LINK_FLAGS ${MPI_C_LINK_FLAGS} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_C_LIBRARIES ${MPI_C_LIBRARIES} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_CXX_COMPILER ${MPI_CXX_COMPILER} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_CXX_INCLUDE_PATH ${MPI_CXX_INCLUDE_PATH} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_CXX_COMPILE_FLAGS ${MPI_CXX_COMPILE_FLAGS} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_CXX_LINK_FLAGS ${MPI_CXX_LINK_FLAGS} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_CXX_LIBRARIES ${MPI_CXX_LIBRARIES} PARENT_SCOPE)</span>
-<span class="c">#set(MPI_LINK_FLAGS ${MPI_LINK_FLAGS} PARENT_SCOPE)</span>
-<span class="c">#set(MATH_LIBS ${MATH_LIBS} PARENT_SCOPE)</span>
-<span class="c">#set(RESTRICT ${RESTRICT} PARENT_SCOPE)</span>
-<span class="c">#set(RELEASE ${RELEASE} PARENT_SCOPE)</span>
-<span class="c">#set(BLAS_POST ${BLAS_POST} PARENT_SCOPE)</span>
-<span class="c">#set(LAPACK_POST ${LAPACK_POST} PARENT_SCOPE)</span>
-<span class="c">#set(HAVE_F90_INTERFACE ${HAVE_F90_INTERFACE} PARENT_SCOPE)</span>
-<span class="c">#set(WITHOUT_PMRRR ${WITHOUT_PMRRR} PARENT_SCOPE)</span>
-<span class="c">#set(AVOID_COMPLEX_MPI ${AVOID_COMPLEX_MPI} PARENT_SCOPE)</span>
-<span class="c">#set(HAVE_REDUCE_SCATTER_BLOCK ${HAVE_REDUCE_SCATTER_BLOCK} PARENT_SCOPE)</span>
-<span class="c">#set(REDUCE_SCATTER_BLOCK_VIA_ALLREDUCE ${REDUCE_SCATTER_BLOCK_VIA_ALLREDUCE} PARENT_SCOPE)</span>
-<span class="c">#set(USE_BYTE_ALLGATHERS ${USE_BYTE_ALLGATHERS} PARENT_SCOPE)</span>
-</pre></div>
-</div>
-<p>to</p>
-<div class="highlight-python"><pre>################################################################################
-# Uncomment if including Elemental as a subproject in another build system     #
-################################################################################
-set(LIBRARY_TYPE ${LIBRARY_TYPE} PARENT_SCOPE)
-set(CMAKE_CXX_FLAGS_${UPPER_BUILD_TYPE} ${CMAKE_CXX_FLAGS_${UPPER_BUILD_TYPE}} PARENT_SCOPE)
-set(MPI_C_COMPILER ${MPI_C_COMPILER} PARENT_SCOPE)
-set(MPI_C_INCLUDE_PATH ${MPI_C_INCLUDE_PATH} PARENT_SCOPE)
-set(MPI_C_COMPILE_FLAGS ${MPI_C_COMPILE_FLAGS} PARENT_SCOPE)
-set(MPI_C_LINK_FLAGS ${MPI_C_LINK_FLAGS} PARENT_SCOPE)
-set(MPI_C_LIBRARIES ${MPI_C_LIBRARIES} PARENT_SCOPE)
-set(MPI_CXX_COMPILER ${MPI_CXX_COMPILER} PARENT_SCOPE)
-set(MPI_CXX_INCLUDE_PATH ${MPI_CXX_INCLUDE_PATH} PARENT_SCOPE)
-set(MPI_CXX_COMPILE_FLAGS ${MPI_CXX_COMPILE_FLAGS} PARENT_SCOPE)
-set(MPI_CXX_LINK_FLAGS ${MPI_CXX_LINK_FLAGS} PARENT_SCOPE)
-set(MPI_CXX_LIBRARIES ${MPI_CXX_LIBRARIES} PARENT_SCOPE)
-set(MPI_LINK_FLAGS ${MPI_LINK_FLAGS} PARENT_SCOPE)
-set(MATH_LIBS ${MATH_LIBS} PARENT_SCOPE)
-set(RESTRICT ${RESTRICT} PARENT_SCOPE)
-set(RELEASE ${RELEASE} PARENT_SCOPE)
-set(BLAS_POST ${BLAS_POST} PARENT_SCOPE)
-set(LAPACK_POST ${LAPACK_POST} PARENT_SCOPE)
-set(HAVE_F90_INTERFACE ${HAVE_F90_INTERFACE} PARENT_SCOPE)
-set(WITHOUT_PMRRR ${WITHOUT_PMRRR} PARENT_SCOPE)
-set(AVOID_COMPLEX_MPI ${AVOID_COMPLEX_MPI} PARENT_SCOPE)
-set(HAVE_REDUCE_SCATTER_BLOCK ${HAVE_REDUCE_SCATTER_BLOCK} PARENT_SCOPE)
-set(REDUCE_SCATTER_BLOCK_VIA_ALLREDUCE ${REDUCE_SCATTER_BLOCK_VIA_ALLREDUCE} PARENT_SCOPE)
-set(USE_BYTE_ALLGATHERS ${USE_BYTE_ALLGATHERS} PARENT_SCOPE)</pre>
-</div>
-<p>Afterwards, create a <tt class="docutils literal"><span class="pre">CMakeLists.txt</span></tt> in your main project folder that builds
-off of the following snippet:</p>
+<tt class="docutils literal"><span class="pre">external/elemental</span></tt>, and then create a <tt class="docutils literal"><span class="pre">CMakeLists.txt</span></tt> file in your main
+project folder that builds off of the following snippet:</p>
 <div class="highlight-python"><pre>cmake_minimum_required(VERSION 2.8.5)
 project(Foo)
 
@@ -418,16 +358,19 @@ include_directories(${MPI_CXX_INCLUDE_PATH})
 
 # Build your project here
 # e.g.,
-#   add_library(foo STATIC ${FOO_SRC})
+#   add_library(foo ${LIBRARY_TYPE} ${FOO_SRC})
 #   target_link_libraries(foo elemental)</pre>
 </div>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>If you run into build problems, please email
-<a class="reference external" href="mailto:jack&#46;poulson&#37;&#52;&#48;gmail&#46;com">jack<span>&#46;</span>poulson<span>&#64;</span>gmail<span>&#46;</span>com</a> and make sure to
-attach the file <tt class="docutils literal"><span class="pre">include/elemental/config.h</span></tt>, which should be generated
-within your build directory. Please only direct general usage questions to
+<a class="reference external" href="mailto:elemental-maint&#37;&#52;&#48;googlegroups&#46;com">elemental-maint<span>&#64;</span>googlegroups<span>&#46;</span>com</a>
+and make sure to attach the file <tt class="docutils literal"><span class="pre">include/elemental/config.h</span></tt>, which should
+be generated within your build directory.
+Please only direct usage questions to
+<a class="reference external" href="mailto:elemental-user&#37;&#52;&#48;googlegroups&#46;com">elemental-user<span>&#64;</span>googlegroups<span>&#46;</span>com</a>,
+and development questions to
 <a class="reference external" href="mailto:elemental-dev&#37;&#52;&#48;googlegroups&#46;com">elemental-dev<span>&#64;</span>googlegroups<span>&#46;</span>com</a>.</p>
 </div>
 </div>
