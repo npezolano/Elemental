@@ -55,10 +55,9 @@
   <div class="section" id="lapack">
 <h1>LAPACK<a class="headerlink" href="#lapack" title="Permalink to this headline">¶</a></h1>
 <p>A handful of LAPACK routines are currently used by Elemental: a few
-routines for querying floating point characteristics, serial Cholesky and LU
-factorization, triangular inversion, and a few other utilities. In addition,
-there are several BLAS-like routines which are technically part of LAPACK
-(e.g., <tt class="docutils literal"><span class="pre">csyr</span></tt>) which were included in the BLAS imports section.</p>
+routines for querying floating point characteristics and a few other utilities.
+In addition, there are several BLAS-like routines which are technically part
+of LAPACK (e.g., <tt class="docutils literal"><span class="pre">csyr</span></tt>) which were included in the BLAS imports section.</p>
 <p>The prototypes can be found in
 <a class="reference external" href="https://github.com/poulson/Elemental/tree/master/include/elemental/core/imports/lapack.hpp">include/elemental/core/imports/lapack.hpp</a>,
 while the implementations are in
@@ -150,18 +149,6 @@ void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</
 <dt id="lapack::ComputeGivens__C.C.RP.CP.CP">
 void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</tt><big>(</big>C <em>phi</em>, C <em>gamma</em>, R* <em>c</em>, C* <em>s</em>, C* <em>rho</em><big>)</big><a class="headerlink" href="#lapack::ComputeGivens__C.C.RP.CP.CP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a Givens rotation for complex <span class="math">\(\phi\)</span> and <span class="math">\(\gamma\)</span>.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="cholesky-factorization">
-<h2>Cholesky factorization<a class="headerlink" href="#cholesky-factorization" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="lapack::Cholesky__c.i.FCP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">Cholesky</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, const F* <em>A</em>, int <em>lda</em><big>)</big><a class="headerlink" href="#lapack::Cholesky__c.i.FCP.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform a Cholesky factorization on <span class="math">\(A \in F^{n \times n}\)</span>, where
-<span class="math">\(A(i,j)\)</span> can be accessed at <tt class="docutils literal"><span class="pre">A[i+j*lda]</span></tt> and <span class="math">\(A\)</span> is implicitly
-Hermitian, with the data stored in the lower triangle if <cite>uplo</cite> equals
-&#8216;L&#8217;, or in the upper triangle if <cite>uplo</cite> equals &#8216;U&#8217;.</p>
 </dd></dl>
 
 </div>
