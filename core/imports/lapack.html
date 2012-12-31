@@ -165,30 +165,6 @@ Hermitian, with the data stored in the lower triangle if <cite>uplo</cite> equal
 </dd></dl>
 
 </div>
-<div class="section" id="lu-factorization">
-<h2>LU factorization<a class="headerlink" href="#lu-factorization" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="lapack::LU__i.i.FP.i.iP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">LU</tt><big>(</big>int <em>m</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, int* <em>p</em><big>)</big><a class="headerlink" href="#lapack::LU__i.i.FP.i.iP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform an LU factorization with partial pivoting on
-<span class="math">\(A \in F^{m \times n}\)</span>, where <span class="math">\(A(i,j)\)</span> can be accessed at
-<tt class="docutils literal"><span class="pre">A[i+j*lda]</span></tt>. On exit, the pivots are stored in the vector <cite>p</cite>, which
-should be at least as large as <tt class="docutils literal"><span class="pre">min(m,n)</span></tt>.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="triangular-inversion">
-<h2>Triangular inversion<a class="headerlink" href="#triangular-inversion" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="lapack::TriangularInverse__c.c.i.FCP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">TriangularInverse</tt><big>(</big>char <em>uplo</em>, char <em>diag</em>, int <em>n</em>, const F* <em>A</em>, int <em>lda</em><big>)</big><a class="headerlink" href="#lapack::TriangularInverse__c.c.i.FCP.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite either the lower or upper triangle of <span class="math">\(A \in F^{n \times n}\)</span>
-with its inverse. Which triangle is accessed is determined by <cite>uplo</cite> (&#8216;L&#8217; for lower or &#8216;U&#8217; for upper), and setting <cite>diag</cite> equal to &#8216;U&#8217; results in the
-triangular matrix being treated as unit diagonal (set <cite>diag</cite> to &#8216;N&#8217;
-otherwise).</p>
-</dd></dl>
-
-</div>
 <div class="section" id="qr-based-svd">
 <h2>QR-based SVD<a class="headerlink" href="#qr-based-svd" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
