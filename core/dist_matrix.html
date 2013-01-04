@@ -30,7 +30,7 @@
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
     <link rel="top" title="Elemental 0.77-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
-    <link rel="next" title="Partitioning" href="partitioning.html" />
+    <link rel="next" title="Viewing" href="viewing.html" />
     <link rel="prev" title="The Grid class" href="grid.html" /> 
   </head>
   <body>
@@ -45,7 +45,7 @@
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="partitioning.html">Partitioning</a>&#160;&#160;»
+        <a href="viewing.html">Viewing</a>&#160;&#160;»
         </p>
 
       </div>
@@ -910,90 +910,18 @@ the number of process columns).</p>
 
 <p class="rubric">Views</p>
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View__DistMatrix:T.MC.MR:R">
-void <tt class="descname">View</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View__DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure this matrix such that it is essentially a copy of the
-distributed matrix <cite>A</cite>, but the local data buffer simply points to
-the one from <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView__DistMatrix:T.MC.MR:CR">
-void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView__DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but this matrix is &#8220;locked&#8221;, meaning that it cannot
-change the data from <cite>A</cite> that it points to.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View__DistMatrix:T.MC.MR:R.i.i.i.i">
-void <tt class="descname">View</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>A</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View__DistMatrix:T.MC.MR:R.i.i.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>View a subset of <cite>A</cite> rather than the entire matrix. In particular,
-reconfigure this matrix to behave like the submatrix defined from the
-<tt class="docutils literal"><span class="pre">[i,i+height)</span></tt> rows and <tt class="docutils literal"><span class="pre">[j,j+width)</span></tt> columns of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView__DistMatrix:T.MC.MR:CR.i.i.i.i">
-void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>A</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView__DistMatrix:T.MC.MR:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but this matrix is &#8220;locked&#8221;, meaning that it cannot
-change the data from <cite>A</cite> that it points to.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View__i.i.i.i.TP.i.elem::GridCR">
-void <tt class="descname">View</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, T* <em>buffer</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View__i.i.i.i.TP.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::Attach__i.i.i.i.TP.i.elem::GridCR">
+void <tt class="descname">Attach</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, T* <em>buffer</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::Attach__i.i.i.i.TP.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconfigure this distributed matrix around an implicit <tt class="docutils literal"><span class="pre">[MC,MR]</span></tt>
 distributed matrix of the specified dimensions, alignments, local buffer,
 local leading dimension, and process grid.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView__i.i.i.i.TCP.i.elem::GridCR">
-void <tt class="descname">LockedView</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, const T* <em>buffer</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView__i.i.i.i.TCP.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::LockedAttach__i.i.i.i.TCP.i.elem::GridCR">
+void <tt class="descname">LockedAttach</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, const T* <em>buffer</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedAttach__i.i.i.i.TCP.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but the resulting matrix is &#8220;locked&#8221;, meaning that it
 cannot modify the underlying local data.</p>
-</dd></dl>
-
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The following functions have strict requirements on the input matrices
-and must be used with care in <tt class="docutils literal"><span class="pre">PureRelease</span></tt> and <tt class="docutils literal"><span class="pre">HybridRelease</span></tt> modes.</p>
-</div>
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View1x2__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R">
-void <tt class="descname">View1x2</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AR</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View1x2__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recombine two adjacent submatrices to form <span class="math">\([A_L A_R]\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView1x2__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR">
-void <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AR</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView1x2__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the result is &#8220;locked&#8221; (the data is not modifiable).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View2x1__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R">
-void <tt class="descname">View2x1</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AB</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View2x1__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recombine two adjacent submatrices to form <span class="math">\([A_T; A_B]\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView2x1__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR">
-void <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>AB</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView2x1__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the result is &#8220;locked&#8221; (the data is not modifiable).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::View2x2__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R">
-void <tt class="descname">View2x2</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ABR</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::View2x2__DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R.DistMatrix:T.MC.MR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recombine four adjacent submatrices to form
-<span class="math">\([A_{TL} A_{TR}; A_{BL} A_{BR}]\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::LockedView2x2__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR">
-void <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="#DistMatrix:T.MC.MR:__class" title="DistMatrix&lt;T, MC, MR&gt;">const DistMatrix&lt;T, MC, MR&gt;&amp;</a> <em>ABR</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::LockedView2x2__DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR.DistMatrix:T.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the result is &#8220;locked&#8221; (the data is not modifiable).</p>
 </dd></dl>
 
 <p class="rubric">Custom communication routines</p>
@@ -1880,13 +1808,13 @@ cases of <a class="reference internal" href="#DistMatrix:T.STAR.STAR:__class" ti
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="partitioning.html">Partitioning</a>&#160;&#160;»
+        <a href="viewing.html">Viewing</a>&#160;&#160;»
         </p>
 
       </div>
 
     <div class="footer">
-        &copy; Copyright 2012, Jack Poulson.
+        &copy; Copyright 2009-2013, Jack Poulson.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>

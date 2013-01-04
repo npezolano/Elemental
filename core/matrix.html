@@ -106,14 +106,13 @@ to view the bottom-right <span class="math">\(6 \times 7\)</span> submatrix usin
 <blockquote>
 <div><div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;elemental.hpp&quot;</span>
 <span class="p">...</span>
-<span class="n">Matrix</span><span class="o">&lt;</span><span class="n">Complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">ABR</span><span class="p">;</span>
-<span class="n">ABR</span><span class="p">.</span><span class="n">View</span><span class="p">(</span> <span class="n">A</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span> <span class="p">);</span>
+<span class="n">Matrix</span><span class="o">&lt;</span><span class="n">Complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">ABR</span><span class="p">(</span> <span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>since the bottom-right <span class="math">\(6 \times 7\)</span> submatrix beings at index
-<span class="math">\((4,3)\)</span>. In general, to view the <span class="math">\(M \times N\)</span> submatrix starting
-at entry <span class="math">\((i,j)\)</span>, one would call <tt class="docutils literal"><span class="pre">ABR.View(</span> <span class="pre">A,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">M,</span> <span class="pre">N</span> <span class="pre">);</span></tt>.</p>
+<p>since the bottom-right <span class="math">\(3 \times 4\)</span> submatrix beings at index
+<span class="math">\((1,2)\)</span>. In general, to view the <span class="math">\(M \times N\)</span> submatrix starting
+at entry <span class="math">\((i,j)\)</span>, one would call <tt class="docutils literal"><span class="pre">View(</span> <span class="pre">ABR,</span> <span class="pre">A,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">M,</span> <span class="pre">N</span> <span class="pre">);</span></tt>.</p>
 <dl class="type">
 <dt id="Matrix:T:__class">
 <em class="property">type </em>class <tt class="descname">Matrix&lt;T&gt;</tt><a class="headerlink" href="#Matrix:T:__class" title="Permalink to this definition">¶</a></dt>
@@ -380,87 +379,15 @@ bool <tt class="descname">LockedView</tt><big>(</big><big>)</big><tt class="desc
 </dd></dl>
 
 <dl class="function">
-<dt id="Matrix:T:::View__i.i.TP.i">
-void <tt class="descname">View</tt><big>(</big>int <em>height</em>, int <em>width</em>, T* <em>buffer</em>, int <em>ldim</em><big>)</big><a class="headerlink" href="#Matrix:T:::View__i.i.TP.i" title="Permalink to this definition">¶</a></dt>
+<dt id="Matrix:T:::Attach__i.i.TP.i">
+void <tt class="descname">Attach</tt><big>(</big>int <em>height</em>, int <em>width</em>, T* <em>buffer</em>, int <em>ldim</em><big>)</big><a class="headerlink" href="#Matrix:T:::Attach__i.i.TP.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconfigure the matrix around the specified buffer.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Matrix:T:::View__Matrix:T:R">
-void <tt class="descname">View</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Matrix:T:::View__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix around the modifiable buffer underlying <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView__i.i.TCP.i">
-void <tt class="descname">LockedView</tt><big>(</big>int <em>height</em>, int <em>width</em>, const T* <em>buffer</em>, int <em>ldim</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView__i.i.TCP.i" title="Permalink to this definition">¶</a></dt>
+<dt id="Matrix:T:::LockedAttach__i.i.TCP.i">
+void <tt class="descname">LockedAttach</tt><big>(</big>int <em>height</em>, int <em>width</em>, const T* <em>buffer</em>, int <em>ldim</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedAttach__i.i.TCP.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconfigure the matrix around the specified unmodifiable buffer.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView__Matrix:T:CR">
-void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView__Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix around the unmodifiable buffer underlying <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::View__Matrix:T:R.i.i.i.i">
-void <tt class="descname">View</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#Matrix:T:::View__Matrix:T:R.i.i.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix around the modifiable buffer underlying <cite>A</cite>, but
-only the portion that holds the <cite>height</cite> <span class="math">\(\times\)</span> <cite>width</cite> submatrix
-starting at entry <cite>(i,j)</cite></p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView__Matrix:T:CR.i.i.i.i">
-void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView__Matrix:T:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the resulting matrix data is unmodifiable.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::View1x2__Matrix:T:R.Matrix:T:R">
-void <tt class="descname">View1x2</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AR</em><big>)</big><a class="headerlink" href="#Matrix:T:::View1x2__Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix to use the modifiable buffer that spans the
-matrices <span class="math">\(A_L\)</span> and <span class="math">\(A_R\)</span> such that it behaves like
-<span class="math">\([A_L A_R]\)</span> (this routine requires that <span class="math">\(A_R\)</span>&#8216;s buffer begins
-at the same memory location that an extra column of <span class="math">\(A_L\)</span> would
-have).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView1x2__Matrix:T:CR.Matrix:T:CR">
-void <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>AR</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView1x2__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the resulting matrix data is unmodifiable.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::View2x1__Matrix:T:R.Matrix:T:R">
-void <tt class="descname">View2x1</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AB</em><big>)</big><a class="headerlink" href="#Matrix:T:::View2x1__Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix to use the modifiable buffer that spans the
-matrices <span class="math">\(A_T\)</span> and <span class="math">\(A_B\)</span> such that it behaves like
-<span class="math">\([A_T;A_B]\)</span> (this routine requires that <span class="math">\(A_B\)</span>&#8216;s buffer begins
-at the same memory location that an extra row of <span class="math">\(A_T\)</span> would have).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView2x1__Matrix:T:CR.Matrix:T:CR">
-void <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>AB</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView2x1__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the resulting matrix data is unmodifiable.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::View2x2__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R">
-void <tt class="descname">View2x2</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em><big>)</big><a class="headerlink" href="#Matrix:T:::View2x2__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure the matrix to behave like
-<span class="math">\([A_{TL} A_{TR}; A_{BL} A_{BR}]\)</span>
-(the buffer requirements are similar to <a class="reference internal" href="#Matrix:T:::View1x2__Matrix:T:R.Matrix:T:R" title="Matrix&lt;T&gt;::View1x2"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Matrix&lt;T&gt;::View1x2()</span></tt></a>
-and <a class="reference internal" href="#Matrix:T:::View2x1__Matrix:T:R.Matrix:T:R" title="Matrix&lt;T&gt;::View2x1"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Matrix&lt;T&gt;::View2x1()</span></tt></a>).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="Matrix:T:::LockedView2x2__Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">
-void <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>ABR</em><big>)</big><a class="headerlink" href="#Matrix:T:::LockedView2x2__Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as above, but the resulting matrix data is unmodifiable.</p>
 </dd></dl>
 
 <p class="rubric">Utilities</p>
@@ -534,7 +461,7 @@ complex with base type <cite>R</cite>.</p>
       </div>
 
     <div class="footer">
-        &copy; Copyright 2012, Jack Poulson.
+        &copy; Copyright 2009-2013, Jack Poulson.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
