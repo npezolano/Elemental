@@ -67,15 +67,12 @@ implementations are in <a class="reference external" href="https://github.com/po
 <dl class="function">
 <dt id="Adjoint__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Adjoint</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#Adjoint__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial version (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Adjoint__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Adjoint</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Adjoint__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed version (templated over the datatype and the individual
-distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="axpy">
@@ -84,15 +81,12 @@ distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</s
 <dl class="function">
 <dt id="Axpy__T.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>X</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>Y</em><big>)</big><a class="headerlink" href="#Axpy__T.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Axpy__T.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R">
 void <tt class="descname">Axpy</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>X</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>Y</em><big>)</big><a class="headerlink" href="#Axpy__T.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the shared
-distribution of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="conjugate">
@@ -105,29 +99,23 @@ distribution of <span class="math">\(A\)</span> and <span class="math">\(B\)</sp
 <dl class="function">
 <dt id="Conjugate__Matrix:T:R">
 void <tt class="descname">Conjugate</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Conjugate__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial version (templated over datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Conjugate__DistMatrix:T.U.V:R">
 void <tt class="descname">Conjugate</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Conjugate__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed version (templated over the datatype and the distribution of
-<span class="math">\(A\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <p><span class="math">\(B := \bar A\)</span>.</p>
 <dl class="function">
 <dt id="Conjugate__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Conjugate</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#Conjugate__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial version (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Conjugate__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Conjugate</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Conjugate__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed version (templated over the datatype and the individual
-distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="copy">
@@ -136,15 +124,12 @@ distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</s
 <dl class="function">
 <dt id="Copy__Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">Copy</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>X</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>Y</em><big>)</big><a class="headerlink" href="#Copy__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Copy__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Copy</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Copy__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="diagonalscale">
@@ -159,15 +144,12 @@ where <span class="math">\(op(D)\)</span> equals <span class="math">\(D=D^T\)</s
 <dl class="function">
 <dt id="DiagonalScale__LeftOrRight.Orientation.Matrix:T:CR.Matrix:T:R">
 void <tt class="descname">DiagonalScale</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>d</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#DiagonalScale__LeftOrRight.Orientation.Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="DiagonalScale__LeftOrRight.Orientation.DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">DiagonalScale</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>d</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>X</em><big>)</big><a class="headerlink" href="#DiagonalScale__LeftOrRight.Orientation.DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(d\)</span> and <span class="math">\(X\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="diagonalsolve">
@@ -182,15 +164,12 @@ is a column vector.</p>
 <dl class="function">
 <dt id="DiagonalSolve__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:R.b">
 void <tt class="descname">DiagonalSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>d</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em>, bool <em>checkIfSingular</em><em>=false </em><big>)</big><a class="headerlink" href="#DiagonalSolve__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="DiagonalSolve__LeftOrRight.Orientation.DistMatrix:F.U.V:CR.DistMatrix:F.W.Z:R.b">
 void <tt class="descname">DiagonalSolve</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>d</em>, DistMatrix&lt;F, W, Z&gt;&amp; <em>X</em>, bool <em>checkIfSingular</em><em>=false </em><big>)</big><a class="headerlink" href="#DiagonalSolve__LeftOrRight.Orientation.DistMatrix:F.U.V:CR.DistMatrix:F.W.Z:R.b" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(d\)</span> and <span class="math">\(X\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="dot">
@@ -200,15 +179,12 @@ stored as column or row vectors, but will be interpreted as column vectors.</p>
 <dl class="function">
 <dt id="Dot__Matrix:T:CR.Matrix:T:CR">
 T <tt class="descname">Dot</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>x</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>y</em><big>)</big><a class="headerlink" href="#Dot__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Dot__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dot</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dot__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="dotc">
@@ -218,15 +194,12 @@ BLAS naming convention.</p>
 <dl class="function">
 <dt id="Dotc__Matrix:T:CR.Matrix:T:CR">
 T <tt class="descname">Dotc</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>x</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>y</em><big>)</big><a class="headerlink" href="#Dotc__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Dotc__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dotc</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dotc__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="dotu">
@@ -235,15 +208,12 @@ individual distributions of <span class="math">\(x\)</span> and <span class="mat
 <dl class="function">
 <dt id="Dotu__Matrix:T:CR.Matrix:T:CR">
 T <tt class="descname">Dotu</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>x</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>y</em><big>)</big><a class="headerlink" href="#Dotu__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Dotu__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR">
 T <tt class="descname">Dotu</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>x</em>, const DistMatrix&lt;T, W, Z&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Dotu__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-individual distributions of <span class="math">\(x\)</span> and <span class="math">\(y\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="maketrapezoidal">
@@ -262,14 +232,12 @@ integer.</p>
 <dl class="function">
 <dt id="MakeTrapezoidal__LeftOrRight.UpperOrLower.i.Matrix:T:R">
 void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__LeftOrRight.UpperOrLower.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="MakeTrapezoidal__LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R">
 void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="nrm2">
@@ -294,15 +262,12 @@ as a column vector.</p>
 <dl class="function">
 <dt id="Scal__T.Matrix:T:R">
 void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Scal__T.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation (templated over the datatype).</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Scal__T.DistMatrix:T.U.V:R">
 void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Scal__T.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation (templated over the datatype and the
-distribution of <span class="math">\(X\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="scaletrapezoid">
@@ -316,14 +281,12 @@ The parameter conventions follow those of <tt class="docutils literal"><span cla
 <dl class="function">
 <dt id="ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.Matrix:T:R">
 void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R">
 void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="transpose">
@@ -332,19 +295,16 @@ void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a cl
 <p class="first admonition-title">Note</p>
 <p class="last">This is not a standard BLAS routine, but it is BLAS-like.</p>
 </div>
-<p><span class="math">\(B := A^T\)</span>.</p>
+<p><span class="math">\(B := A^T\)</span> or <span class="math">\(B := A^H\)</span>.</p>
 <dl class="function">
-<dt id="Transpose__Matrix:T:CR.Matrix:T:R">
-void <tt class="descname">Transpose</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#Transpose__Matrix:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial version (templated over the datatype).</p>
-</dd></dl>
+<dt id="Transpose__Matrix:T:CR.Matrix:T:R.b">
+void <tt class="descname">Transpose</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em>, bool <em>conjugate</em><em>=false </em><big>)</big><a class="headerlink" href="#Transpose__Matrix:T:CR.Matrix:T:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Transpose__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">
 void <tt class="descname">Transpose</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, DistMatrix&lt;T, W, Z&gt;&amp; <em>B</em><big>)</big><a class="headerlink" href="#Transpose__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed version (templated over the datatype and the individual
-distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>).</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="zero">
@@ -357,14 +317,12 @@ distributions of <span class="math">\(A\)</span> and <span class="math">\(B\)</s
 <dl class="function">
 <dt id="Zero__Matrix:T:R">
 void <tt class="descname">Zero</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zero__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The serial implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Zero__DistMatrix:T.U.V:R">
 void <tt class="descname">Zero</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zero__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>The distributed implementation.</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 </div>
